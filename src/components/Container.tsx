@@ -5,7 +5,10 @@ const Container: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   className,
   ...props
 }) => (
-  <div className={clsx("max-w-container mx-auto w-full flex", className)} {...props}>
+  <div
+    className={clsx("max-w-container mx-auto w-full flex px-10", className)}
+    {...props}
+  >
     {children}
   </div>
 );
