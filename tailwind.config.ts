@@ -18,6 +18,7 @@ const config: Config = {
       "16": "64px",
       "20": "80px",
       "35": "140px",
+      "37": "148px",
       container: "1472px",
     },
     colors: {
@@ -26,7 +27,7 @@ const config: Config = {
     },
     fontSize: {
       sm: "18px",
-      md: "",
+      md: "24px",
       lg: "32px",
       xl: "",
       xxl: "80px",
