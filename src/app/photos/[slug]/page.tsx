@@ -2,24 +2,18 @@ import Image from "next/image";
 
 import DetailsSection from "./DetailsSection";
 import { data } from "./mock";
+import SessionPhoto from "./SessionPhoto";
 import SuggestedPhotos from "./SuggestedPhotos";
 
 import Container from "@/components/Container";
+import RatioContainer from "@/components/RatioContainer";
 
 const HeroSection = ({ photo }: any) => (
-  <div style={{ paddingBottom: "56.25%" }} className="w-full relative overflow-hidden">
-    <div className="absolute top-0 left-0 w-full">
-      <div style={{ paddingBottom: "37.5%" }} className="w-full relative overflow-hidden">
-        <Image
-          src={photo}
-          className="absolute top-0 left-0 w-full"
-          alt=""
-          width={1920}
-          height={720}
-        />
-      </div>
-    </div>
-  </div>
+  <RatioContainer ratio={1080 / 1920} className="flex flex-col justify-end">
+    <RatioContainer ratio={690 / 1920}>
+      <Image src={photo} className="w-full" alt="" width={1920} height={720} />
+    </RatioContainer>
+  </RatioContainer>
 );
 
 const PhotoSession = ({ session = data }: any) => {
@@ -33,12 +27,8 @@ const PhotoSession = ({ session = data }: any) => {
           {`"${title}"`}
         </h1>
         <DetailsSection details={details} />
-        {photos.map(({ type, img }) => (
-          <>
-            {/* {type === EPhotoType.Photo && <Image />}
-            {type === EPhotoType.FullWidth && <Image />}
-            {type === EPhotoType.Group && <Image />} */}
-          </>
+        {photos.map((item, index) => (
+          <SessionPhoto photo={item} key={index} />
         ))}
         <SuggestedPhotos photos={suggested} />
       </Container>

@@ -19,7 +19,8 @@ const config: Config = {
       "20": "80px",
       "35": "140px",
       "37": "148px",
-      container: "1472px",
+      "100": "400px",
+      container: "1552px",
     },
     colors: {
       "off-white": "#fffff4",
@@ -33,6 +34,18 @@ const config: Config = {
       xxl: "80px",
     },
     extend: {
+      blur: {
+        md: "10px",
+      },
+      animation: {
+        slide: "slide 5s linear 0s infinite forwards",
+      },
+      keyframes: {
+        slide: {
+          from: { transform: "translateX(10%)" },
+          to: { transform: "translateX(-150%)" },
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

@@ -14,7 +14,7 @@ const fonts = localFont({
     },
     {
       path: "../../public/fonts/HelveticaNeueLTStd-LtCn.woff",
-      weight: "300", // light
+      weight: "300",
       style: "normal",
     },
   ],

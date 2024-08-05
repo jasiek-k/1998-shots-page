@@ -1,28 +1,27 @@
+"use client";
 import Image from "next/image";
 
-import useFonts from "./useFonts";
+import useColorMode from "./useColorMode";
 
 import Container from "@/components/Container";
 import Footer from "@/components/Footer";
+import RatioContainer from "@/components/RatioContainer";
 
 const App = () => {
-  useFonts();
+  useColorMode();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <div
-        style={{ paddingBottom: "56.25%" }}
-        className="w-full relative overflow-hidden"
-      >
+    <main>
+      <RatioContainer ratio={1080 / 1920}>
         <Image
           src="/images/photo_landing.jpg"
-          className="absolute top-0 left-0 w-full"
+          className="w-full"
           alt=""
           width={1920}
           height={1080}
         />
         <Footer className="absolute bottom-20 w-full" />
-      </div>
+      </RatioContainer>
       <Container>WELCOME TO THE 1998 SHOTS WORLD</Container>
     </main>
   );

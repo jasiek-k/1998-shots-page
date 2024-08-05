@@ -18,13 +18,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useColorMode();
   const fonts = useFonts();
 
   return (
     <html lang="en">
       <body className={fonts.className}>
-        {/* <Header /> */}
+        <Header />
         {children}
         <Footer />
       </body>

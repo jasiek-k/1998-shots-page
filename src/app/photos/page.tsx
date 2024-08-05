@@ -2,18 +2,16 @@
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./test.css";
 
-import clsx from "clsx";
-import Image from "next/image";
-import Link from "next/link";
 import React, { useCallback, useRef, useState } from "react";
 import Slider from "react-slick";
 
 import { teasers } from "./mock";
+import SliderItem from "./SliderItem";
 
-import Container from "@/components/Container";
+import RatioContainer from "@/components/RatioContainer";
 
+// TODO responsive slides
 const settings = {
   className: "",
   dots: false,
@@ -29,16 +27,6 @@ const settings = {
 };
 
 const navButtonStyle = "py-5 px-5 uppercase underline";
-
-const formatTeaserTitle = (title: string) => {
-  if (!title) {
-    return;
-  }
-
-  const arr = new Array(10).fill(title);
-
-  return arr.join(" - ");
-};
 
 const Photos = () => {
   const ref = useRef<Slider>(null);
@@ -56,61 +44,33 @@ const Photos = () => {
     }
   }, []);
 
+  const toggleIsHover = useCallback((index?: number) => {
+    setIsHover(index !== undefined ? index : undefined);
+  }, []);
+
   return (
     <section>
-      <div
-        style={{
-          height: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-end",
-        }}
-      >
+      <RatioContainer className="flex flex-col justify-end" ratio={1080 / 1920}>
         <Slider ref={ref} {...settings}>
-          {teasers.map(({ img, href, title }, index) => (
-            <div className="px-5" key={index}>
-              <Link
-                href={href}
-                onMouseEnter={() => {
-                  setIsHover(index);
-                }}
-                onMouseLeave={() => {
-                  setIsHover(undefined);
-                }}
-              >
-                <div className="wrapper">
-                  <Image
-                    src={img}
-                    alt=""
-                    className={clsx(
-                      "absolute w-full top-0 left-0",
-                      Boolean(isHover !== undefined && isHover !== index) && "XD",
-                    )}
-                    width={338}
-                    height={600}
-                  />
-                  {Boolean(isHover !== undefined && isHover === index) && (
-                    <div
-                      style={{ width: "400px" }}
-                      className="slide-text absolute bottom-16 uppercase flex"
-                    >
-                      <h1 className="text-md font-bold">{formatTeaserTitle(title)}</h1>
-                    </div>
-                  )}
-                </div>
-              </Link>
-            </div>
+          {teasers.map((item, index) => (
+            <SliderItem
+              item={item}
+              key={index}
+              isHover={isHover}
+              index={index}
+              toggleIsHover={toggleIsHover}
+            />
           ))}
         </Slider>
-      </div>
-      <div className="flex flex-row justify-end mr-5">
-        <button className={navButtonStyle} onClick={handlePrevSlide}>
-          Prev
-        </button>
-        <button className={navButtonStyle} onClick={handleNextSlide}>
-          Next
-        </button>
-      </div>
+        <div className="flex flex-row justify-end mr-5">
+          <button className={navButtonStyle} onClick={handlePrevSlide}>
+            Prev
+          </button>
+          <button className={navButtonStyle} onClick={handleNextSlide}>
+            Next
+          </button>
+        </div>
+      </RatioContainer>
     </section>
   );
 };
