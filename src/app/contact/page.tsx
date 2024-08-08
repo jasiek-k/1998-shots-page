@@ -1,7 +1,7 @@
-import { LogoRound, ServingAuthenticityCaption } from "public/svgs";
+import Container from "components/Container";
+import { RatioContainer } from "components/Container";
 
-import Container from "@/components/Container";
-import RatioContainer from "@/components/RatioContainer";
+import { LogoRound, ServingAuthenticityCaption } from "public/svgs";
 
 const Contact = () => {
   return (

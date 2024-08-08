@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useCallback, useEffect } from "react";
 
 import { Logo } from "public/svgs";
 
@@ -13,6 +14,17 @@ import { links } from "@/config";
 const Header = () => {
   const pathname = usePathname();
 
+  const checkIsActive = useCallback(
+    (href: string) => pathname === href || (pathname.includes(href) && href !== "/"),
+    [pathname],
+  );
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      console.log(window.scrollY);
+    });
+  }, []);
+
   return (
     <header className="absolute w-full flex z-50 mt-10 flex-col">
       <nav className="flex justify-center">
@@ -22,7 +34,7 @@ const Header = () => {
             key={index}
             className={clsx(
               "text-off-white font-light text-sm mx-5",
-              href === pathname && "underline",
+              checkIsActive(href) && "underline",
             )}
           >
             {name}

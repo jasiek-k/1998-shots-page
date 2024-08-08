@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { RatioContainer } from "components/Container";
+
 import type { ISuggestedSession } from "@/app/types";
-import RatioContainer from "@/components/RatioContainer";
 
 interface ISuggestedPhotosProps {
   photos: ISuggestedSession[];

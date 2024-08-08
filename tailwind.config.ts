@@ -10,12 +10,14 @@ const config: Config = {
     spacing: {
       "1": "4px",
       "2": "8px",
+      "2.5": "10px",
       "3": "12px",
       "4": "16px",
       "5": "20px",
       "6": "24px",
       "10": "40px",
       "16": "64px",
+      "15": "60px",
       "20": "80px",
       "35": "140px",
       "37": "148px",
@@ -31,7 +33,7 @@ const config: Config = {
       md: "24px",
       lg: "32px",
       xl: "",
-      xxl: "80px",
+      xxl: "60px",
     },
     extend: {
       blur: {

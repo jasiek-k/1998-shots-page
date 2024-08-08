@@ -2,11 +2,11 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 
-import useColorMode from "./useColorMode";
 import useFonts from "./useFonts";
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { ThemeScope } from "@/ThemeContext";
 
 export const metadata: Metadata = {
   title: "1998 SHOTS",
@@ -21,12 +21,14 @@ export default function RootLayout({
   const fonts = useFonts();
 
   return (
-    <html lang="en">
-      <body className={fonts.className}>
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <ThemeScope>
+      <html lang="en">
+        <body className={fonts.className}>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </ThemeScope>
   );
 }

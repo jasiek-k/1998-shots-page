@@ -1,17 +1,19 @@
 "use client";
 import Image from "next/image";
 
-import useColorMode from "./useColorMode";
+import Container from "components/Container";
+import { RatioContainer } from "components/Container";
+import Footer from "components/Footer";
 
-import Container from "@/components/Container";
-import Footer from "@/components/Footer";
-import RatioContainer from "@/components/RatioContainer";
+// import useColorMode from "./useColorMode";
+import { useTheme } from "@/ThemeContext";
 
 const App = () => {
-  useColorMode();
-
+  // useColorMode();
+  const test = useTheme();
+  console.log(test);
   return (
-    <main>
+    <main style={{ maxWidth: "1920px", marginLeft: "auto", marginRight: "auto" }}>
       <RatioContainer ratio={1080 / 1920}>
         <Image
           src="/images/photo_landing.jpg"

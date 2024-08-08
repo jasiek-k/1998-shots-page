@@ -1,12 +1,12 @@
 import Image from "next/image";
 
+import Container from "components/Container";
+import { RatioContainer } from "components/Container";
+
 import DetailsSection from "./DetailsSection";
 import { data } from "./mock";
 import SessionPhoto from "./SessionPhoto";
 import SuggestedPhotos from "./SuggestedPhotos";
-
-import Container from "@/components/Container";
-import RatioContainer from "@/components/RatioContainer";
 
 const HeroSection = ({ photo }: any) => (
   <RatioContainer ratio={1080 / 1920} className="flex flex-col justify-end">
@@ -23,12 +23,12 @@ const PhotoSession = ({ session = data }: any) => {
     <section>
       <HeroSection photo={heroPhoto} />
       <Container className="flex-col">
-        <h1 className="text-xxl font-off-white w-full text-center uppercase font-bold">
+        <h1 className="text-xxl font-off-white w-full text-center uppercase font-bold mt-35 mb-15">
           {`"${title}"`}
         </h1>
-        <DetailsSection details={details} />
+        <DetailsSection details={details} className="mb-35" />
         {photos.map((item, index) => (
-          <SessionPhoto photo={item} key={index} />
+          <SessionPhoto photo={item} key={index} className="mb-35" />
         ))}
         <SuggestedPhotos photos={suggested} />
       </Container>

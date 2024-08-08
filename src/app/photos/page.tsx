@@ -6,14 +6,13 @@ import "slick-carousel/slick/slick-theme.css";
 import React, { useCallback, useRef, useState } from "react";
 import Slider from "react-slick";
 
+import { RatioContainer } from "components/Container";
+
 import { teasers } from "./mock";
 import SliderItem from "./SliderItem";
 
-import RatioContainer from "@/components/RatioContainer";
-
 // TODO responsive slides
 const settings = {
-  className: "",
   dots: false,
   infinite: true,
   slidesToShow: 5,
@@ -24,6 +23,14 @@ const settings = {
   pauseOnHover: true,
   nextArrow: <></>,
   prevArrow: <></>,
+  // responsive: [
+  //   {
+  //     breakpoint: 1024,
+  //     settings: {
+  //       slidesToShow: 4,
+  //     },
+  //   },
+  // ],
 };
 
 const navButtonStyle = "py-5 px-5 uppercase underline";
@@ -49,7 +56,7 @@ const Photos = () => {
   }, []);
 
   return (
-    <section>
+    <section style={{ maxWidth: "1920px", marginLeft: "auto", marginRight: "auto" }}>
       <RatioContainer className="flex flex-col justify-end" ratio={1080 / 1920}>
         <Slider ref={ref} {...settings}>
           {teasers.map((item, index) => (

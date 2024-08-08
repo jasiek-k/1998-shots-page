@@ -2,7 +2,8 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 
-import RatioContainer from "@/components/RatioContainer";
+import { RatioContainer } from "components/Container";
+
 import { formatTeaserTitle } from "@/helpers";
 
 interface ISliderItemProps {
@@ -15,10 +16,11 @@ interface ISliderItemProps {
 const SliderItem = ({ item, toggleIsHover, index, isHover }: ISliderItemProps) => {
   const isBlurred = Boolean(isHover !== undefined && isHover !== index);
   const isCaptionDisplayed = Boolean(isHover !== undefined && isHover === index);
-  console.log(item, index);
+  //   console.log(item, index);
   const { img, href, title } = item;
+
   return (
-    <div className="px-5">
+    <div className="px-2.5">
       <Link
         href={href}
         onMouseEnter={() => {
