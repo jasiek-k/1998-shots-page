@@ -1,22 +1,30 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 
-import Container from "components/Container";
-import { RatioContainer } from "components/Container";
+import Container, { EContainerVariant, RatioContainer } from "components/Container";
 
 import DetailsSection from "./DetailsSection";
 import { data } from "./mock";
 import SessionPhoto from "./SessionPhoto";
 import SuggestedPhotos from "./SuggestedPhotos";
 
-const HeroSection = ({ photo }: any) => (
-  <RatioContainer ratio={1080 / 1920} className="flex flex-col justify-end">
+interface IHeroSectionProps {
+  photo: string;
+}
+
+interface IPhotoSessionProps {
+  session: any;
+}
+
+const HeroSection = ({ photo }: IHeroSectionProps) => (
+  <Container variant={EContainerVariant.FullWidth} className="mt-5">
     <RatioContainer ratio={690 / 1920}>
       <Image src={photo} className="w-full" alt="" width={1920} height={720} />
     </RatioContainer>
-  </RatioContainer>
+  </Container>
 );
 
-const PhotoSession = ({ session = data }: any) => {
+const PhotoSession = ({ session = data }: IPhotoSessionProps) => {
   const { title, heroPhoto, details, photos, suggested } = session;
 
   return (
@@ -27,7 +35,7 @@ const PhotoSession = ({ session = data }: any) => {
           {`"${title}"`}
         </h1>
         <DetailsSection details={details} className="mb-35" />
-        {photos.map((item, index) => (
+        {photos.map((item: any, index: any) => (
           <SessionPhoto photo={item} key={index} className="mb-35" />
         ))}
         <SuggestedPhotos photos={suggested} />

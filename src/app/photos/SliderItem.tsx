@@ -20,7 +20,7 @@ const SliderItem = ({ item, toggleIsHover, index, isHover }: ISliderItemProps) =
   const { img, href, title } = item;
 
   return (
-    <div className="px-2.5">
+    <div className="px-3">
       <Link
         href={href}
         onMouseEnter={() => {

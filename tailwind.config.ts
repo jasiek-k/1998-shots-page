@@ -8,6 +8,7 @@ const config: Config = {
   ],
   theme: {
     spacing: {
+      divider: "1px",
       "1": "4px",
       "2": "8px",
       "2.5": "10px",
@@ -21,15 +22,18 @@ const config: Config = {
       "20": "80px",
       "35": "140px",
       "37": "148px",
+      "40": "160px",
+      "90": "360px",
       "100": "400px",
       container: "1552px",
+      fullWidth: "1920px",
     },
     colors: {
       "off-white": "#fffff4",
       black: "#1F1B24",
     },
     fontSize: {
-      sm: "18px",
+      sm: "16px",
       md: "24px",
       lg: "32px",
       xl: "",

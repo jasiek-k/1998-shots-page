@@ -3,7 +3,15 @@ import Image from "next/image";
 
 import { EPhotoType } from "@/app/types";
 
-const SessionPhoto = ({ photo: { type, img, width, height }, className }: any) => {
+interface ISessionPhotoProps {
+  photo: any;
+  className: string;
+}
+
+const SessionPhoto = ({
+  photo: { type, img, width, height },
+  className,
+}: ISessionPhotoProps) => {
   return (
     <div className={className}>
       {/* {type === EPhotoType.Photo && <Image />*/}
@@ -12,7 +20,7 @@ const SessionPhoto = ({ photo: { type, img, width, height }, className }: any) =
       )}
       {type === EPhotoType.Group && (
         <>
-          <div className="flex gap-10">
+          <div className="flex gap-6">
             {img.map((item, index) => (
               <div key={index}>
                 <Image src={item} width={width} height={height} alt="" />

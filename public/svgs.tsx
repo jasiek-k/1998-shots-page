@@ -57,12 +57,7 @@ export const ServingAuthenticityCaption = () => (
 );
 
 export const LogoRound = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="212"
-    height="226.536"
-    viewBox="0 0 212 226.536"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212 226.536">
     <g transform="translate(-68.678 -61.049)">
       <g transform="translate(68.678 61.049)">
         <path

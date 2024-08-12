@@ -1,33 +1,28 @@
 import Container from "components/Container";
-import { RatioContainer } from "components/Container";
 
 import { LogoRound, ServingAuthenticityCaption } from "public/svgs";
 
-const Contact = () => {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <RatioContainer ratio={1080 / 1920}>
-        <Container>
-          <div className="flex flex-col items-center">
-            <div className="flex flex-row items-center mb-10">
-              <div className="w-1/2 mr-37 flex justify-end">
-                <LogoRound />
-              </div>
-              <div style={{ width: "1px" }} className="bg-off-white h-100" />
-              <div className="w-1/2 ml-37">
-                <p className="uppercase">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
-                </p>
-              </div>
-            </div>
-            <ServingAuthenticityCaption />
+const Contact = () => (
+  <Container className="mt-6 mb-16">
+    <div className="flex flex-col items-center">
+      <div className="flex flex-row items-center mb-10">
+        <div className="w-1/2 mr-37 flex justify-end">
+          <div className="w-1/3">
+            <LogoRound />
           </div>
-        </Container>
-      </RatioContainer>
-    </main>
-  );
-};
+        </div>
+        <div className="bg-off-white h-90 w-divider" />
+        <div className="w-1/2 ml-37">
+          <p className="uppercase">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+            nostrud exercitation ullamco laboris nisi ut aliquip ex.
+          </p>
+        </div>
+      </div>
+      <ServingAuthenticityCaption />
+    </div>
+  </Container>
+);
 
 export default Contact;

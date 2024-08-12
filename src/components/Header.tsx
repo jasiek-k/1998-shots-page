@@ -25,8 +25,9 @@ const Header = () => {
     });
   }, []);
 
+  // absolute
   return (
-    <header className="absolute w-full flex z-50 mt-10 flex-col">
+    <header className="w-full flex z-50 mt-10 flex-col">
       <nav className="flex justify-center">
         {Object.values(links).map(({ name, href }, index) => (
           <Link
@@ -41,7 +42,7 @@ const Header = () => {
           </Link>
         ))}
       </nav>
-      <Container style={{ paddingLeft: "126px", paddingRight: "126px" }} className="mt-5">
+      <Container style={{ paddingLeft: "160px", paddingRight: "160px" }} className="mt-6">
         <Logo />
       </Container>
     </header>

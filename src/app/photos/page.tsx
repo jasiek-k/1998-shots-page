@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import React, { useCallback, useRef, useState } from "react";
 import Slider from "react-slick";
 
-import { RatioContainer } from "components/Container";
+import Container, { EContainerVariant } from "components/Container";
 
 import { teasers } from "./mock";
 import SliderItem from "./SliderItem";
@@ -56,29 +56,27 @@ const Photos = () => {
   }, []);
 
   return (
-    <section style={{ maxWidth: "1920px", marginLeft: "auto", marginRight: "auto" }}>
-      <RatioContainer className="flex flex-col justify-end" ratio={1080 / 1920}>
-        <Slider ref={ref} {...settings}>
-          {teasers.map((item, index) => (
-            <SliderItem
-              item={item}
-              key={index}
-              isHover={isHover}
-              index={index}
-              toggleIsHover={toggleIsHover}
-            />
-          ))}
-        </Slider>
-        <div className="flex flex-row justify-end mr-5">
-          <button className={navButtonStyle} onClick={handlePrevSlide}>
-            Prev
-          </button>
-          <button className={navButtonStyle} onClick={handleNextSlide}>
-            Next
-          </button>
-        </div>
-      </RatioContainer>
-    </section>
+    <Container variant={EContainerVariant.FullWidth} className="flex-col mt-6">
+      <Slider ref={ref} {...settings}>
+        {teasers.map((item, index) => (
+          <SliderItem
+            item={item}
+            key={index}
+            isHover={isHover}
+            index={index}
+            toggleIsHover={toggleIsHover}
+          />
+        ))}
+      </Slider>
+      <div className="flex flex-row justify-end mr-5">
+        <button className={navButtonStyle} onClick={handlePrevSlide}>
+          Prev
+        </button>
+        <button className={navButtonStyle} onClick={handleNextSlide}>
+          Next
+        </button>
+      </div>
+    </Container>
   );
 };
 

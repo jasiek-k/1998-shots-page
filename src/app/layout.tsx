@@ -26,7 +26,7 @@ export default function RootLayout({
         <body className={fonts.className}>
           <Header />
           <main>{children}</main>
-          <Footer />
+          <Footer className="pb-10 pt-5" />
         </body>
       </html>
     </ThemeScope>

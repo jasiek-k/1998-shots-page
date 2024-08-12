@@ -1,25 +1,41 @@
 import clsx from "clsx";
 import type { DetailedHTMLProps, HTMLAttributes } from "react";
 
-interface IRatioContainer
-  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+export enum EContainerVariant {
+  Base = "base",
+  FullWidth = "fullWidth",
+}
+
+type TDivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+
+interface IRatioContainerProps extends TDivProps {
   ratio: number;
 }
 
-const Container: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+interface IContainerProps extends TDivProps {
+  variant?: EContainerVariant;
+}
+
+const containerStyle: Record<EContainerVariant, string> = {
+  [EContainerVariant.Base]: "max-w-container px-20",
+  [EContainerVariant.FullWidth]: "max-w-fullWidth",
+};
+
+const Container = ({
   children,
   className,
+  variant = EContainerVariant.Base,
   ...props
-}) => (
+}: IContainerProps) => (
   <div
-    className={clsx("max-w-container mx-auto w-full flex px-20", className)}
+    className={clsx("mx-auto w-full flex", containerStyle[variant], className)}
     {...props}
   >
     {children}
   </div>
 );
 
-export const RatioContainer = ({ children, className, ratio }: IRatioContainer) => (
+export const RatioContainer = ({ children, className, ratio }: IRatioContainerProps) => (
   <div
     style={{ paddingBottom: `${ratio * 100}%` }}
     className="relative overflow-hidden w-full"
