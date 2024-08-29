@@ -13,6 +13,7 @@ import { links } from "@/config";
 
 const Header = () => {
   const pathname = usePathname();
+  const isHomePath = pathname === "/";
 
   const checkIsActive = useCallback(
     (href: string) => pathname === href || (pathname.includes(href) && href !== "/"),
@@ -25,9 +26,8 @@ const Header = () => {
     });
   }, []);
 
-  // absolute
   return (
-    <header className="w-full flex z-50 mt-10 flex-col">
+    <header className={clsx(isHomePath && "absolute", "w-full flex z-50 mt-10 flex-col")}>
       <nav className="flex justify-center">
         {Object.values(links).map(({ name, href }, index) => (
           <Link
@@ -42,7 +42,7 @@ const Header = () => {
           </Link>
         ))}
       </nav>
-      <Container style={{ paddingLeft: "160px", paddingRight: "160px" }} className="mt-6">
+      <Container className="mt-6 md:px-40">
         <Logo />
       </Container>
     </header>

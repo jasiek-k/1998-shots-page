@@ -8,10 +8,11 @@ import Slider from "react-slick";
 
 import Container, { EContainerVariant } from "components/Container";
 
+import { LeftArrowIcon, RightArrowIcon } from "public/svgs";
+
 import { teasers } from "./mock";
 import SliderItem from "./SliderItem";
 
-// TODO responsive slides
 const settings = {
   dots: false,
   infinite: true,
@@ -23,17 +24,17 @@ const settings = {
   pauseOnHover: true,
   nextArrow: <></>,
   prevArrow: <></>,
-  // responsive: [
-  //   {
-  //     breakpoint: 1024,
-  //     settings: {
-  //       slidesToShow: 4,
-  //     },
-  //   },
-  // ],
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+  ],
 };
 
-const navButtonStyle = "py-5 px-5 uppercase underline";
+const navButtonStyle = "py-3 md:py-5 px-5 uppercase flex";
 
 const Photos = () => {
   const ref = useRef<Slider>(null);
@@ -56,7 +57,10 @@ const Photos = () => {
   }, []);
 
   return (
-    <Container variant={EContainerVariant.FullWidth} className="flex-col mt-6">
+    <Container
+      variant={EContainerVariant.FullWidth}
+      className="flex-col mt-6 mb-10 md:mb-"
+    >
       <Slider ref={ref} {...settings}>
         {teasers.map((item, index) => (
           <SliderItem
@@ -68,12 +72,15 @@ const Photos = () => {
           />
         ))}
       </Slider>
-      <div className="flex flex-row justify-end mr-5">
+      <div className="flex flex-row justify-between md:justify-end md:mr-5 md:ml-0 mx-3 mt-2 md:mt-0">
         <button className={navButtonStyle} onClick={handlePrevSlide}>
-          Prev
+          <LeftArrowIcon width="20px" height="20px" />
+          <span className="ml-1">Prev</span>
         </button>
+        {/* <div className="h-auto w-divider bg-off-white" /> */}
         <button className={navButtonStyle} onClick={handleNextSlide}>
-          Next
+          <span className="mr-1">Next</span>
+          <RightArrowIcon width="20px" height="20px" />
         </button>
       </div>
     </Container>

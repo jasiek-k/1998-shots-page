@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 
-import { RatioContainer } from "components/Container";
+import { EContainerRatio, RatioContainer } from "components/Container";
 
 import { formatTeaserTitle } from "@/helpers";
 
@@ -30,7 +30,7 @@ const SliderItem = ({ item, toggleIsHover, index, isHover }: ISliderItemProps) =
           toggleIsHover();
         }}
       >
-        <RatioContainer ratio={600 / 338}>
+        <RatioContainer variant={EContainerRatio.Teaser}>
           <Image
             src={img}
             alt=""

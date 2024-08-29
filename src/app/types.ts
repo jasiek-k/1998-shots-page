@@ -3,11 +3,18 @@ export interface ISuggestedSession {
   href: string;
 }
 
+export interface ICredit {
+  name: string;
+  role: string;
+}
+
 export interface ISession {
   title: string;
+  about: string;
   details: string[];
   photos: Array<IFullWidth | IGroup | IPhoto>;
   suggested: ISuggestedSession[];
+  credits: Array<ICredit>;
 }
 
 export enum EPhotoType {

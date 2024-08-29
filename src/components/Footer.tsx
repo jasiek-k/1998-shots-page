@@ -1,14 +1,16 @@
-import clsx from "clsx";
-
-const caption = ["PHOTOGRAPHY X DESIGN", `FROM 51°45'33.30"N, 19°27'21.54"E`, "XXX"];
-
-const Footer: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className }) => (
-  <footer className={clsx("flex justify-center flex-col", className)}>
-    {caption.map((item, index) => (
-      <span className="text-center font-light text-sm" key={index}>
-        {item}
-      </span>
-    ))}
+const Footer = () => (
+  <footer className="flex justify-center pb-8 pt-4 text-sm">
+    <span className="font-bold">
+      1998 
+    </span>
+    <span className="font-light mx-1">SHOTS®</span>
+    <span className="font-bold">
+      ALL RIGHTS RESERVED
+    </span>
+    <span className="font-light mx-1">X</span>
+    <span className="font-bold">
+      EST. MMXXIII
+    </span>
   </footer>
 );
 

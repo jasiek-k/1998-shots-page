@@ -3,13 +3,20 @@ import type { DetailedHTMLProps, HTMLAttributes } from "react";
 
 export enum EContainerVariant {
   Base = "base",
+  BaseNoMobilePadding = "baseNoMobilePadding",
   FullWidth = "fullWidth",
+}
+
+export enum EContainerRatio {
+  FullPage = "fullPage",
+  Banner = "banner",
+  Teaser = "teaser",
 }
 
 type TDivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 interface IRatioContainerProps extends TDivProps {
-  ratio: number;
+  variant: EContainerRatio;
 }
 
 interface IContainerProps extends TDivProps {
@@ -17,8 +24,15 @@ interface IContainerProps extends TDivProps {
 }
 
 const containerStyle: Record<EContainerVariant, string> = {
-  [EContainerVariant.Base]: "max-w-container px-20",
+  [EContainerVariant.Base]: "max-w-container md:px-20 px-4",
+  [EContainerVariant.BaseNoMobilePadding]: "max-w-container md:px-20",
   [EContainerVariant.FullWidth]: "max-w-fullWidth",
+};
+
+const ratios: Record<EContainerRatio, string> = {
+  [EContainerRatio.FullPage]: "pb-fullPageMobile md:pb-fullPage",
+  [EContainerRatio.Banner]: "pb-bannerMobile md:pb-banner",
+  [EContainerRatio.Teaser]: "pb-teaser",
 };
 
 const Container = ({
@@ -35,11 +49,12 @@ const Container = ({
   </div>
 );
 
-export const RatioContainer = ({ children, className, ratio }: IRatioContainerProps) => (
-  <div
-    style={{ paddingBottom: `${ratio * 100}%` }}
-    className="relative overflow-hidden w-full"
-  >
+export const RatioContainer = ({
+  children,
+  className,
+  variant,
+}: IRatioContainerProps) => (
+  <div className={clsx("relative overflow-hidden w-full", ratios[variant])}>
     <div className={clsx("absolute top-0 left-0 w-full h-full", className)}>
       {children}
     </div>
