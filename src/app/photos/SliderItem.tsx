@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { EContainerRatio, RatioContainer } from "components/Container";
 
-import { formatTeaserTitle } from "@/helpers";
+// import { formatTeaserTitle } from "@/helpers";
 
 interface ISliderItemProps {
   item: any;
@@ -15,7 +15,7 @@ interface ISliderItemProps {
 
 const SliderItem = ({ item, toggleIsHover, index, isHover }: ISliderItemProps) => {
   const isBlurred = Boolean(isHover !== undefined && isHover !== index);
-  const isCaptionDisplayed = Boolean(isHover !== undefined && isHover === index);
+  // const isCaptionDisplayed = Boolean(isHover !== undefined && isHover === index);
   //   console.log(item, index);
   const { img, href, title } = item;
 
@@ -38,13 +38,13 @@ const SliderItem = ({ item, toggleIsHover, index, isHover }: ISliderItemProps) =
             width={338}
             height={600}
           />
-          {isCaptionDisplayed && (
+          {/* {isCaptionDisplayed && (
             <div className="animate-slide absolute bottom-16 uppercase flex whitespace-nowrap w-100">
               <h1 className="text-md font-bold inline-block">
                 {formatTeaserTitle(title)}
               </h1>
             </div>
-          )}
+          )} */}
         </RatioContainer>
       </Link>
     </div>

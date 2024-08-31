@@ -12,7 +12,7 @@ const Contact = () => (
           </div>
         </div>
         <div className="bg-off-white h-divider w-full md:h-90 md:w-divider" />
-        <div className="w-1/2 md:ml-37">
+        <div className="md:w-1/2 md:ml-37">
           <p className="uppercase">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis

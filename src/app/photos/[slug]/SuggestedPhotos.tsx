@@ -31,12 +31,12 @@ const SessionTeaser = ({
 
 const SuggestedPhotos = ({ photos }: ISuggestedPhotosProps) => (
   <Container variant={EContainerVariant.BaseNoMobilePadding} className="flex-col pb-15">
-    <div className="pl-4">
+    <div className="pl-4 md:pl-0">
       <h1 className="text-lg font-bold mb-2 uppercase">Check another ones</h1>
-      <div className="overflow-auto">
-        <div style={{ width: "288vw" }} className="flex gap-6 pr-4 md:pr-0">
+      <div className="overflow-auto snap-x noScroll">
+        <div className="flex gap-6 pr-4 md:pr-0 w-teaserMobile md:w-auto">
           {photos.map((item, index) => (
-            <SessionTeaser item={item} key={index} className="w-3/12" />
+            <SessionTeaser item={item} key={index} className="w-3/12 snap-center" />
           ))}
         </div>
       </div>

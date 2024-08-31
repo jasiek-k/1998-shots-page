@@ -56,8 +56,8 @@ export const ServingAuthenticityCaption = () => (
   </svg>
 );
 
-export const LogoRound = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212 226.536">
+export const LogoRound = (props: any) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212 226.536" {...props}>
     <g transform="translate(-68.678 -61.049)">
       <g transform="translate(68.678 61.049)">
         <path
@@ -131,6 +131,27 @@ export const RightArrowIcon = (props: any) => (
       fill="#fffff4"
       d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z"
       data-name="Right"
+    />
+  </svg>
+);
+
+export const CloseIcon = (props: any) => (
+  <svg viewBox="0 0 34 32" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <line
+      x1="2.70711"
+      y1="1.29289"
+      x2="32.7071"
+      y2="31.2929"
+      stroke="#FFFFF4"
+      strokeWidth="2"
+    />
+    <line
+      x1="1.29289"
+      y1="31.2929"
+      x2="31.2929"
+      y2="1.29289"
+      stroke="#FFFFF4"
+      strokeWidth="2"
     />
   </svg>
 );

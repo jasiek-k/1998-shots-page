@@ -8,6 +8,7 @@ const config: Config = {
   ],
   theme: {
     spacing: {
+      "0": "0px",
       divider: "1px",
       "1": "4px",
       "2": "8px",
@@ -38,6 +39,7 @@ const config: Config = {
       teaser: "177.51%",
       banner: "35.94%",
       bannerMobile: "132.80%",
+      teaserMobile: "288vw",
     },
     borderWidth: {
       1: "1px",
@@ -47,6 +49,7 @@ const config: Config = {
       black: "#1F1B24",
     },
     fontSize: {
+      xs: "12px",
       sm: "16px",
       mobileSm: "18px",
       md: "24px",
@@ -67,10 +70,8 @@ const config: Config = {
           to: { transform: "translateX(-150%)" },
         },
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      backdropBlur: {
+        default: "15px",
       },
     },
   },

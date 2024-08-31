@@ -59,10 +59,7 @@ const PhotoSession = ({ session = data }: IPhotoSessionProps) => {
     <section>
       <HeroSection photo={heroPhoto} photoMobile={heroPhotoMobile} />
       <HeaderSection title={title} about={about} />
-      <Container
-        variant={EContainerVariant.BaseNoMobilePadding}
-        className="flex-col pb-15"
-      >
+      <Container variant={EContainerVariant.BaseNoMobilePadding} className="flex-col">
         {photos.map((item: any, index: any) => (
           <SessionPhoto photo={item} key={index} className="mb-6 md:mb-35" />
         ))}
