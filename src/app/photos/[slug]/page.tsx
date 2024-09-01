@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 
 import Container, {
@@ -13,13 +12,15 @@ import { data } from "./mock";
 import SessionPhoto from "./SessionPhoto";
 import SuggestedPhotos from "./SuggestedPhotos";
 
+import type { ISession } from "@/app/types";
+
 interface IHeroSectionProps {
   photo: string;
   photoMobile: string;
 }
 
 interface IPhotoSessionProps {
-  session: any;
+  session: ISession;
 }
 
 const HeroSection = ({ photo, photoMobile }: IHeroSectionProps) => (
@@ -43,24 +44,16 @@ const HeroSection = ({ photo, photoMobile }: IHeroSectionProps) => (
   </Container>
 );
 
-const PhotoSession = ({ session = data }: IPhotoSessionProps) => {
-  const {
-    title,
-    about,
-    heroPhoto,
-    heroPhotoMobile,
-    details,
-    credits,
-    photos,
-    suggested,
-  } = session;
+const PhotoSession = ({ session = data as unknown as ISession }: IPhotoSessionProps) => {
+  const { title, about, heroPhoto, heroPhotoMobile, credits, photos, suggested } =
+    session;
 
   return (
     <section>
       <HeroSection photo={heroPhoto} photoMobile={heroPhotoMobile} />
       <HeaderSection title={title} about={about} />
       <Container variant={EContainerVariant.BaseNoMobilePadding} className="flex-col">
-        {photos.map((item: any, index: any) => (
+        {photos.map((item, index) => (
           <SessionPhoto photo={item} key={index} className="mb-6 md:mb-35" />
         ))}
       </Container>

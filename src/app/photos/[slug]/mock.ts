@@ -4,7 +4,6 @@ export const data = {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
   heroPhoto: "/images/ILTSOBRITM_hero.jpg",
   heroPhotoMobile: "/images/ILTSOBRITM_hero_mobile.jpg",
-  details: ["Sony Alpha 7 II", "Year 2K23"],
   photos: [
     {
       type: "full-width",

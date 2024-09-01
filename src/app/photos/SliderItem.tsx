@@ -4,10 +4,12 @@ import Link from "next/link";
 
 import { EContainerRatio, RatioContainer } from "components/Container";
 
+import type { ISuggestedSession } from "../types";
+
 // import { formatTeaserTitle } from "@/helpers";
 
 interface ISliderItemProps {
-  item: any;
+  item: ISuggestedSession;
   toggleIsHover: (index?: number) => void;
   index: number;
   isHover: number | undefined;
@@ -16,7 +18,7 @@ interface ISliderItemProps {
 const SliderItem = ({ item, toggleIsHover, index, isHover }: ISliderItemProps) => {
   const isBlurred = Boolean(isHover !== undefined && isHover !== index);
   // const isCaptionDisplayed = Boolean(isHover !== undefined && isHover === index);
-  //   console.log(item, index);
+
   const { img, href, title } = item;
 
   return (

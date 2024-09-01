@@ -26,44 +26,59 @@ const Header = () => {
     setIsOpen(is => !is);
   }, []);
 
+  const toggleTheme = useCallback(() => {}, []);
+
+  const getLinks = useCallback(
+    (onClick?: () => void) => {
+      return Object.values(links).map(({ name, href }, index) => (
+        <Link
+          href={href}
+          key={index}
+          onClick={onClick}
+          className={clsx(
+            "text-off-white font-light text-md md:text-sm mx-5 text-center my-4 md:my-0",
+            checkIsActive(href) && "underline",
+          )}
+        >
+          {name}
+        </Link>
+      ));
+    },
+    [checkIsActive],
+  );
+
   useEffect(() => {
     // window.addEventListener("scroll", () => {
     //   console.log(window.scrollY);
     // });
   }, []);
 
-  // TODO onClick only for mobile
-
   return (
-    <header className={clsx(isHomePath && "absolute", "w-full flex z-50 mt-10 flex-col")}>
+    <header
+      className={clsx(isHomePath && "absolute", "w-full flex z-50 md:mt-10 flex-col")}
+    >
       <div
         className={clsx(
           isOpen ? "flex freezeScroll" : "hidden",
-          "backdrop-blur-default pt-15 pb-20 justify-between fixed top-0 left-0 w-full h-full z-10 items-center flex-col",
-          "md:backdrop-blur-none md:flex md:py-0 md:justify-center md:static md:flex-row",
+          "md:hidden backdrop-blur-default pt-15 pb-20 justify-between fixed top-0 left-0 w-full h-full z-10 items-center flex-col",
         )}
       >
-        <LogoRound width="60px" className="md:hidden" />
-        <nav className="flex flex-col md:flex-row">
-          {Object.values(links).map(({ name, href }, index) => (
-            <Link
-              href={href}
-              key={index}
-              onClick={toggleIsOpen}
-              className={clsx(
-                "text-off-white font-light text-md md:text-sm mx-5 text-center my-4 md:my-0",
-                checkIsActive(href) && "underline",
-              )}
-            >
-              {name}
-            </Link>
-          ))}
-        </nav>
-        <button type="button" className="md:hidden" onClick={toggleIsOpen}>
+        <LogoRound width="60px" />
+        <nav className="flex flex-col">{getLinks(toggleIsOpen)}</nav>
+        <button type="button" onClick={toggleIsOpen}>
           <CloseIcon width="30px" />
         </button>
       </div>
-      <Container className="mt-6 md:px-40">
+      <Container className="mt-6 md:px-40 flex flex-col">
+        <div className="flex justify-between md:justify-center mb-6 text-xs md:relative">
+          <button onClick={toggleTheme} className="md:absolute md:left-0">
+            LIGHT MODE
+          </button>
+          <button onClick={toggleIsOpen} className="md:hidden">
+            MENU
+          </button>
+          <nav className="hidden md:flex flex-row justify-center">{getLinks()}</nav>
+        </div>
         <Logo />
       </Container>
     </header>

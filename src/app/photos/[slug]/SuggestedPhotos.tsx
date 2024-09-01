@@ -14,7 +14,7 @@ interface ISuggestedPhotosProps {
 }
 
 interface ISessionTeaserProps {
-  item: any;
+  item: ISuggestedSession;
   className: string;
 }
 

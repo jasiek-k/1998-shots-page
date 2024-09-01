@@ -1,4 +1,9 @@
-export interface ISuggestedSession {
+interface IBasePhoto {
+  width: number;
+  height: number;
+}
+
+export interface ISuggestedSession extends IBasePhoto {
   img: string;
   href: string;
 }
@@ -11,7 +16,8 @@ export interface ICredit {
 export interface ISession {
   title: string;
   about: string;
-  details: string[];
+  heroPhoto: string;
+  heroPhotoMobile: string;
   photos: Array<IFullWidth | IGroup | IPhoto>;
   suggested: ISuggestedSession[];
   credits: Array<ICredit>;
@@ -23,17 +29,20 @@ export enum EPhotoType {
   Photo = "photo",
 }
 
-interface IFullWidth {
+export interface IFullWidth extends IBasePhoto {
   type: EPhotoType.FullWidth;
   img: string;
+  caption?: string;
 }
 
-interface IGroup {
+export interface IGroup extends IBasePhoto {
   type: EPhotoType.Group;
   img: string[];
+  caption?: string;
 }
 
-interface IPhoto {
+export interface IPhoto extends IBasePhoto {
   type: EPhotoType.Photo;
   img: string;
+  caption?: string;
 }

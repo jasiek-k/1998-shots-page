@@ -77,7 +77,6 @@ const Photos = () => {
           <LeftArrowIcon width="20px" height="20px" />
           <span className="ml-1">Prev</span>
         </button>
-        {/* <div className="h-auto w-divider bg-off-white" /> */}
         <button className={navButtonStyle} onClick={handleNextSlide}>
           <span className="mr-1">Next</span>
           <RightArrowIcon width="20px" height="20px" />
