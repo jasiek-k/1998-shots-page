@@ -15,7 +15,7 @@ const Header = () => {
   const pathname = usePathname();
   const isHomePath = pathname === "/";
 
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const checkIsActive = useCallback(
     (href: string) => pathname === href || (pathname.includes(href) && href !== "/"),
@@ -31,6 +31,8 @@ const Header = () => {
     //   console.log(window.scrollY);
     // });
   }, []);
+
+  // TODO onClick only for mobile
 
   return (
     <header className={clsx(isHomePath && "absolute", "w-full flex z-50 mt-10 flex-col")}>

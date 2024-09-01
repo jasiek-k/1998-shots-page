@@ -5,3 +5,7 @@ export const links = {
 };
 
 export const modeKey = "1998_SHOTS_COLOR_MODE";
+
+export const instagramName = "1998.shots";
+export const instagramLink = `https://www.instagram.com/${instagramName}`;
+export const emailAddress = "1998.shots.mail@gmail.com";

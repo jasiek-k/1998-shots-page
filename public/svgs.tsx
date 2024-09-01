@@ -42,7 +42,7 @@ export const Logo = () => (
 
 // TODO replace with final svg
 export const ServingAuthenticityCaption = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="354" height="56" viewBox="0 0 354 56">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 354 56">
     <text
       transform="translate(176 41)"
       fill="#fffff4"

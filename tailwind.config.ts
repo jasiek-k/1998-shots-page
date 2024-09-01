@@ -30,6 +30,7 @@ const config: Config = {
       "35": "140px",
       "37": "148px",
       "40": "160px",
+      "88": "352px",
       "90": "360px",
       "100": "400px",
       container: "1552px",
@@ -46,12 +47,12 @@ const config: Config = {
     },
     colors: {
       "off-white": "#fffff4",
-      black: "#1F1B24",
+      black: "#181818",
     },
     fontSize: {
-      xs: "12px",
+      xxs: "12px",
+      xs: "14px",
       sm: "16px",
-      mobileSm: "18px",
       md: "24px",
       lg: "32px",
       xl: "",
