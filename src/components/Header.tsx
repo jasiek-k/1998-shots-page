@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 import { useCallback, useEffect, useState } from "react";
 
 import { CloseIcon, Logo, LogoRound } from "public/svgs";
@@ -14,9 +15,10 @@ import { links } from "@/config";
 const Header = () => {
   const pathname = usePathname();
   const isHomePath = pathname === "/";
+  const { theme, setTheme } = useTheme();
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
+  console.log(theme);
   const checkIsActive = useCallback(
     (href: string) => pathname === href || (pathname.includes(href) && href !== "/"),
     [pathname],
@@ -26,7 +28,10 @@ const Header = () => {
     setIsOpen(is => !is);
   }, []);
 
-  const toggleTheme = useCallback(() => {}, []);
+  const toggleTheme = useCallback(() => {
+    console.log("click");
+    setTheme(theme => (theme === "light" ? "dark" : "light"));
+  }, [setTheme]);
 
   const getLinks = useCallback(
     (onClick?: () => void) => {
@@ -72,7 +77,7 @@ const Header = () => {
       <Container className="mt-6 md:px-40 flex flex-col">
         <div className="flex justify-between md:justify-center mb-6 text-xs md:relative">
           <button onClick={toggleTheme} className="md:absolute md:left-0">
-            LIGHT MODE
+            {theme === "dark" ? "LIGHT MODE" : "DARK MODE"}
           </button>
           <button onClick={toggleIsOpen} className="md:hidden">
             MENU

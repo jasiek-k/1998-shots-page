@@ -2,11 +2,11 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 
+// import Providers from "./providers";
 import useFonts from "./useFonts";
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { ThemeScope } from "@/ThemeContext";
 
 export const metadata: Metadata = {
   title: "1998 SHOTS",
@@ -19,16 +19,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const fonts = useFonts();
+  // const { theme } = useTheme();
 
   return (
-    <ThemeScope>
-      <html lang="en">
-        <body className={fonts.className}>
-          <Header />
-          <main>{children}</main>
-          <Footer className="pb-10 pt-5" />
-        </body>
-      </html>
-    </ThemeScope>
+    <html lang="en">
+      <body className={fonts.className}>
+        {/* <Providers> */}
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        {/* </Providers> */}
+      </body>
+    </html>
   );
 }

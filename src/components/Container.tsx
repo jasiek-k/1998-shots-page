@@ -11,6 +11,7 @@ export enum EContainerRatio {
   FullPage = "fullPage",
   Banner = "banner",
   Teaser = "teaser",
+  HeroLink = "heroLink",
 }
 
 type TDivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
@@ -33,6 +34,7 @@ const ratios: Record<EContainerRatio, string> = {
   [EContainerRatio.FullPage]: "pb-fullPageMobile md:pb-fullPage",
   [EContainerRatio.Banner]: "pb-bannerMobile md:pb-banner",
   [EContainerRatio.Teaser]: "pb-teaser",
+  [EContainerRatio.HeroLink]: "pb-heroLink",
 };
 
 const Container = ({

@@ -7,6 +7,7 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    darkMode: "selector",
     spacing: {
       "0": "0px",
       divider: "1px",
@@ -22,8 +23,8 @@ const config: Config = {
       "9": "36px",
       "10": "40px",
       "12": "48px",
-      "16": "64px",
       "15": "60px",
+      "16": "64px",
       "20": "80px",
       "23": "92px",
       "25": "100px",
@@ -33,6 +34,7 @@ const config: Config = {
       "88": "352px",
       "90": "360px",
       "100": "400px",
+      "135": "540px",
       container: "1552px",
       fullWidth: "1920px",
       fullPage: "56.25%",
@@ -41,6 +43,7 @@ const config: Config = {
       banner: "35.94%",
       bannerMobile: "132.80%",
       teaserMobile: "288vw",
+      heroLink: "56.6%",
     },
     borderWidth: {
       1: "1px",

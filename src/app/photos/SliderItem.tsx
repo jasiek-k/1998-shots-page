@@ -15,11 +15,14 @@ interface ISliderItemProps {
   isHover: number | undefined;
 }
 
-const SliderItem = ({ item, toggleIsHover, index, isHover }: ISliderItemProps) => {
+const SliderItem = ({
+  item: { img, href },
+  toggleIsHover,
+  index,
+  isHover,
+}: ISliderItemProps) => {
   const isBlurred = Boolean(isHover !== undefined && isHover !== index);
   // const isCaptionDisplayed = Boolean(isHover !== undefined && isHover === index);
-
-  const { img, href, title } = item;
 
   return (
     <div className="px-3">

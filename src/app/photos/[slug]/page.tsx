@@ -1,4 +1,7 @@
+// "use client";
+
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 import Container, {
   EContainerRatio,
@@ -8,7 +11,7 @@ import Container, {
 
 import CreditsSection from "./CreditsSection";
 import HeaderSection from "./HeaderSection";
-import { data } from "./mock";
+import { burningRubberData as data } from "./mock";
 import SessionPhoto from "./SessionPhoto";
 import SuggestedPhotos from "./SuggestedPhotos";
 
@@ -21,6 +24,7 @@ interface IHeroSectionProps {
 
 interface IPhotoSessionProps {
   session: ISession;
+  params: { slug: string };
 }
 
 const HeroSection = ({ photo, photoMobile }: IHeroSectionProps) => (
@@ -44,9 +48,16 @@ const HeroSection = ({ photo, photoMobile }: IHeroSectionProps) => (
   </Container>
 );
 
-const PhotoSession = ({ session = data as unknown as ISession }: IPhotoSessionProps) => {
+const PhotoSession = async ({
+  session = data as unknown as ISession,
+  params: { slug },
+}: IPhotoSessionProps) => {
+  console.log(slug);
   const { title, about, heroPhoto, heroPhotoMobile, credits, photos, suggested } =
     session;
+  // const test = await fetch("https://localhost:3000");
+  // const posts = await test.json();
+  // console.log(posts);
 
   return (
     <section>

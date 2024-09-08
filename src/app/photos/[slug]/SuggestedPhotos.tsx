@@ -18,13 +18,10 @@ interface ISessionTeaserProps {
   className: string;
 }
 
-const SessionTeaser = ({
-  item: { img, href, width, height },
-  className,
-}: ISessionTeaserProps) => (
+const SessionTeaser = ({ item: { img, href }, className }: ISessionTeaserProps) => (
   <Link href={href} className={className}>
     <RatioContainer variant={EContainerRatio.Teaser}>
-      <Image src={img} alt="" className="w-full" width={width} height={height} />
+      <Image src={img} alt="" className="w-full" width={338} height={600} />
     </RatioContainer>
   </Link>
 );

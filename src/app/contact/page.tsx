@@ -15,7 +15,7 @@ const Contact = () => (
             <LogoRound />
           </div>
         </div>
-        <div className="bg-off-white h-divider w-full md:h-90 md:w-divider my-20 md:my-0" />
+        <div className="dark:bg-off-white h-divider w-full md:h-90 md:w-divider my-20 md:my-0" />
         <div className="md:w-1/2 md:ml-37 flex flex-col uppercase">
           <Link
             target="_blank"
@@ -23,12 +23,12 @@ const Contact = () => (
             className="underline"
             href={instagramLink}
           >
-            {`[INSTAGRAM]: @${instagramName}`}
+            {`[    INSTAGRAM    ]: @${instagramName}`}
           </Link>
           <Link
             href={`mailto:${emailAddress}`}
             className="underline"
-          >{`[E-MAIL]: ${emailAddress}`}</Link>
+          >{`[   E-MAIL   ]: ${emailAddress}`}</Link>
           <p className="mt-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis

@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 import type { ISession } from "@/app/types";
 import Container from "@/components/Container";
 
@@ -14,15 +16,15 @@ const CreditsSection = ({ credits }: ICreditsSectionProps) => (
       <span className="text-xs md:text-sm">ROLE</span>
     </div>
     {credits.map(({ name, role }, index) => (
-      <>
-        <div key={index} className="flex justify-between">
+      <Fragment key={index}>
+        <div className="flex justify-between">
           <span className={creditStyle}>{name}</span>
           <span className={creditStyle}> {role}</span>
         </div>
         {index < credits.length - 1 && (
-          <div className="w-full border-t-1 bg-off-white mt-1 md:mt-0 mb-2" />
+          <div className="w-full border-t-1 dark:bg-off-white mt-1 md:mt-0 mb-2" />
         )}
-      </>
+      </Fragment>
     ))}
   </Container>
 );

@@ -3,6 +3,8 @@ export const teasers = [
     img: "/images/slider-1.jpg",
     href: "/photos/bike-life",
     title: "Bike Life",
+    width: 0,
+    height: 0,
   },
   {
     img: "/images/slider-2.jpg",

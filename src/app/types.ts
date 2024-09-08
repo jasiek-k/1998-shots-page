@@ -3,7 +3,7 @@ interface IBasePhoto {
   height: number;
 }
 
-export interface ISuggestedSession extends IBasePhoto {
+export interface ISuggestedSession {
   img: string;
   href: string;
 }
