@@ -23,6 +23,17 @@ const caption = ["PHOTOGRAPHY X DESIGN", `FROM 51°45'33.30"N, 19°27'21.54"E`, 
 //   "/images/landing_2.jpg",
 //   "/images/landing_3.jpg",
 // ];
+// <p className="text-center uppercase text-sm mb-6">
+//   That&apos;s how it&apos;s done over here
+// </p>
+// <div className="flex gap-6">
+//   {images.map((src, index) => (
+//     <div key={index} className="flex w-2/6">
+//       <Image src={src} className="w-full" alt="" width={352} height={352} />
+//     </div>
+//   ))}
+// </div>
+// <div className="my-25 w-full bg-off-white h-divider" />
 
 const HeroCaption: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className }) => (
   <div className={clsx("flex justify-center flex-col", className)}>
@@ -53,17 +64,6 @@ const App = () => (
         </p>
         <LogoRound width={70} />
       </div>
-      {/* <p className="text-center uppercase text-sm mb-6">
-        That&apos;s how it&apos;s done over here
-      </p>
-      <div className="flex gap-6">
-        {images.map((src, index) => (
-          <div key={index} className="flex w-2/6">
-            <Image src={src} className="w-full" alt="" width={352} height={352} />
-          </div>
-        ))}
-      </div>
-      <div className="my-25 w-full bg-off-white h-divider" /> */}
       <ResponsiveImage mobile={bannerMobile} desktop={bannerDesktop} />
       <div className="flex flex-col md:flex-row gap-4 md:gap-6 pt-4 md:pt-6">
         {landingLinks.map(({ href, src, caption, subcaption }, index) => (
