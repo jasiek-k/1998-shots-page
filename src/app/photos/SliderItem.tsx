@@ -6,8 +6,6 @@ import { EContainerRatio, RatioContainer } from "components/Container";
 
 import type { ISuggestedSession } from "../types";
 
-// import { formatTeaserTitle } from "@/helpers";
-
 interface ISliderItemProps {
   item: ISuggestedSession;
   toggleIsHover: (index?: number) => void;
@@ -22,7 +20,6 @@ const SliderItem = ({
   isHover,
 }: ISliderItemProps) => {
   const isBlurred = Boolean(isHover !== undefined && isHover !== index);
-  // const isCaptionDisplayed = Boolean(isHover !== undefined && isHover === index);
 
   return (
     <div className="px-3">
@@ -43,13 +40,6 @@ const SliderItem = ({
             width={338}
             height={600}
           />
-          {/* {isCaptionDisplayed && (
-            <div className="animate-slide absolute bottom-16 uppercase flex whitespace-nowrap w-100">
-              <h1 className="text-md font-bold inline-block">
-                {formatTeaserTitle(title)}
-              </h1>
-            </div>
-          )} */}
         </RatioContainer>
       </Link>
     </div>

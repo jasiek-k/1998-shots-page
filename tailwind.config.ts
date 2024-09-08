@@ -58,8 +58,7 @@ const config: Config = {
       sm: "16px",
       md: "24px",
       lg: "32px",
-      xl: "",
-      xxl: "60px",
+      xl: "60px",
     },
     extend: {
       blur: {

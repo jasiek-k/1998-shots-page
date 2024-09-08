@@ -2,11 +2,11 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 
-// import Providers from "./providers";
 import useFonts from "./useFonts";
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import ScrollTop from "@/components/ScrollTop";
 
 export const metadata: Metadata = {
   title: "1998 SHOTS",
@@ -19,16 +19,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const fonts = useFonts();
-  // const { theme } = useTheme();
 
   return (
     <html lang="en">
       <body className={fonts.className}>
-        {/* <Providers> */}
+        <ScrollTop />
         <Header />
         <main>{children}</main>
         <Footer />
-        {/* </Providers> */}
       </body>
     </html>
   );

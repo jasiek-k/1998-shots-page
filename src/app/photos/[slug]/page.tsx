@@ -1,8 +1,8 @@
 // "use client";
 
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 
+// import { usePathname } from "next/navigation";
 import Container, {
   EContainerRatio,
   EContainerVariant,
@@ -16,6 +16,7 @@ import SessionPhoto from "./SessionPhoto";
 import SuggestedPhotos from "./SuggestedPhotos";
 
 import type { ISession } from "@/app/types";
+import ResponsiveImage from "@/components/ResponsiveImage";
 
 interface IHeroSectionProps {
   photo: string;
@@ -27,22 +28,16 @@ interface IPhotoSessionProps {
   params: { slug: string };
 }
 
+const getHeroMobile = (src: string) => ({ src, width: 375, height: 498 });
+
+const getHeroDesktop = (src: string) => ({ src, width: 1920, height: 720 });
+
 const HeroSection = ({ photo, photoMobile }: IHeroSectionProps) => (
   <Container variant={EContainerVariant.FullWidth} className="mt-5">
     <RatioContainer variant={EContainerRatio.Banner}>
-      <Image
-        src={photo}
-        className="w-full hidden md:block"
-        alt=""
-        width={1920}
-        height={720}
-      />
-      <Image
-        src={photoMobile}
-        className="w-full md:hidden"
-        alt=""
-        width={375}
-        height={498}
+      <ResponsiveImage
+        desktop={getHeroDesktop(photo)}
+        mobile={getHeroMobile(photoMobile)}
       />
     </RatioContainer>
   </Container>
@@ -52,7 +47,7 @@ const PhotoSession = async ({
   session = data as unknown as ISession,
   params: { slug },
 }: IPhotoSessionProps) => {
-  console.log(slug);
+  // console.log(slug);
   const { title, about, heroPhoto, heroPhotoMobile, credits, photos, suggested } =
     session;
   // const test = await fetch("https://localhost:3000");

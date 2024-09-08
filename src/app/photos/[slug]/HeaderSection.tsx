@@ -9,7 +9,7 @@ interface IDetailsSectionProps {
 
 const HeaderSection = ({ title, about, className }: IDetailsSectionProps) => (
   <Container className="flex-col my-12 md:my-20 dark:font-off-white light:font-black">
-    <h1 className="text-lg md:text-xxl w-full text-center uppercase font-bold">
+    <h1 className="text-lg md:text-xl w-full text-center uppercase font-bold">
       {`"${title}"`}
     </h1>
     <div className="md:px-23">

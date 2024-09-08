@@ -23,12 +23,12 @@ const Contact = () => (
             className="underline"
             href={instagramLink}
           >
-            {`[    INSTAGRAM    ]: @${instagramName}`}
+            {`[INSTAGRAM]: @${instagramName}`}
           </Link>
           <Link
             href={`mailto:${emailAddress}`}
             className="underline"
-          >{`[   E-MAIL   ]: ${emailAddress}`}</Link>
+          >{`[E-MAIL]: ${emailAddress}`}</Link>
           <p className="mt-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
