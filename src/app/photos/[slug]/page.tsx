@@ -1,6 +1,6 @@
 // "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 
 // import { usePathname } from "next/navigation";
 import Container, {
@@ -11,11 +11,11 @@ import Container, {
 
 import CreditsSection from "./CreditsSection";
 import HeaderSection from "./HeaderSection";
-import { burningRubberData as data } from "./mock";
+import { burningRubberData as session } from "./mock";
 import SessionPhoto from "./SessionPhoto";
 import SuggestedPhotos from "./SuggestedPhotos";
 
-import type { ISession } from "@/app/types";
+import type { IPhoto } from "@/app/types";
 import ResponsiveImage from "@/components/ResponsiveImage";
 
 interface IHeroSectionProps {
@@ -24,7 +24,6 @@ interface IHeroSectionProps {
 }
 
 interface IPhotoSessionProps {
-  session: ISession;
   params: { slug: string };
 }
 
@@ -43,10 +42,7 @@ const HeroSection = ({ photo, photoMobile }: IHeroSectionProps) => (
   </Container>
 );
 
-const PhotoSession = async ({
-  session = data as unknown as ISession,
-  params: { slug },
-}: IPhotoSessionProps) => {
+const PhotoSession = ({ params: { slug } }: IPhotoSessionProps) => {
   // console.log(slug);
   const { title, about, heroPhoto, heroPhotoMobile, credits, photos, suggested } =
     session;
@@ -60,7 +56,7 @@ const PhotoSession = async ({
       <HeaderSection title={title} about={about} />
       <Container variant={EContainerVariant.BaseNoMobilePadding} className="flex-col">
         {photos.map((item, index) => (
-          <SessionPhoto photo={item} key={index} className="mb-6 md:mb-35" />
+          <SessionPhoto photo={item as IPhoto} key={index} className="mb-6 md:mb-35" />
         ))}
       </Container>
       <CreditsSection credits={credits} />
