@@ -67,7 +67,7 @@ const App = () => (
       <ResponsiveImage mobile={bannerMobile} desktop={bannerDesktop} />
       <div className="flex flex-col md:flex-row gap-4 md:gap-6 pt-4 md:pt-6">
         {landingLinks.map(({ href, src, caption, subcaption }, index) => (
-          <Link key={index} href={href} className="w-full md:w-2/4">
+          <Link key={index} href={href} prefetch={true} className="w-full md:w-2/4">
             <RatioContainer variant={EContainerRatio.HeroLink}>
               <Image src={src} alt="" className="w-full" width={540} height={300} />
               <div className="absolute w-full h-full top-0 left-0 flex flex-col items-center justify-center">

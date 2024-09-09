@@ -31,6 +31,7 @@ const SliderItem = ({
         onMouseLeave={() => {
           toggleIsHover();
         }}
+        prefetch={true}
       >
         <RatioContainer variant={EContainerRatio.Teaser}>
           <Image

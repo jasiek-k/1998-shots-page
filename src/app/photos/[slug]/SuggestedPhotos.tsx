@@ -19,7 +19,7 @@ interface ISessionTeaserProps {
 }
 
 const SessionTeaser = ({ item: { img, href }, className }: ISessionTeaserProps) => (
-  <Link href={href} className={className}>
+  <Link href={href} className={className} prefetch={true}>
     <RatioContainer variant={EContainerRatio.Teaser}>
       <Image src={img} alt="" className="w-full" width={338} height={600} />
     </RatioContainer>

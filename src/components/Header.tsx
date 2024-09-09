@@ -38,6 +38,7 @@ const Header = () => {
         <Link
           href={href}
           key={index}
+          prefetch={true}
           onClick={onClick}
           className={clsx(
             "text-off-white font-light text-md md:text-sm mx-5 text-center my-4 md:my-0",
