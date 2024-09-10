@@ -32,17 +32,14 @@ export enum EPhotoType {
 export interface IFullWidth extends IBasePhoto {
   type: EPhotoType.FullWidth;
   img: string;
-  caption?: string;
 }
 
 export interface IGroup extends IBasePhoto {
   type: EPhotoType.Group;
   img: string[];
-  caption?: string;
 }
 
 export interface IPhoto extends IBasePhoto {
   type: EPhotoType.Photo;
   img: string;
-  caption?: string;
 }

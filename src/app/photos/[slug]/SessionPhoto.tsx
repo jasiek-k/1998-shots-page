@@ -10,35 +10,32 @@ interface ISessionPhotoProps {
 }
 
 const SessionPhoto = ({
-  photo: { type, img, width, height, caption },
+  photo: { type, img, width, height },
   className,
-}: ISessionPhotoProps) => {
-  return (
-    <div className={className}>
-      {caption && <h2 className="">{caption}</h2>}
-      {/* {type === EPhotoType.Photo && <Image />*/}
-      {type === EPhotoType.FullWidth && (
-        <Image src={img} width={width} height={height} alt="" className="w-full" />
-      )}
-      {type === EPhotoType.Group && (
-        <>
-          <div className="flex flex-col md:flex-row md:gap-6">
-            {img.map((item, index) => (
-              <div key={index}>
-                <Image
-                  src={item}
-                  width={width}
-                  height={height}
-                  className={clsx(index !== img.length - 1 && "mb-6 md:mb-0", "w-full")}
-                  alt=""
-                />
-              </div>
-            ))}
-          </div>
-        </>
-      )}
-    </div>
-  );
-};
+}: ISessionPhotoProps) => (
+  <div className={className}>
+    {/* {type === EPhotoType.Photo && <Image />*/}
+    {type === EPhotoType.FullWidth && (
+      <Image src={img} width={width} height={height} alt="" className="w-full" />
+    )}
+    {type === EPhotoType.Group && (
+      <>
+        <div className="flex flex-col md:flex-row md:gap-6">
+          {img.map((item, index) => (
+            <div key={index}>
+              <Image
+                src={item}
+                width={width}
+                height={height}
+                className={clsx(index !== img.length - 1 && "mb-6 md:mb-0", "w-full")}
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+  </div>
+);
 
 export default SessionPhoto;

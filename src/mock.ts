@@ -1,4 +1,4 @@
-import type { ISession } from "@/app/types";
+import type { EPhotoType, IPhoto, ISession } from "@/app/types";
 import { links } from "@/config";
 
 const parseSlug = (title: string) => title.toLowerCase().split(" ").join("-");
@@ -61,7 +61,6 @@ const suggested = [
 ];
 
 function filterSuggested() {
-  console.log(this);
   // return suggested.filter(item => item.title !== this.title);
   return [];
 }
@@ -74,19 +73,19 @@ export const burningRubberData: ISession = {
   heroPhotoMobile: "/images/ILTSOBRITM_hero_mobile.jpg",
   photos: [
     {
-      type: "full-width",
+      type: "full-width" as EPhotoType.FullWidth,
       img: "/images/iltsobritm/iltsobritm1.jpg",
       width: 1472,
       height: 943,
     },
     {
-      type: "full-width",
+      type: "full-width" as EPhotoType.FullWidth,
       img: "/images/iltsobritm/iltsobritm2.jpg",
       width: 1472,
       height: 943,
     },
     {
-      type: "group",
+      type: "group" as EPhotoType.Group,
       img: [
         "/images/iltsobritm/iltsobritm4.jpg",
         "/images/iltsobritm/iltsobritm5.jpg",
@@ -97,7 +96,7 @@ export const burningRubberData: ISession = {
       height: 600,
     },
     {
-      type: "full-width",
+      type: "full-width" as EPhotoType.FullWidth,
       img: "/images/iltsobritm/iltsobritm3.jpg",
       width: 1472,
       height: 943,
@@ -133,7 +132,11 @@ export const bikeLifeData = {
       height: 600,
     },
   ],
-  credits: [{ name: "Jan Klamka", role: "photography & retouch" }],
+  credits: [
+    { name: "Jan Klamka", role: "photography & retouch" },
+    { name: "Sebastian Komicz", role: "support" },
+    { name: "Michalina Kowalczyk", role: "model" },
+  ],
 };
 
 export const noFaceNoCaseData = {
@@ -158,7 +161,11 @@ export const noFaceNoCaseData = {
       height: 600,
     },
   ],
-  credits: [{ name: "Jan Klamka", role: "photography & retouch" }],
+  credits: [
+    { name: "Jan Klamka", role: "photography & retouch" },
+    { name: "Sebastian Komicz", role: "support" },
+    { name: "Mateusz Bednarczyk", role: "model" },
+  ],
 };
 
 export const gunsData = {
@@ -183,7 +190,11 @@ export const gunsData = {
       height: 600,
     },
   ],
-  credits: [{ name: "Jan Klamka", role: "photography & retouch" }],
+  credits: [
+    { name: "Jan Klamka", role: "photography & retouch" },
+    { name: "Sebastian Komicz", role: "support" },
+    { name: "Mateusz Wojcik", role: "model" },
+  ],
 };
 
 export const inTheSpotlightData = {
@@ -208,10 +219,20 @@ export const inTheSpotlightData = {
       height: 600,
     },
   ],
-  credits: [{ name: "Jan Klamka", role: "photography & retouch" }],
+  credits: [
+    { name: "Jan Klamka", role: "photography & retouch" },
+    { name: "Sebastian Komicz", role: "support" },
+    { name: "Maciej Tylinski", role: "model" },
+  ],
 };
 
-const sessionsList = [burningRubberData, bikeLifeData, noFaceNoCaseData, gunsData];
+const sessionsList = [
+  burningRubberData,
+  bikeLifeData,
+  noFaceNoCaseData,
+  gunsData,
+  inTheSpotlightData,
+];
 const sessions = Object.fromEntries(
   sessionsList.map(item => [parseSlug(item.title), item]),
 );
