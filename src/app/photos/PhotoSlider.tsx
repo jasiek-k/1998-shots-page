@@ -8,8 +8,9 @@ import Slider from "react-slick";
 
 import { LeftArrowIcon, RightArrowIcon } from "public/svgs";
 
-import { teasers } from "./mock";
 import SliderItem from "./SliderItem";
+
+import { teasers } from "@/mock";
 
 const navButtonStyle = "py-3 md:py-5 px-5 uppercase flex";
 

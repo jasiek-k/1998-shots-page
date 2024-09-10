@@ -1,8 +1,5 @@
-// "use client";
+"use client";
 
-// import Image from "next/image";
-
-// import { usePathname } from "next/navigation";
 import Container, {
   EContainerRatio,
   EContainerVariant,
@@ -11,12 +8,12 @@ import Container, {
 
 import CreditsSection from "./CreditsSection";
 import HeaderSection from "./HeaderSection";
-import { burningRubberData as session } from "./mock";
 import SessionPhoto from "./SessionPhoto";
 import SuggestedPhotos from "./SuggestedPhotos";
 
 import type { IPhoto } from "@/app/types";
 import ResponsiveImage from "@/components/ResponsiveImage";
+import sessions from "@/mock";
 
 interface IHeroSectionProps {
   photo: string;
@@ -43,12 +40,16 @@ const HeroSection = ({ photo, photoMobile }: IHeroSectionProps) => (
 );
 
 const PhotoSession = ({ params: { slug } }: IPhotoSessionProps) => {
-  // console.log(slug);
+  // const session = burningRubberData;
+  const session = sessions[slug];
+
+  if (!session) {
+    // TODO
+    return <div>Error</div>;
+  }
+
   const { title, about, heroPhoto, heroPhotoMobile, credits, photos, suggested } =
     session;
-  // const test = await fetch("https://localhost:3000");
-  // const posts = await test.json();
-  // console.log(posts);
 
   return (
     <section>

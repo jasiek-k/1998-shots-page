@@ -4,8 +4,6 @@ export const links = {
   contact: { name: "CONTACT", href: "/contact" },
 };
 
-export const modeKey = "1998_SHOTS_COLOR_MODE";
-
 export const instagramName = "1998.shots";
 export const instagramLink = `https://www.instagram.com/${instagramName}`;
 export const emailAddress = "1998.shots.mail@gmail.com";
@@ -26,13 +24,13 @@ export const landingLinks = [
 ];
 
 export const heroMobile = {
-  src: "/images/photo_landing_mobile.jpg",
+  src: "/images/landing_hero_mobile.jpg",
   width: 375,
   height: 667,
 };
 
 export const heroDesktop = {
-  src: "/images/photo_landing.jpg",
+  src: "/images/landing_hero.jpg",
   width: 1920,
   height: 1080,
 };
