@@ -1,3 +1,5 @@
+"use client";
+
 import Container, {
   EContainerRatio,
   EContainerVariant,
@@ -9,7 +11,7 @@ import HeaderSection from "./HeaderSection";
 import SessionPhoto from "./SessionPhoto";
 import SuggestedPhotos from "./SuggestedPhotos";
 
-import type { IPhoto } from "@/app/types";
+import type { TPhoto } from "@/app/types";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import sessions from "@/mock";
 
@@ -38,7 +40,6 @@ const HeroSection = ({ photo, photoMobile }: IHeroSectionProps) => (
 );
 
 const PhotoSession = ({ params: { slug } }: IPhotoSessionProps) => {
-  // const session = burningRubberData;
   const session = sessions[slug];
 
   if (!session) {
@@ -55,7 +56,7 @@ const PhotoSession = ({ params: { slug } }: IPhotoSessionProps) => {
       <HeaderSection title={title} about={about} />
       <Container variant={EContainerVariant.BaseNoMobilePadding} className="flex-col">
         {photos.map((item, index) => (
-          <SessionPhoto photo={item as IPhoto} key={index} className="mb-6 md:mb-35" />
+          <SessionPhoto photo={item as TPhoto} key={index} className="mb-6 md:mb-35" />
         ))}
       </Container>
       <CreditsSection credits={credits} />

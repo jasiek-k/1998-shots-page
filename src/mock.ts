@@ -1,69 +1,42 @@
-import type { EPhotoType, IPhoto, ISession } from "@/app/types";
+import type { EPhotoType, ISession, ISuggestedSession } from "@/app/types";
 import { links } from "@/config";
+
+const suggestedLength = 4;
 
 const parseSlug = (title: string) => title.toLowerCase().split(" ").join("-");
 
+function filterSuggested(this: ISession, item: ISuggestedSession) {
+  return item.title !== this.title;
+}
+
 export const teasers = [
   {
-    img: "/images/slider-2.jpg",
-    href: `${links.photos.href}/guns-guns-guns`,
-    title: "Guns Guns Guns",
-  },
-  {
-    img: "/images/slider-3.jpg",
-    href: `${links.photos.href}/i-love-the-smell-of-burning-rubber-in-the-morning`,
-    title: "I Love The Smell Of Burning Rubber In The Morning",
-  },
-  {
-    img: "/images/slider-4.jpg",
-    href: `${links.photos.href}/in-the-spotlight`,
-    title: "In The Spotlight",
-  },
-  {
-    img: "/images/slider-5.jpg",
-    href: `${links.photos.href}/bike-life`,
-    title: "Bike Life",
-  },
-  {
     img: "/images/slider-6.jpg",
-    href: `${links.photos.href}/no-face-no-case`,
-    title: "No Face No Case",
-  },
-];
-
-const suggested = [
-  {
-    img: "/images/teaser_vandal.jpg",
     href: `${links.photos.href}/no-face-no-case`,
     title: "no face no case",
   },
   {
-    //   img: "/images/teaser_moto_color.jpg",
-    img: "/images/teaser_moto_bw.jpg",
+    //   img: "/images/slider-1.jpg",
+    img: "/images/slider-5.jpg",
     href: `${links.photos.href}/bike-life`,
     title: "bike life",
   },
   {
-    img: "/images/teaser_guns.jpg",
+    img: "/images/slider-2.jpg",
     href: `${links.photos.href}/guns-guns-guns`,
     title: "guns guns guns",
   },
   {
-    img: "/images/teaser_moto_color.jpg",
+    img: "/images/slider-3.jpg",
     href: `${links.photos.href}/i-love-the-smell-of-burning-rubber-in-the-morning`,
     title: "i love the smell of burning rubber in the morning",
   },
   {
-    img: "/images/teaser_moto_color.jpg",
-    href: `${links.photos.href}/rudy`,
+    img: "/images/slider-4.jpg",
+    href: `${links.photos.href}/in-the-spotlight`,
     title: "in the spotlight",
   },
 ];
-
-function filterSuggested() {
-  // return suggested.filter(item => item.title !== this.title);
-  return [];
-}
 
 export const burningRubberData: ISession = {
   title: "i love the smell of burning rubber in the morning",
@@ -106,11 +79,7 @@ export const burningRubberData: ISession = {
   credits: [{ name: "Jan Klamka", role: "photography & retouch" }],
 };
 
-burningRubberData.suggested = suggested.filter(
-  item => item.title !== burningRubberData.title,
-);
-
-export const bikeLifeData = {
+export const bikeLifeData: ISession = {
   title: "bike life",
   about:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
@@ -118,20 +87,13 @@ export const bikeLifeData = {
   heroPhotoMobile: "",
   photos: [
     {
-      type: "full-width",
+      type: "full-width" as EPhotoType.FullWidth,
       img: "",
       width: 1472,
       height: 943,
     },
   ],
-  suggested: [
-    {
-      img: "",
-      href: "",
-      width: 338,
-      height: 600,
-    },
-  ],
+  suggested: [],
   credits: [
     { name: "Jan Klamka", role: "photography & retouch" },
     { name: "Sebastian Komicz", role: "support" },
@@ -139,28 +101,33 @@ export const bikeLifeData = {
   ],
 };
 
-export const noFaceNoCaseData = {
-  title: "no face on case",
+export const noFaceNoCaseData: ISession = {
+  title: "no face no case",
   about:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
   heroPhoto: "",
   heroPhotoMobile: "",
   photos: [
     {
-      type: "full-width",
-      img: "",
-      width: 1472,
-      height: 943,
+      type: "vertical-photo" as EPhotoType.VerticalPhoto,
+      img: "/images/noFaceNoCase/nofacenocase_1.jpg",
+      width: 728,
+      height: 728,
     },
-  ],
-  suggested: [
     {
-      img: "",
-      href: "",
-      width: 338,
-      height: 600,
+      type: "vertical-photo" as EPhotoType.VerticalPhoto,
+      img: "/images/noFaceNoCase/nofacenocase_2.jpg",
+      width: 728,
+      height: 728,
+    },
+    {
+      type: "vertical-photo" as EPhotoType.VerticalPhoto,
+      img: "/images/noFaceNoCase/nofacenocase_3.jpg",
+      width: 728,
+      height: 728,
     },
   ],
+  suggested: [],
   credits: [
     { name: "Jan Klamka", role: "photography & retouch" },
     { name: "Sebastian Komicz", role: "support" },
@@ -182,14 +149,7 @@ export const gunsData = {
       height: 943,
     },
   ],
-  suggested: [
-    {
-      img: "",
-      href: "",
-      width: 338,
-      height: 600,
-    },
-  ],
+  suggested: [],
   credits: [
     { name: "Jan Klamka", role: "photography & retouch" },
     { name: "Sebastian Komicz", role: "support" },
@@ -211,14 +171,7 @@ export const inTheSpotlightData = {
       height: 943,
     },
   ],
-  suggested: [
-    {
-      img: "",
-      href: "",
-      width: 338,
-      height: 600,
-    },
-  ],
+  suggested: [],
   credits: [
     { name: "Jan Klamka", role: "photography & retouch" },
     { name: "Sebastian Komicz", role: "support" },
@@ -234,7 +187,13 @@ const sessionsList = [
   inTheSpotlightData,
 ];
 const sessions = Object.fromEntries(
-  sessionsList.map(item => [parseSlug(item.title), item]),
+  sessionsList.map(item => {
+    item.suggested = teasers
+      .filter(filterSuggested.bind(item as ISession))
+      .slice(0, suggestedLength);
+
+    return [parseSlug(item.title), item];
+  }),
 );
 
 export default sessions;

@@ -35,6 +35,7 @@ const config: Config = {
       "90": "360px",
       "100": "400px",
       "135": "540px",
+      "182": "728px",
       container: "1552px",
       fullWidth: "1920px",
       fullPage: "56.25%",

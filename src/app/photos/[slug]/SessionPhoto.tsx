@@ -1,11 +1,11 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-import type { IFullWidth, IGroup, IPhoto } from "@/app/types";
+import type { TPhoto } from "@/app/types";
 import { EPhotoType } from "@/app/types";
 
 interface ISessionPhotoProps {
-  photo: IFullWidth | IGroup | IPhoto;
+  photo: TPhoto;
   className?: string;
 }
 
@@ -14,9 +14,13 @@ const SessionPhoto = ({
   className,
 }: ISessionPhotoProps) => (
   <div className={className}>
-    {/* {type === EPhotoType.Photo && <Image />*/}
+    {type === EPhotoType.VerticalPhoto && (
+      <div className="max-w-182 mx-auto">
+        <Image src={img} width={width} height={height} className="w-full" alt="" />
+      </div>
+    )}
     {type === EPhotoType.FullWidth && (
-      <Image src={img} width={width} height={height} alt="" className="w-full" />
+      <Image src={img} width={width} height={height} className="w-full" alt="" />
     )}
     {type === EPhotoType.Group && (
       <>

@@ -13,7 +13,7 @@ const ScrollTopButton = () => {
   return (
     <button
       type="button"
-      className={clsx(isDisplayed ? "" : "", "fixed bottom-15")}
+      className={clsx(isDisplayed ? "" : "", "fixed bottom-15 right-15")}
       onClick={handleScroll}
     >
       TOP

@@ -6,6 +6,7 @@ interface IBasePhoto {
 export interface ISuggestedSession {
   img: string;
   href: string;
+  title: string;
 }
 
 export interface ICredit {
@@ -13,20 +14,10 @@ export interface ICredit {
   role: string;
 }
 
-export interface ISession {
-  title: string;
-  about: string;
-  heroPhoto: string;
-  heroPhotoMobile: string;
-  photos: Array<IFullWidth | IGroup | IPhoto>;
-  suggested: ISuggestedSession[];
-  credits: Array<ICredit>;
-}
-
 export enum EPhotoType {
   FullWidth = "full-width",
   Group = "group",
-  Photo = "photo",
+  VerticalPhoto = "vertical-photo",
 }
 
 export interface IFullWidth extends IBasePhoto {
@@ -39,7 +30,19 @@ export interface IGroup extends IBasePhoto {
   img: string[];
 }
 
-export interface IPhoto extends IBasePhoto {
-  type: EPhotoType.Photo;
+export interface IVerticalPhoto extends IBasePhoto {
+  type: EPhotoType.VerticalPhoto;
   img: string;
+}
+
+export type TPhoto = IFullWidth | IGroup | IVerticalPhoto;
+
+export interface ISession {
+  title: string;
+  about: string;
+  heroPhoto: string;
+  heroPhotoMobile: string;
+  photos: Array<TPhoto>;
+  suggested: ISuggestedSession[];
+  credits: Array<ICredit>;
 }
