@@ -39,8 +39,3 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - [Tailwind Documentation](https://tailwindcss.com/docs/installation)
 - [React Slick Documentation](https://react-slick.neostack.com/docs/api)
-
-## TO DO
-
-- dark/light mode (detected basing on the hour)
-- favicon

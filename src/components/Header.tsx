@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 
 import { CloseIcon, Logo, LogoRound } from "public/icons";
 
@@ -68,7 +68,7 @@ const Header = () => {
         </button>
       </div>
       <Container className="mt-6 md:px-40 flex flex-col">
-        <div className="flex md:justify-center mb-6 text-xs md:relative">
+        <div className="flex justify-end md:justify-center mb-6 text-xs md:relative">
           {/* <button onClick={toggleTheme} className="md:absolute md:left-0">
             {theme === "dark" ? "LIGHT MODE" : "DARK MODE"}
           </button> */}

@@ -1,37 +1,41 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const useIsOutOfView = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [isOutState, setIsOutState] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (ref.current) {
-        const { top, height } = ref.current.getBoundingClientRect();
-        const isOutNow = Math.abs(top) > height;
+  const handleEvent = useCallback(
+    (eventName: "showButton" | "hideButton", isOut: boolean) => {
+      const event = new Event(eventName);
 
-        if (isOutNow && !isOutState) {
-          const event = new Event("showButton");
+      dispatchEvent(event);
+      setIsOutState(isOut);
+    },
+    [],
+  );
 
-          dispatchEvent(event);
-          setIsOutState(true);
-        } else if (!isOutNow && isOutState) {
-          const event = new Event("hideButton");
+  const handleScroll = useCallback(() => {
+    if (ref.current) {
+      const { top, height } = ref.current.getBoundingClientRect();
+      const isOutNow = Math.abs(top) > height;
 
-          dispatchEvent(event);
-          setIsOutState(false);
-        }
+      if (isOutNow && !isOutState) {
+        handleEvent("showButton", true);
+      } else if (!isOutNow && isOutState) {
+        handleEvent("hideButton", false);
       }
-    };
+    }
+  }, [handleEvent, isOutState]);
 
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isOutState]);
+  }, [isOutState, handleScroll]);
 
   return { ref };
 };
