@@ -11,16 +11,23 @@ interface IImage {
 interface IResponsiveImage {
   mobile: IImage;
   desktop: IImage;
+  priority?: boolean;
 }
 
-const ResponsiveImage = ({ mobile, desktop }: IResponsiveImage) => (
+const ResponsiveImage = ({ mobile, desktop, priority }: IResponsiveImage) => (
   <>
     <Image
       {...desktop}
       className={clsx("w-full hidden md:block", desktop?.className)}
+      priority={priority}
       alt=""
     />
-    <Image {...mobile} className={clsx("w-full md:hidden", mobile?.className)} alt="" />
+    <Image
+      {...mobile}
+      className={clsx("w-full md:hidden", mobile?.className)}
+      priority={priority}
+      alt=""
+    />
   </>
 );
 

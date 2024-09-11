@@ -48,7 +48,7 @@ const HeroCaption: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className
 const App = () => (
   <Container variant={EContainerVariant.FullWidth} className="pb-8 flex flex-col">
     <RatioContainer variant={EContainerRatio.FullPage}>
-      <ResponsiveImage mobile={heroMobile} desktop={heroDesktop} />
+      <ResponsiveImage mobile={heroMobile} desktop={heroDesktop} priority={true} />
       <HeroCaption className="absolute bottom-20 w-full" />
     </RatioContainer>
     <Container className="flex flex-col">

@@ -36,10 +36,11 @@ const SliderItem = ({
         <RatioContainer variant={EContainerRatio.Teaser}>
           <Image
             src={img}
-            alt=""
             className={clsx("w-full", isBlurred && "blur-md")}
+            priority={true}
             width={338}
             height={600}
+            alt=""
           />
         </RatioContainer>
       </Link>
