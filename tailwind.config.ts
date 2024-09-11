@@ -23,6 +23,7 @@ const config: Config = {
       "9": "36px",
       "10": "40px",
       "12": "48px",
+      "14": "56px",
       "15": "60px",
       "16": "64px",
       "20": "80px",
@@ -62,6 +63,9 @@ const config: Config = {
       xl: "60px",
     },
     extend: {
+      lineHeight: {
+        header: "1.25",
+      },
       blur: {
         md: "10px",
       },

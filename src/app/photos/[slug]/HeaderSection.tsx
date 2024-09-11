@@ -18,12 +18,9 @@ interface IDetailsSectionProps {
 </Container> */
 
 const HeaderSection = ({ title, about, className }: IDetailsSectionProps) => (
-  <Container className="flex-col my-12 md:my-20 dark:font-off-white light:font-black">
+  <Container className="flex-col my-20 dark:font-off-white light:font-black">
     <div className="md:max-w-135 mx-auto">
-      <h1
-        style={{ lineHeight: "1.25" }}
-        className="text-lg md:text-xl w-full text-center uppercase font-bold"
-      >
+      <h1 className="text-lg md:text-xl w-full text-center uppercase font-bold leading-header">
         {`"${title}"`}
       </h1>
       <p className="text-sm mt-10 text-center uppercase">{about}</p>
