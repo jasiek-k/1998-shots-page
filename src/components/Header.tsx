@@ -9,7 +9,7 @@ import { CloseIcon, Logo, LogoRound } from "public/icons";
 
 import Container from "./Container";
 
-import { links } from "@/config";
+import { links } from "@/app/config";
 
 const Header = () => {
   const pathname = usePathname();
@@ -50,12 +50,6 @@ const Header = () => {
     },
     [checkIsActive],
   );
-
-  useEffect(() => {
-    // window.addEventListener("scroll", () => {
-    //   console.log(window.scrollY);
-    // });
-  }, []);
 
   return (
     <header

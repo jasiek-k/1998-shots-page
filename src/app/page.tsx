@@ -1,22 +1,18 @@
-import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 
-import Container, { EContainerRatio, EContainerVariant } from "components/Container";
-import { RatioContainer } from "components/Container";
+import Container, {
+  EContainerRatio,
+  EContainerVariant,
+  RatioContainer,
+} from "components/Container";
 
 import { LogoRound } from "public/icons";
 
-import ResponsiveImage from "@/components/ResponsiveImage";
-import {
-  bannerDesktop,
-  bannerMobile,
-  heroDesktop,
-  heroMobile,
-  landingLinks,
-} from "@/config";
+import HeroSection from "./HeroSection";
 
-const caption = ["PHOTOGRAPHY X DESIGN", `FROM 51°45'33.30"N, 19°27'21.54"E`, "XXX"];
+import { bannerDesktop, bannerMobile, landingLinks } from "@/app/config";
+import ResponsiveImage from "@/components/ResponsiveImage";
 
 // const images = [
 //   "/images/landing_1.jpg",
@@ -35,22 +31,9 @@ const caption = ["PHOTOGRAPHY X DESIGN", `FROM 51°45'33.30"N, 19°27'21.54"E`, 
 // </div>
 // <div className="my-25 w-full bg-off-white h-divider" />
 
-const HeroCaption: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className }) => (
-  <div className={clsx("flex justify-center flex-col", className)}>
-    {caption.map((item, index) => (
-      <span className="text-center font-light text-sm" key={index}>
-        {item}
-      </span>
-    ))}
-  </div>
-);
-
 const App = () => (
   <Container variant={EContainerVariant.FullWidth} className="pb-8 flex flex-col">
-    <RatioContainer variant={EContainerRatio.FullPage}>
-      <ResponsiveImage mobile={heroMobile} desktop={heroDesktop} priority={true} />
-      <HeroCaption className="absolute bottom-20 w-full" />
-    </RatioContainer>
+    <HeroSection />
     <Container className="flex flex-col">
       <div className="flex flex-col md:mx-auto md:max-w-135 items-center py-23 md:py-35">
         <h1 className="text-lg md:text-xl font-bold text-center leading-header">

@@ -1,5 +1,5 @@
+import { links } from "@/app/config";
 import type { EPhotoType, ISession, ISuggestedSession } from "@/app/types";
-import { links } from "@/config";
 
 const suggestedLength = 4;
 

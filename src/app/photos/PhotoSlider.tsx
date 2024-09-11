@@ -10,7 +10,7 @@ import { LeftArrowIcon, RightArrowIcon } from "public/icons";
 
 import SliderItem from "./SliderItem";
 
-import { teasers } from "@/mock";
+import { teasers } from "@/app/mock";
 
 const navButtonStyle = "py-3 md:py-5 px-5 uppercase flex";
 

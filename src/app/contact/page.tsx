@@ -4,7 +4,7 @@ import Container from "components/Container";
 
 import { LogoRound, ServingAuthenticityCaption } from "public/icons";
 
-import { emailAddress, instagramLink, instagramName } from "@/config";
+import { emailAddress, instagramLink, instagramName } from "@/app/config";
 
 const Contact = () => (
   <Container className="mt-20 mb-16 md:mt-6 md:mb-16">
