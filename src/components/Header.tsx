@@ -3,10 +3,9 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// import { useTheme } from "next-themes";
 import { useCallback, useEffect, useState } from "react";
 
-import { CloseIcon, Logo, LogoRound } from "public/svgs";
+import { CloseIcon, Logo, LogoRound } from "public/icons";
 
 import Container from "./Container";
 

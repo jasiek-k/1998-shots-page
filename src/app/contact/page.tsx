@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import Container from "components/Container";
 
-import { LogoRound, ServingAuthenticityCaption } from "public/svgs";
+import { LogoRound, ServingAuthenticityCaption } from "public/icons";
 
 import { emailAddress, instagramLink, instagramName } from "@/config";
 
@@ -36,7 +36,7 @@ const Contact = () => (
           </p>
         </div>
       </div>
-      <div className="w-full max-w-88 md:w-88 mt-10 md:mt-0">
+      <div className="w-full md:w-88 mt-20 md:mt-0">
         <ServingAuthenticityCaption />
       </div>
     </div>

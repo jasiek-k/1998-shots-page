@@ -5,7 +5,7 @@ import Link from "next/link";
 import Container, { EContainerRatio, EContainerVariant } from "components/Container";
 import { RatioContainer } from "components/Container";
 
-import { LogoRound } from "public/svgs";
+import { LogoRound } from "public/icons";
 
 import ResponsiveImage from "@/components/ResponsiveImage";
 import {

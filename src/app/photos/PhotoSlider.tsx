@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import React, { useCallback, useRef, useState } from "react";
 import Slider from "react-slick";
 
-import { LeftArrowIcon, RightArrowIcon } from "public/svgs";
+import { LeftArrowIcon, RightArrowIcon } from "public/icons";
 
 import SliderItem from "./SliderItem";
 
