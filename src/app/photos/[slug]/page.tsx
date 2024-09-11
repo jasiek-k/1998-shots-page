@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 import Container, { EContainerVariant } from "components/Container";
 
 import CreditsSection from "./CreditsSection";
@@ -17,8 +19,7 @@ const PhotoSession = ({ params: { slug } }: IPhotoSessionProps) => {
   const session = sessions[slug];
 
   if (!session) {
-    // TODO
-    return <div>Error</div>;
+    notFound();
   }
 
   const { title, about, heroPhoto, heroPhotoMobile, credits, photos, suggested } =
