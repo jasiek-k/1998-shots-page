@@ -84,7 +84,7 @@ export const bikeLifeData: ISession = {
   about:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
   heroPhoto: "/images/bikeLife/bikelife_banner.jpg",
-  heroPhotoMobile: "",
+  heroPhotoMobile: "/images/bikeLife/bikelife_banner_mobile.jpg",
   photos: [
     {
       type: "full-width" as EPhotoType.FullWidth,
@@ -181,7 +181,7 @@ export const gunsData = {
   ],
 };
 
-export const inTheSpotlightData = {
+export const inTheSpotlightData: ISession = {
   title: "in the spotlight",
   about:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
@@ -189,10 +189,34 @@ export const inTheSpotlightData = {
   heroPhotoMobile: "",
   photos: [
     {
-      type: "full-width",
-      img: "",
-      width: 1472,
-      height: 943,
+      type: "full-width" as EPhotoType.FullWidth,
+      img: "/images/inTheSpotlight/inthespotlight_1.jpg",
+      width: 1104,
+      height: 1104,
+    },
+    {
+      type: "group" as EPhotoType.Group,
+      img: [
+        "/images/inTheSpotlight/inthespotlight_2.jpg",
+        "/images/inTheSpotlight/inthespotlight_3.jpg",
+      ],
+      width: 540,
+      height: 540,
+    },
+    {
+      type: "full-width" as EPhotoType.FullWidth,
+      img: "/images/inTheSpotlight/inthespotlight_4.jpg",
+      width: 1104,
+      height: 1104,
+    },
+    {
+      type: "group" as EPhotoType.Group,
+      img: [
+        "/images/inTheSpotlight/inthespotlight_5.jpg",
+        "/images/inTheSpotlight/inthespotlight_6.jpg",
+      ],
+      width: 540,
+      height: 540,
     },
   ],
   suggested: [],

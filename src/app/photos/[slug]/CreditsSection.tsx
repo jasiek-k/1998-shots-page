@@ -14,7 +14,7 @@ const CreditsSection = ({ credits }: ICreditsSectionProps) => {
     index < credits.length - 1 || credits.length === 1;
 
   return (
-    <Container className="flex-col mt-14 md:mt-0 mb-20 md:mb-35">
+    <Container className="flex-col mt-14 md:mt-29 mb-20 md:mb-35">
       <div className="flex justify-between mb-1 md:mb-2">
         <span className="text-xs md:text-sm">NAME</span>
         <span className="text-xs md:text-sm">ROLE</span>
