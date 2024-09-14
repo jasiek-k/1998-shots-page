@@ -31,7 +31,7 @@ const PhotoSession = ({ params: { slug } }: IPhotoSessionProps) => {
       <HeaderSection title={title} about={about} />
       <Container variant={EContainerVariant.BaseNoMobilePadding} className="flex-col">
         {photos.map((item, index) => (
-          <SessionPhoto photo={item as TPhoto} key={index} className="mb-6 md:mb-35" />
+          <SessionPhoto photo={item as TPhoto} key={index} className="mb-6" />
         ))}
       </Container>
       <CreditsSection credits={credits} />

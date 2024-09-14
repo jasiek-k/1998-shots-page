@@ -26,7 +26,7 @@ const SessionPhoto = ({
       <>
         <div className="flex flex-col md:flex-row md:gap-6">
           {img.map((item, index) => (
-            <div key={index}>
+            <div key={index} style={{ width: `${(1 / img.length) * 100}%` }}>
               <Image
                 src={item}
                 width={width}

@@ -83,14 +83,38 @@ export const bikeLifeData: ISession = {
   title: "bike life",
   about:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
-  heroPhoto: "",
+  heroPhoto: "/images/bikeLife/bikelife_banner.jpg",
   heroPhotoMobile: "",
   photos: [
     {
       type: "full-width" as EPhotoType.FullWidth,
-      img: "",
-      width: 1472,
-      height: 943,
+      img: "/images/bikeLife/bikelife_1.jpg",
+      width: 1104,
+      height: 1104,
+    },
+    {
+      type: "group" as EPhotoType.Group,
+      img: ["/images/bikeLife/bikelife_2.jpg", "/images/bikeLife/bikelife_3.jpg"],
+      width: 540,
+      height: 540,
+    },
+    {
+      type: "full-width" as EPhotoType.FullWidth,
+      img: "/images/bikeLife/bikelife_4.jpg",
+      width: 1104,
+      height: 1563,
+    },
+    {
+      type: "group" as EPhotoType.Group,
+      img: ["/images/bikeLife/bikelife_5.jpg", "/images/bikeLife/bikelife_6.jpg"],
+      width: 540,
+      height: 540,
+    },
+    {
+      type: "full-width" as EPhotoType.FullWidth,
+      img: "/images/bikeLife/bikelife_7.jpg",
+      width: 1104,
+      height: 1563,
     },
   ],
   suggested: [],
