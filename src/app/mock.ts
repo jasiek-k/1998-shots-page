@@ -1,7 +1,7 @@
 import { links } from "@/app/config";
 import type { EPhotoType, ISession, ISuggestedSession } from "@/app/types";
 
-const suggestedLength = 4;
+const suggestedPostsLength = 4;
 
 const parseSlug = (title: string) => title.toLowerCase().split(" ").join("-");
 
@@ -11,28 +11,28 @@ function filterSuggested(this: ISession, item: ISuggestedSession) {
 
 export const teasers = [
   {
-    img: "/images/slider-6.jpg",
+    img: "/images/slider/slider-6.jpg",
     href: `${links.photos.href}/no-face-no-case`,
     title: "no face no case",
   },
   {
-    //   img: "/images/slider-1.jpg",
-    img: "/images/slider-5.jpg",
+    //   img: "/images/slider/slider-1.jpg",
+    img: "/images/slider/slider-5.jpg",
     href: `${links.photos.href}/bike-life`,
     title: "bike life",
   },
   {
-    img: "/images/slider-2.jpg",
+    img: "/images/slider/slider-2.jpg",
     href: `${links.photos.href}/guns-guns-guns`,
     title: "guns guns guns",
   },
   {
-    img: "/images/slider-3.jpg",
+    img: "/images/slider/slider-3.jpg",
     href: `${links.photos.href}/i-love-the-smell-of-burning-rubber-in-the-morning`,
     title: "i love the smell of burning rubber in the morning",
   },
   {
-    img: "/images/slider-4.jpg",
+    img: "/images/slider/slider-4.jpg",
     href: `${links.photos.href}/in-the-spotlight`,
     title: "in the spotlight",
   },
@@ -42,35 +42,35 @@ export const burningRubberData: ISession = {
   title: "i love the smell of burning rubber in the morning",
   about:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
-  heroPhoto: "/images/ILTSOBRITM_hero.jpg",
-  heroPhotoMobile: "/images/ILTSOBRITM_hero_mobile.jpg",
+  heroPhoto: "/images/iltsobritm/iltsobritm_banner.jpg",
+  heroPhotoMobile: "/images/iltsobritm/iltsobritm_banner_mobile.jpg",
   photos: [
     {
       type: "full-width" as EPhotoType.FullWidth,
-      img: "/images/iltsobritm/iltsobritm1.jpg",
+      img: "/images/iltsobritm/iltsobritm_1.jpg",
       width: 1472,
       height: 943,
     },
     {
       type: "full-width" as EPhotoType.FullWidth,
-      img: "/images/iltsobritm/iltsobritm2.jpg",
+      img: "/images/iltsobritm/iltsobritm_2.jpg",
       width: 1472,
       height: 943,
     },
     {
       type: "group" as EPhotoType.Group,
       img: [
-        "/images/iltsobritm/iltsobritm4.jpg",
-        "/images/iltsobritm/iltsobritm5.jpg",
-        "/images/iltsobritm/iltsobritm6.jpg",
-        "/images/iltsobritm/iltsobritm7.jpg",
+        "/images/iltsobritm/iltsobritm_4.jpg",
+        "/images/iltsobritm/iltsobritm_5.jpg",
+        "/images/iltsobritm/iltsobritm_6.jpg",
+        "/images/iltsobritm/iltsobritm_7.jpg",
       ],
       width: 338,
       height: 600,
     },
     {
       type: "full-width" as EPhotoType.FullWidth,
-      img: "/images/iltsobritm/iltsobritm3.jpg",
+      img: "/images/iltsobritm/iltsobritm_3.jpg",
       width: 1472,
       height: 943,
     },
@@ -129,37 +129,37 @@ export const noFaceNoCaseData: ISession = {
   title: "no face no case",
   about:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
-  heroPhoto: "",
-  heroPhotoMobile: "",
+  heroPhoto: "/images/noFaceNoCase/nofacenocase_banner.jpg",
+  heroPhotoMobile: "/images/noFaceNoCase/nofacenocase_banner_mobile.jpg",
   photos: [
     {
-      type: "vertical-photo" as EPhotoType.VerticalPhoto,
+      type: "full-width" as EPhotoType.FullWidth,
       img: "/images/noFaceNoCase/nofacenocase_1.jpg",
-      width: 728,
-      height: 728,
+      width: 1104,
+      height: 1104,
     },
     {
-      type: "vertical-photo" as EPhotoType.VerticalPhoto,
+      type: "full-width" as EPhotoType.FullWidth,
       img: "/images/noFaceNoCase/nofacenocase_2.jpg",
-      width: 728,
-      height: 728,
+      width: 1104,
+      height: 1104,
     },
     {
-      type: "vertical-photo" as EPhotoType.VerticalPhoto,
+      type: "full-width" as EPhotoType.FullWidth,
       img: "/images/noFaceNoCase/nofacenocase_3.jpg",
-      width: 728,
-      height: 728,
+      width: 1104,
+      height: 1104,
     },
   ],
   suggested: [],
   credits: [
-    { name: "Jan Klamka", role: "photography & retouch" },
+    { name: "Jan Klamka", role: "photography & retouch | model" },
     { name: "Sebastian Komicz", role: "support" },
     { name: "Mateusz Bednarczyk", role: "model" },
   ],
 };
 
-export const gunsData = {
+export const gunsData: ISession = {
   title: "guns guns guns",
   about:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
@@ -167,7 +167,7 @@ export const gunsData = {
   heroPhotoMobile: "",
   photos: [
     {
-      type: "full-width",
+      type: "full-width" as EPhotoType.FullWidth,
       img: "",
       width: 1472,
       height: 943,
@@ -185,8 +185,8 @@ export const inTheSpotlightData: ISession = {
   title: "in the spotlight",
   about:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
-  heroPhoto: "",
-  heroPhotoMobile: "",
+  heroPhoto: "/images/inTheSpotlight/inthespotlight_banner.jpg",
+  heroPhotoMobile: "/images/inTheSpotlight/inthespotlight_banner_mobile.jpg",
   photos: [
     {
       type: "full-width" as EPhotoType.FullWidth,
@@ -238,7 +238,7 @@ const sessions = Object.fromEntries(
   sessionsList.map(item => {
     item.suggested = teasers
       .filter(filterSuggested.bind(item as ISession))
-      .slice(0, suggestedLength);
+      .slice(0, suggestedPostsLength);
 
     return [parseSlug(item.title), item];
   }),
