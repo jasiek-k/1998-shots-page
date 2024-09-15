@@ -7,7 +7,7 @@ interface ICreditsSectionProps {
   credits: ISession["credits"];
 }
 
-const creditStyle = "uppercase text-sm md:text-md font-bold";
+const creditStyle = "uppercase text-sm md:text-sm";
 
 const CreditsSection = ({ credits }: ICreditsSectionProps) => {
   const isDividerDisplayed = (index: number) =>
@@ -15,10 +15,7 @@ const CreditsSection = ({ credits }: ICreditsSectionProps) => {
 
   return (
     <Container className="flex-col mt-14 md:mt-29 mb-20 md:mb-35">
-      <div className="flex justify-between mb-1 md:mb-2">
-        <span className="text-xs md:text-sm">NAME</span>
-        <span className="text-xs md:text-sm">ROLE</span>
-      </div>
+      <h1 className="text-md md:text-md font-bold mb-4">CREATED BY</h1>
       {credits.map(({ name, role }, index) => (
         <Fragment key={index}>
           <div className="flex justify-between">
@@ -26,7 +23,7 @@ const CreditsSection = ({ credits }: ICreditsSectionProps) => {
             <span className={creditStyle}> {role}</span>
           </div>
           {isDividerDisplayed(index) && (
-            <div className="w-full border-t-1 dark:bg-off-white mt-1 md:mt-0 mb-2" />
+            <div className="w-full border-t-1 dark:bg-off-white mt-1 md:mt-2 mb-2" />
           )}
         </Fragment>
       ))}

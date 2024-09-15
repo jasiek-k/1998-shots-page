@@ -167,10 +167,26 @@ export const gunsData: ISession = {
   heroPhotoMobile: "",
   photos: [
     {
+      type: "group" as EPhotoType.Group,
+      img: ["/images/guns/guns_1.jpg", "/images/guns/guns_2.jpg"],
+      width: 540,
+      height: 757,
+    },
+    {
       type: "full-width" as EPhotoType.FullWidth,
-      img: "",
-      width: 1472,
-      height: 943,
+      img: "/images/guns/guns_3.jpg",
+      width: 1104,
+      height: 736,
+    },
+    {
+      type: "group" as EPhotoType.Group,
+      img: [
+        "/images/guns/guns_4.jpg",
+        "/images/guns/guns_5.jpg",
+        "/images/guns/guns_6.jpg",
+      ],
+      width: 352,
+      height: 624,
     },
   ],
   suggested: [],
