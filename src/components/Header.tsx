@@ -5,11 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useState } from "react";
 
-import { CloseIcon, Logo, LogoRound } from "public/icons";
+import { CloseIcon, InstagramIcon, Logo, LogoRound, MenuIcon } from "public/icons";
 
 import Container from "./Container";
 
-import { links } from "@/app/config";
+import { instagramLink, links } from "@/app/config";
 
 const Header = () => {
   const pathname = usePathname();
@@ -53,7 +53,10 @@ const Header = () => {
 
   return (
     <header
-      className={clsx(isHomePath && "absolute", "w-full flex z-50 md:mt-10 flex-col")}
+      className={clsx(
+        isHomePath && "absolute",
+        "w-full flex z-50 mb-6 md:mt-10 flex-col",
+      )}
     >
       <div
         className={clsx(
@@ -67,17 +70,19 @@ const Header = () => {
           <CloseIcon width="30px" />
         </button>
       </div>
-      <Container className="mt-6 md:px-40 flex flex-col">
-        <div className="flex justify-end md:justify-center mb-6 text-xs md:relative">
-          {/* <button onClick={toggleTheme} className="md:absolute md:left-0">
-            {theme === "dark" ? "LIGHT MODE" : "DARK MODE"}
-          </button> */}
+      <Container className="mt-5 md:mt-0 md:px-40 flex flex-col">
+        <div className="flex justify-between md:justify-center mb-6 text-xs md:relative">
+          <Link href={instagramLink} className="md:hidden">
+            <InstagramIcon />
+          </Link>
           <button onClick={toggleIsOpen} className="md:hidden">
-            MENU
+            <MenuIcon />
           </button>
           <nav className="hidden md:flex flex-row justify-center">{getLinks()}</nav>
         </div>
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
       </Container>
     </header>
   );

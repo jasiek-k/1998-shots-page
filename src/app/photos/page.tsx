@@ -3,7 +3,7 @@ import Container, { EContainerVariant } from "components/Container";
 import PhotoSlider from "./PhotoSlider";
 
 const Photos = () => (
-  <Container variant={EContainerVariant.FullWidth} className="flex-col mt-6 mb-10 md:mb-">
+  <Container variant={EContainerVariant.FullWidth} className="flex-col mb-10">
     <PhotoSlider />
   </Container>
 );
