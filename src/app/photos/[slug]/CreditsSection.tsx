@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { Fragment } from "react";
 
+import { links } from "@/app/config";
 import type { ISession } from "@/app/types";
 import Container from "@/components/Container";
 
@@ -14,7 +16,7 @@ const CreditsSection = ({ credits }: ICreditsSectionProps) => {
     index < credits.length - 1 || credits.length === 1;
 
   return (
-    <Container className="flex-col mt-14 md:mt-29 mb-20 md:mb-35">
+    <Container className="flex-col mt-29 mb-35">
       <h1 className="text-md md:text-md font-bold mb-4">CREATED BY</h1>
       {credits.map(({ name, role }, index) => (
         <Fragment key={index}>
@@ -27,6 +29,14 @@ const CreditsSection = ({ credits }: ICreditsSectionProps) => {
           )}
         </Fragment>
       ))}
+      <div className="mt-12 flex flex-col md:flex-row">
+        <h1 className="text-md font-bold uppercase">WANT TO SEE MORE PHOTOS?</h1>
+        <Link href={links.photos.href}>
+          <span className="text-sm uppercase underline md:ml-3 md:leading-photosLink">
+            GO BACK TO PHOTOS LISTING
+          </span>
+        </Link>
+      </div>
     </Container>
   );
 };

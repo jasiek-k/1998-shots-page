@@ -66,6 +66,7 @@ const config: Config = {
     extend: {
       lineHeight: {
         header: "1.25",
+        photosLink: "36px",
       },
       blur: {
         md: "10px",

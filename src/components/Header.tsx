@@ -14,7 +14,6 @@ import { instagramLink, links } from "@/app/config";
 const Header = () => {
   const pathname = usePathname();
   const isHomePath = pathname === "/";
-  // const { theme, setTheme } = useTheme();
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -26,10 +25,6 @@ const Header = () => {
   const toggleIsOpen = useCallback(() => {
     setIsOpen(is => !is);
   }, []);
-
-  // const toggleTheme = useCallback(() => {
-  //   setTheme(theme => (theme === "light" ? "dark" : "light"));
-  // }, [setTheme]);
 
   const getLinks = useCallback(
     (onClick?: () => void) => {
