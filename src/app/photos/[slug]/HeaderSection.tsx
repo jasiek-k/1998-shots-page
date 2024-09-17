@@ -1,5 +1,6 @@
 import type { ISession } from "@/app/types";
 import Container from "@/components/Container";
+import { Title } from "@/components/Text";
 
 interface IDetailsSectionProps {
   title: ISession["title"];
@@ -8,10 +9,8 @@ interface IDetailsSectionProps {
 
 const HeaderSection = ({ title, about }: IDetailsSectionProps) => (
   <Container className="flex-col py-35 dark:font-off-white light:font-black">
-    <div className="md:max-w-135 mx-auto">
-      <h1 className="text-lg md:text-xl w-full text-center uppercase font-bold leading-header">
-        {`"${title}"`}
-      </h1>
+    <div className="md:max-w-135 mx-auto text-center">
+      <Title className="w-full">{`"${title}"`}</Title>
       <p className="text-sm mt-10 text-center uppercase">{about}</p>
     </div>
   </Container>

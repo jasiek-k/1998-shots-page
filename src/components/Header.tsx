@@ -67,7 +67,12 @@ const Header = () => {
       </div>
       <Container className="mt-5 md:mt-0 md:px-40 flex flex-col">
         <div className="flex justify-between md:justify-center mb-6 text-xs md:relative">
-          <Link href={instagramLink} className="md:hidden">
+          <Link
+            href={instagramLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:hidden"
+          >
             <InstagramIcon />
           </Link>
           <button onClick={toggleIsOpen} className="md:hidden">

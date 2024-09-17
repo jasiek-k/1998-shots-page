@@ -13,6 +13,7 @@ import HeroSection from "./HeroSection";
 
 import { bannerDesktop, bannerMobile, landingLinks } from "@/app/config";
 import ResponsiveImage from "@/components/ResponsiveImage";
+import { Title } from "@/components/Text";
 
 // const images = [
 //   "/images/landing_1.jpg",
@@ -35,10 +36,8 @@ const App = () => (
   <Container variant={EContainerVariant.FullWidth} className="pb-8 flex flex-col">
     <HeroSection />
     <Container className="flex flex-col">
-      <div className="flex flex-col md:mx-auto md:max-w-135 items-center py-23 md:py-35">
-        <h1 className="text-lg md:text-xl font-bold text-center leading-header">
-          WELCOME TO THE 1998&nbsp;SHOTS®&nbsp;WORLD
-        </h1>
+      <div className="flex flex-col md:mx-auto md:max-w-135 items-center py-23 md:py-35 text-center">
+        <Title>WELCOME TO THE 1998&nbsp;SHOTS®&nbsp;WORLD</Title>
         <p className="py-12 md:py-15 text-center uppercase">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
