@@ -6,6 +6,25 @@ import { LogoRound, ServingAuthenticityCaption } from "public/icons";
 
 import { emailAddress, instagramLink, instagramName } from "@/app/config";
 
+interface IContactLinkProps {
+  name: string;
+  value: string;
+  href: string;
+  target?: string;
+  rel?: string;
+}
+
+const ContactLink = ({ name, value, ...props }: IContactLinkProps) => (
+  <div>
+    <span>[</span>
+    <span className="mx-3 uppercase">{name}</span>
+    <span>]:</span>
+    <Link {...props} className="ml-2 underline">
+      {value}
+    </Link>
+  </div>
+);
+
 const Contact = () => (
   <Container className="mt-20 mb-16 md:mt-6 md:mb-16">
     <div className="flex flex-col items-center">
@@ -17,18 +36,18 @@ const Contact = () => (
         </div>
         <div className="dark:bg-off-white h-divider w-full md:h-90 md:w-divider my-20 md:my-0" />
         <div className="md:w-1/2 md:ml-37 flex flex-col uppercase">
-          <Link
+          <ContactLink
+            name="instagram"
+            value={`@${instagramName}`}
+            href={instagramLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline"
-            href={instagramLink}
-          >
-            {`[INSTAGRAM]: @${instagramName}`}
-          </Link>
-          <Link
+          />
+          <ContactLink
+            name="e-mail"
             href={`mailto:${emailAddress}`}
-            className="underline"
-          >{`[E-MAIL]: ${emailAddress}`}</Link>
+            value={emailAddress}
+          />
           <p className="mt-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
