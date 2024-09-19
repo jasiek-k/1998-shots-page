@@ -31,11 +31,13 @@ const useScrollButton = () => {
 
     const handleScroll = () => {
       const newValue = window.scrollY;
+      const isScrollingUp = oldValue - newValue > 0;
+      const isScrollingDown = oldValue - newValue < 0;
 
-      if (oldValue - newValue < 0) {
-        setIsDisplayed(true);
-      } else if (oldValue - newValue > 0) {
+      if (isScrollingDown) {
         setIsDisplayed(false);
+      } else if (isScrollingUp) {
+        setIsDisplayed(true);
       }
 
       oldValue = newValue;
