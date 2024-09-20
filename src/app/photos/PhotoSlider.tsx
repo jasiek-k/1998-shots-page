@@ -71,10 +71,10 @@ const PhotoSlider = () => {
       <div className="flex flex-row justify-between md:justify-end md:mr-5 md:ml-0 mx-3 mt-2 md:mt-0">
         <button className={navButtonStyle} onClick={handlePrevSlide}>
           <LeftArrowIcon width="20px" height="20px" />
-          <span className="ml-1">Prev</span>
+          <span className="ml-2">Prev</span>
         </button>
         <button className={navButtonStyle} onClick={handleNextSlide}>
-          <span className="mr-1">Next</span>
+          <span className="mr-2">Next</span>
           <RightArrowIcon width="20px" height="20px" />
         </button>
       </div>

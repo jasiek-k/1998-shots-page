@@ -5,6 +5,7 @@ import Container, { EContainerVariant } from "components/Container";
 import CreditsSection from "./CreditsSection";
 import HeaderSection from "./HeaderSection";
 import HeroSection from "./HeroSection";
+import PhotosLayout from "./PhotosLayout";
 import SessionPhoto from "./SessionPhoto";
 import SuggestedPhotos from "./SuggestedPhotos";
 
@@ -29,11 +30,7 @@ const PhotoSession = ({ params: { slug } }: IPhotoSessionProps) => {
     <section>
       <HeroSection photo={heroPhoto} photoMobile={heroPhotoMobile} />
       <HeaderSection title={title} about={about} />
-      <Container variant={EContainerVariant.BaseNoMobilePadding} className="flex-col">
-        {photos.map((item, index) => (
-          <SessionPhoto photo={item as TPhoto} key={index} className="mb-6" />
-        ))}
-      </Container>
+      <PhotosLayout photos={photos} />
       <CreditsSection credits={credits} />
       <SuggestedPhotos photos={suggested} />
     </section>
