@@ -14,12 +14,11 @@ body {
       overflow: hidden;
     }
   }
-}
 
-/* [data-theme="dark"] body {
-  background-color: #181818;
-  color: #FFFFF4;
-} */
+  &:has(.freezeScrollAllSizes) {
+    overflow: hidden;
+  }
+}
 
 .noScroll::-webkit-scrollbar {
   display: none;
