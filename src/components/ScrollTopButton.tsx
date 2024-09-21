@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 
-import useScrollButton from "./useScrollButton";
+import useScrollButton from "@/utils/useScrollButton";
 
 const ScrollTopButton = () => {
   const { isDisplayed, handleScrollTop } = useScrollButton();

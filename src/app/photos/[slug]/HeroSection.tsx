@@ -5,9 +5,9 @@ import Container, {
   EContainerVariant,
   RatioContainer,
 } from "components/Container";
+import ResponsiveImage from "components/ResponsiveImage";
 
-import useIsOutOfView from "@/app/useIsOutOfView";
-import ResponsiveImage from "@/components/ResponsiveImage";
+import useIsOutOfView from "@/utils/useIsOutOfView";
 
 interface IHeroSectionProps {
   photo: string;

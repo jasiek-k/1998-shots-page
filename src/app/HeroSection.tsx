@@ -4,10 +4,9 @@ import clsx from "clsx";
 
 import { EContainerRatio, RatioContainer } from "components/Container";
 
-import useIsOutOfView from "./useIsOutOfView";
-
 import { heroDesktop, heroMobile } from "@/app/config";
 import ResponsiveImage from "@/components/ResponsiveImage";
+import useIsOutOfView from "@/utils/useIsOutOfView";
 
 const caption = ["PHOTOGRAPHY X DESIGN", `FROM 51°45'33.30"N, 19°27'21.54"E`, "XXX"];
 
