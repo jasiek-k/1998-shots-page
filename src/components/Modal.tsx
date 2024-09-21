@@ -23,7 +23,7 @@ const Modal = ({
   onPrevPhoto,
   closeModal,
 }: IModalProps) => {
-  const swipeHandlers = useSwipe({ onSwipeLeft: onPrevPhoto, onSwipeRight: onNextPhoto });
+  const swipeHandlers = useSwipe({ onSwipeLeft: onNextPhoto, onSwipeRight: onPrevPhoto });
 
   return (
     <div className="freezeScrollAllSizes backdrop-blur-default fixed left-0 top-0 w-full h-full bg-red flex flex-row justify-center items-center">
