@@ -42,20 +42,13 @@ const Modal = ({
         />
         <button
           type="button"
-          onClick={() => {
-            console.log("click");
-          }}
-          // style={{ backgroundColor: "red" }}
-          className="absolute top-0 left-0 w-full h-full"
+          className="absolute md:hidden top-0 left-0 w-full h-full"
           {...swipeHandlers}
         />
       </div>
       <button
         type="button"
-        onClick={() => {
-          closeModal();
-          console.log("close");
-        }}
+        onClick={closeModal}
         className="fixed top-6 md:top-9 right-4 md:right-9 p-1"
       >
         <CloseIcon width="24px" />

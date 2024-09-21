@@ -1,3 +1,4 @@
+import type { TouchEventHandler } from "react";
 import { useCallback, useState } from "react";
 
 interface IProps {
@@ -6,19 +7,22 @@ interface IProps {
 }
 
 const useSwipe = ({ onSwipeLeft, onSwipeRight }: IProps) => {
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const minSwipeDistance = 50;
 
-  const onTouchStart = useCallback(e => {
+  const onTouchStart: TouchEventHandler = useCallback(e => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
   }, []);
 
-  const onTouchMove = useCallback(e => setTouchEnd(e.targetTouches[0].clientX), []);
+  const onTouchMove: TouchEventHandler = useCallback(
+    e => setTouchEnd(e.targetTouches[0].clientX),
+    [],
+  );
 
-  const onTouchEnd = () => {
+  const onTouchEnd: TouchEventHandler = useCallback(() => {
     if (!touchStart || !touchEnd) {
       return;
     }
@@ -34,7 +38,7 @@ const useSwipe = ({ onSwipeLeft, onSwipeRight }: IProps) => {
     if (isRightSwipe) {
       onSwipeRight();
     }
-  };
+  }, [onSwipeLeft, onSwipeRight, touchEnd, touchStart]);
 
   return { onTouchStart, onTouchMove, onTouchEnd };
 };
