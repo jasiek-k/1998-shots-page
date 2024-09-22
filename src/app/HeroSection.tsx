@@ -6,7 +6,7 @@ import { EContainerRatio, RatioContainer } from "components/Container";
 
 import { heroDesktop, heroMobile } from "@/app/config";
 import ResponsiveImage from "@/components/ResponsiveImage";
-import useIsOutOfView from "@/utils/useIsOutOfView";
+import ScrollWrapper from "@/components/ScrollWrapper";
 
 const caption = ["PHOTOGRAPHY X DESIGN", `FROM 51°45'33.30"N, 19°27'21.54"E`, "XXX"];
 
@@ -20,17 +20,13 @@ const HeroCaption: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className
   </div>
 );
 
-const HeroSection = () => {
-  const { ref } = useIsOutOfView();
-
-  return (
-    <div ref={ref}>
-      <RatioContainer variant={EContainerRatio.FullPage}>
-        <ResponsiveImage mobile={heroMobile} desktop={heroDesktop} priority={true} />
-        <HeroCaption className="absolute bottom-20 w-full" />
-      </RatioContainer>
-    </div>
-  );
-};
+const HeroSection = () => (
+  <ScrollWrapper>
+    <RatioContainer variant={EContainerRatio.FullPage}>
+      <ResponsiveImage mobile={heroMobile} desktop={heroDesktop} priority={true} />
+      <HeroCaption className="absolute bottom-20 w-full" />
+    </RatioContainer>
+  </ScrollWrapper>
+);
 
 export default HeroSection;

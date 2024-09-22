@@ -7,7 +7,7 @@ import Container, {
 } from "components/Container";
 import ResponsiveImage from "components/ResponsiveImage";
 
-import useIsOutOfView from "@/utils/useIsOutOfView";
+import ScrollWrapper from "@/components/ScrollWrapper";
 
 interface IHeroSectionProps {
   photo: string;
@@ -18,22 +18,18 @@ const getHeroMobile = (src: string) => ({ src, width: 375, height: 498 });
 
 const getHeroDesktop = (src: string) => ({ src, width: 1920, height: 720 });
 
-const HeroSection = ({ photo, photoMobile }: IHeroSectionProps) => {
-  const { ref } = useIsOutOfView();
-
-  return (
-    <div ref={ref}>
-      <Container variant={EContainerVariant.FullWidth} className="mt-5">
-        <RatioContainer variant={EContainerRatio.Banner}>
-          <ResponsiveImage
-            desktop={getHeroDesktop(photo)}
-            mobile={getHeroMobile(photoMobile)}
-            priority={true}
-          />
-        </RatioContainer>
-      </Container>
-    </div>
-  );
-};
+const HeroSection = ({ photo, photoMobile }: IHeroSectionProps) => (
+  <ScrollWrapper>
+    <Container variant={EContainerVariant.FullWidth} className="mt-5">
+      <RatioContainer variant={EContainerRatio.Banner}>
+        <ResponsiveImage
+          desktop={getHeroDesktop(photo)}
+          mobile={getHeroMobile(photoMobile)}
+          priority={true}
+        />
+      </RatioContainer>
+    </Container>
+  </ScrollWrapper>
+);
 
 export default HeroSection;

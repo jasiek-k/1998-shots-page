@@ -1,11 +1,16 @@
 "use client";
 
 import clsx from "clsx";
+import { useCallback } from "react";
 
-import useScrollButton from "@/utils/useScrollButton";
+interface IProps {
+  isDisplayed: boolean;
+}
 
-const ScrollTopButton = () => {
-  const { isDisplayed, handleScrollTop } = useScrollButton();
+const ScrollTopButton = ({ isDisplayed }: IProps) => {
+  const handleScrollTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <button
