@@ -6,13 +6,12 @@ import "slick-carousel/slick/slick-theme.css";
 import React, { useCallback, useRef, useState } from "react";
 import Slider from "react-slick";
 
-import { LeftArrowIcon, RightArrowIcon } from "public/icons";
-
 import SliderItem from "./SliderItem";
 
 import { teasers } from "@/app/mock";
+import ArrowButton from "@/components/ArrowButton";
 
-const navButtonStyle = "py-3 md:py-5 px-5 uppercase flex";
+// const navButtonStyle = "py-3 md:py-5 px-5 uppercase flex";
 
 const settings = {
   dots: false,
@@ -68,15 +67,21 @@ const PhotoSlider = () => {
           />
         ))}
       </Slider>
-      <div className="flex flex-row justify-between md:justify-end md:mr-5 md:ml-0 mx-3 mt-2 md:mt-0">
-        <button className={navButtonStyle} onClick={handlePrevSlide}>
+      <div className="flex flex-row justify-between md:justify-end md:mr-5 md:ml-0 mx-4 mt-5 md:mt-5 md:gap-4">
+        {/* <button className={navButtonStyle} onClick={handlePrevSlide}>
           <LeftArrowIcon width="20px" height="20px" />
           <span className="ml-2">Prev</span>
         </button>
         <button className={navButtonStyle} onClick={handleNextSlide}>
           <span className="mr-2">Next</span>
           <RightArrowIcon width="20px" height="20px" />
-        </button>
+        </button> */}
+        <ArrowButton type="button" variant="left" handleClick={handlePrevSlide}>
+          Prev
+        </ArrowButton>
+        <ArrowButton type="button" variant="right" handleClick={handleNextSlide}>
+          Next
+        </ArrowButton>
       </div>
     </>
   );

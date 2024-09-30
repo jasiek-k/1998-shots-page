@@ -15,10 +15,12 @@ interface IContactLinkProps {
 }
 
 const ContactLink = ({ name, value, ...props }: IContactLinkProps) => (
-  <div>
-    <span>[</span>
-    <span className="mx-3 uppercase">{name}</span>
-    <span>]:</span>
+  <div className="flex justify-between md:justify-normal">
+    <div>
+      <span>[</span>
+      <span className="mx-3 uppercase">{name}</span>
+      <span>]:</span>
+    </div>
     <Link {...props} className="ml-2 underline">
       {value}
     </Link>

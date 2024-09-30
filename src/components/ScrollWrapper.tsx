@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 import ScrollTopButton from "./ScrollTopButton";
@@ -9,12 +12,20 @@ interface IProps {
 }
 
 const ScrollWrapper = ({ children }: IProps) => {
+  const [container, setContainer] = useState<Element | undefined>(undefined);
   const { ref, isDisplayed } = useDisplayScrollButton();
+
+  useEffect(() => {
+    if (document) {
+      setContainer(document.body);
+    }
+  }, []);
 
   return (
     <div ref={ref}>
       {children}
-      {createPortal(<ScrollTopButton isDisplayed={isDisplayed} />, document.body)}
+      {container &&
+        createPortal(<ScrollTopButton isDisplayed={isDisplayed} />, container)}
     </div>
   );
 };

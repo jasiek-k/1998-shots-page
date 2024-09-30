@@ -11,7 +11,9 @@ const config: Config = {
     spacing: {
       "0": "0px",
       divider: "1px",
+      "1/2": "2px",
       "1": "4px",
+      "3/2": "6px",
       "2": "8px",
       "2.5": "10px",
       "3": "12px",
@@ -22,6 +24,7 @@ const config: Config = {
       "8": "32px",
       "9": "36px",
       "10": "40px",
+      "11": "44px",
       "12": "48px",
       "14": "56px",
       "15": "60px",
@@ -47,6 +50,7 @@ const config: Config = {
       bannerMobile: "132.80%",
       teaserMobile: "288vw",
       heroLink: "56.6%",
+      arrow: "18px",
     },
     borderWidth: {
       1: "1px",

@@ -36,7 +36,7 @@ const App = () => (
   <Container variant={EContainerVariant.FullWidth} className="pb-8 flex flex-col">
     <HeroSection />
     <Container className="flex flex-col">
-      <div className="flex flex-col md:mx-auto md:max-w-135 items-center py-23 md:py-35 text-center">
+      <div className="flex flex-col md:mx-auto md:max-w-135 items-center py-35 text-center">
         <Title>WELCOME TO THE 1998&nbsp;SHOTS®&nbsp;WORLD</Title>
         <p className="py-12 md:py-15 text-center uppercase">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

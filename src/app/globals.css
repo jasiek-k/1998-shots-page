@@ -4,8 +4,6 @@
 
 
 body {
-  /* background-color: #FFFFF4;
-  color: #181818; */
   background-color: #181818;
   color: #FFFFF4;
   
@@ -17,6 +15,10 @@ body {
 
   &:has(.freezeScrollAllSizes) {
     overflow: hidden;
+  }
+
+  &:has(.notFound) > .header {
+    position: absolute;
   }
 }
 

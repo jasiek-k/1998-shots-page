@@ -263,6 +263,7 @@ export const LogoRound = (props: TProps) => (
   </svg>
 );
 
+// TODO cleanup
 // export const LeftArrowIcon = (props: TProps) => (
 //   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" {...props}>
 //     <path

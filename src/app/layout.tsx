@@ -7,7 +7,6 @@ import useFonts from "./useFonts";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollTop from "@/components/ScrollTop";
-import ScrollTopButton from "@/components/ScrollTopButton";
 
 export const metadata: Metadata = {
   title: "1998 SHOTS",
@@ -23,11 +22,13 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <meta name="color-scheme" content="light dark" />
+      </head>
       <body className={fonts.className}>
         <ScrollTop />
         <Header />
         <main>{children}</main>
-        <ScrollTopButton />
         <Footer />
       </body>
     </html>

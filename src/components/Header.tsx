@@ -50,7 +50,7 @@ const Header = () => {
     <header
       className={clsx(
         isHomePath && "absolute",
-        "w-full flex z-50 mb-6 md:mt-10 flex-col",
+        "header w-full flex z-50 mb-6 md:mt-10 flex-col",
       )}
     >
       <div
