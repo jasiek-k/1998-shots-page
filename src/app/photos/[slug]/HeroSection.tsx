@@ -25,7 +25,8 @@ const HeroSection = ({ photo, photoMobile }: IHeroSectionProps) => (
         <ResponsiveImage
           desktop={getHeroDesktop(photo)}
           mobile={getHeroMobile(photoMobile)}
-          priority={true}
+          // priority={true}
+          loading="eager"
         />
       </RatioContainer>
     </Container>
