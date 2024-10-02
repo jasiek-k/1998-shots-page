@@ -29,13 +29,27 @@ const SessionPhoto = ({
   <div className={className}>
     {type === EPhotoType.VerticalPhoto && (
       <div className="max-w-182 mx-auto relative">
-        <Image src={img} width={width} height={height} className="w-full" alt="" />
+        <Image
+          src={img}
+          width={width}
+          height={height}
+          className="w-full"
+          loading="eager"
+          alt=""
+        />
         <OverlayButton handleClick={() => openModal({ img, width, height })} />
       </div>
     )}
     {type === EPhotoType.FullWidth && (
       <div className="relative">
-        <Image src={img} width={width} height={height} className="w-full" alt="" />
+        <Image
+          src={img}
+          width={width}
+          height={height}
+          className="w-full"
+          loading="eager"
+          alt=""
+        />
         <OverlayButton handleClick={() => openModal({ img, width, height })} />
       </div>
     )}
@@ -49,6 +63,7 @@ const SessionPhoto = ({
                 width={width}
                 height={height}
                 className={clsx(index !== img.length - 1 && "mb-6 md:mb-0", "w-full")}
+                loading="eager"
                 alt=""
               />
               <OverlayButton
