@@ -35,7 +35,6 @@ const SessionPhoto = ({
           height={height}
           className="w-full"
           priority={true}
-          // loading="eager"
           alt=""
         />
         <OverlayButton handleClick={() => openModal({ img, width, height })} />
@@ -48,7 +47,6 @@ const SessionPhoto = ({
           width={width}
           height={height}
           className="w-full"
-          // loading="eager"
           priority={true}
           alt=""
         />
@@ -65,7 +63,6 @@ const SessionPhoto = ({
                 width={width}
                 height={height}
                 className={clsx(index !== img.length - 1 && "mb-6 md:mb-0", "w-full")}
-                // loading="eager"
                 priority={true}
                 alt=""
               />

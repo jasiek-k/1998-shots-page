@@ -19,7 +19,6 @@ const CreditsSection = ({ credits }: ICreditsSectionProps) => {
     <Container className="flex flex-col md:flex-row mt-29 mb-35">
       <div className="md:w-2/3 md:pr-6 flex flex-col justify-center">
         <div>
-          {/* <h1 className="text-md md:text-md font-bold mb-4">CREATED BY</h1> */}
           {credits.map(({ name, role }, index) => (
             <Fragment key={index}>
               <div className="flex justify-between">
@@ -34,16 +33,11 @@ const CreditsSection = ({ credits }: ICreditsSectionProps) => {
         </div>
       </div>
       <div className="w-divider bg-black dark:bg-off-white" />
-      <div className="md:w-1/3 flex md:flex-col justify-between md:justify-normal mt-6 md:mt-0 md:pl-6">
+      <div className="md:w-1/3 flex flex-col justify-between md:justify-normal mt-6 md:mt-0 md:pl-6">
         <h1 className="text-md font-bold uppercase">WANT TO SEE MORE?</h1>
         <ArrowButton variant="right" type="link" href={links.photos.href}>
           GO BACK TO PHOTOS
         </ArrowButton>
-        {/* <Link href={links.photos.href}>
-          <span className="text-sm uppercase underline md:leading-photosLink">
-            GO BACK TO PHOTOS LISTING
-          </span>
-        </Link> */}
       </div>
     </Container>
   );

@@ -8,7 +8,7 @@ import Slider from "react-slick";
 
 import SliderItem from "./SliderItem";
 
-import { teasers } from "@/app/mock";
+import { heroSliderContent } from "@/app/mock";
 import ArrowButton from "@/components/ArrowButton";
 
 const settings = {
@@ -49,13 +49,13 @@ const PhotoSlider = () => {
   }, []);
 
   const toggleIsHover = useCallback((index?: number) => {
-    setIsHover(index !== undefined ? index : undefined);
+    setIsHover(index);
   }, []);
 
   return (
     <>
       <Slider ref={ref} {...settings}>
-        {teasers.map((item, index) => (
+        {heroSliderContent.map((item, index) => (
           <SliderItem
             item={item}
             key={index}

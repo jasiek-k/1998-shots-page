@@ -23,7 +23,7 @@ const HeroCaption: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className
 const HeroSection = () => (
   <ScrollWrapper>
     <RatioContainer variant={EContainerRatio.FullPage}>
-      <ResponsiveImage mobile={heroMobile} desktop={heroDesktop} priority={true} />
+      <ResponsiveImage mobile={heroMobile} desktop={heroDesktop} loading="eager" />
       <HeroCaption className="absolute bottom-20 w-full" />
     </RatioContainer>
   </ScrollWrapper>

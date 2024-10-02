@@ -38,6 +38,8 @@ export const teasers = [
   },
 ];
 
+export const heroSliderContent = teasers.reverse();
+
 export const burningRubberData: ISession = {
   title: "i love the smell of burning rubber in the morning",
   about:
