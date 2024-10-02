@@ -11,8 +11,6 @@ import SliderItem from "./SliderItem";
 import { teasers } from "@/app/mock";
 import ArrowButton from "@/components/ArrowButton";
 
-// const navButtonStyle = "py-3 md:py-5 px-5 uppercase flex";
-
 const settings = {
   dots: false,
   infinite: true,
@@ -68,14 +66,6 @@ const PhotoSlider = () => {
         ))}
       </Slider>
       <div className="flex flex-row justify-between md:justify-end md:mr-5 md:ml-0 mx-4 mt-5 md:mt-5 md:gap-4">
-        {/* <button className={navButtonStyle} onClick={handlePrevSlide}>
-          <LeftArrowIcon width="20px" height="20px" />
-          <span className="ml-2">Prev</span>
-        </button>
-        <button className={navButtonStyle} onClick={handleNextSlide}>
-          <span className="mr-2">Next</span>
-          <RightArrowIcon width="20px" height="20px" />
-        </button> */}
         <ArrowButton type="button" variant="left" handleClick={handlePrevSlide}>
           Prev
         </ArrowButton>

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Fragment } from "react";
 
 import { links } from "@/app/config";
@@ -28,13 +27,13 @@ const CreditsSection = ({ credits }: ICreditsSectionProps) => {
                 <span className={creditStyle}> {role}</span>
               </div>
               {isDividerDisplayed(index) && (
-                <div className="w-full border-t-1 dark:bg-off-white mt-1 md:mt-2 mb-2" />
+                <div className="w-full border-t-1 border-black dark:border-off-white mt-1 md:mt-2 mb-2" />
               )}
             </Fragment>
           ))}
         </div>
       </div>
-      <div className="w-divider bg-off-white" />
+      <div className="w-divider bg-black dark:bg-off-white" />
       <div className="md:w-1/3 flex md:flex-col justify-between md:justify-normal mt-6 md:mt-0 md:pl-6">
         <h1 className="text-md font-bold uppercase">WANT TO SEE MORE?</h1>
         <ArrowButton variant="right" type="link" href={links.photos.href}>

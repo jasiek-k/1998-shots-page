@@ -1,16 +1,12 @@
 import { notFound } from "next/navigation";
 
-import Container, { EContainerVariant } from "components/Container";
-
 import CreditsSection from "./CreditsSection";
 import HeaderSection from "./HeaderSection";
 import HeroSection from "./HeroSection";
 import PhotosLayout from "./PhotosLayout";
-import SessionPhoto from "./SessionPhoto";
 import SuggestedPhotos from "./SuggestedPhotos";
 
 import sessions from "@/app/mock";
-import type { TPhoto } from "@/app/types";
 
 interface IPhotoSessionProps {
   params: { slug: string };
