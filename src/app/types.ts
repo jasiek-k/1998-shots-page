@@ -9,6 +9,13 @@ export interface ISuggestedSession {
   title: string;
 }
 
+export interface ILinkContainer {
+  src: string;
+  href: string;
+  caption: string;
+  subcaption: string;
+}
+
 export interface ICredit {
   name: string;
   role: string;

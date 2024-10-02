@@ -5,20 +5,23 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useState } from "react";
 
-import { CloseIcon, InstagramIcon, Logo, LogoRound, MenuIcon } from "public/icons";
+import { CloseIcon, LogoDark, LogoLight, LogoRound, MenuIcon } from "public/icons";
 
 import Container from "./Container";
+import ThemeSwitch from "./ThemeSwitch";
 
-import { instagramLink, links } from "@/app/config";
+import { links } from "@/app/config";
+
+const homePath = "/";
 
 const Header = () => {
   const pathname = usePathname();
-  const isHomePath = pathname === "/";
+  const isHomePath = pathname === homePath;
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const checkIsActive = useCallback(
-    (href: string) => pathname === href || (pathname.includes(href) && href !== "/"),
+    (href: string) => pathname === href || (pathname.includes(href) && href !== homePath),
     [pathname],
   );
 
@@ -35,7 +38,7 @@ const Header = () => {
           prefetch={true}
           onClick={onClick}
           className={clsx(
-            "text-off-white font-light text-md md:text-sm mx-5 text-center my-4 md:my-0",
+            "text-black dark:text-off-white font-light text-md md:text-sm mx-5 text-center my-4 md:my-0",
             checkIsActive(href) && "underline",
           )}
         >
@@ -59,29 +62,23 @@ const Header = () => {
           "md:hidden backdrop-blur-default pt-15 pb-20 justify-between fixed top-0 left-0 w-full h-full z-10 items-center flex-col",
         )}
       >
-        <LogoRound width="60px" />
+        <LogoRound width="60px" className="dark:fill-off-white fill-black" />
         <nav className="flex flex-col">{getLinks(toggleIsOpen)}</nav>
         <button type="button" onClick={toggleIsOpen}>
-          <CloseIcon width="30px" />
+          <CloseIcon width="30px" className="dark:stroke-off-white stroke-black" />
         </button>
       </div>
       <Container className="mt-5 md:mt-0 md:px-40 flex flex-col">
         <div className="flex justify-between md:justify-center mb-6 text-xs md:relative">
-          <Link
-            href={instagramLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="md:hidden"
-          >
-            <InstagramIcon />
-          </Link>
+          <ThemeSwitch className="md:absolute md:left-0 md:-top-1" />
           <button onClick={toggleIsOpen} className="md:hidden">
-            <MenuIcon />
+            <MenuIcon className="fill-black dark:fill-off-white" />
           </button>
           <nav className="hidden md:flex flex-row justify-center">{getLinks()}</nav>
         </div>
-        <Link href="/">
-          <Logo />
+        <Link href={homePath}>
+          <LogoDark className="hidden dark:flex" />
+          <LogoLight className="dark:hidden flex" />
         </Link>
       </Container>
     </header>

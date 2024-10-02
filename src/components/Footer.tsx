@@ -1,5 +1,5 @@
 const Footer = () => (
-  <footer className="flex justify-center pb-9 pt-4 text-xxs md:text-sm">
+  <footer className="pb-9 pt-4 text-xxs md:text-sm flex justify-center">
     <span className="font-bold">1998</span>
     <span className="font-light mx-1">SHOTS®</span>
     <span className="font-bold">ALL RIGHTS RESERVED</span>

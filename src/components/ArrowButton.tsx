@@ -13,6 +13,9 @@ interface IArrowButtonProps {
   handleClick?: () => void;
 }
 
+const style =
+  "flex px-4 pb-1/2 pt-3/2 border-1 border-black dark:border-off-white rounded-full items-baseline w-max";
+
 const ArrowButton = ({
   variant,
   type,
@@ -23,18 +26,15 @@ const ArrowButton = ({
   const content =
     variant === "left" ? (
       <>
-        <LeftArrowIcon width="18px" />
+        <LeftArrowIcon width="18px" className="dark:fill-off-white fill-black" />
         <span className="ml-2 uppercase">{children}</span>
       </>
     ) : (
       <>
         <span className="mr-2 uppercase">{children}</span>
-        <RightArrowIcon width="18px" />
+        <RightArrowIcon width="18px" className="dark:fill-off-white fill-black" />
       </>
     );
-
-  const style =
-    "flex px-4 pb-1/2 pt-3/2 border-1 border-off-white rounded-full items-baseline w-max";
 
   if (type === "button") {
     return (

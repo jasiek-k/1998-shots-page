@@ -29,7 +29,7 @@ const Modal = ({
     <div className="freezeScrollAllSizes backdrop-blur-default fixed left-0 top-0 w-full h-full bg-red flex flex-row justify-center items-center">
       <div className="hidden md:flex flex-col pl-9 pr-5">
         <button type="button" className="p-1" onClick={onPrevPhoto}>
-          <LeftArrowIcon width="32px" />
+          <LeftArrowIcon width="32px" className="dark:fill-off-white fill-black" />
         </button>
       </div>
       <div className="flex w-full h-full justify-center items-center relative md:static">
@@ -51,11 +51,11 @@ const Modal = ({
         onClick={closeModal}
         className="fixed top-6 md:top-9 right-4 md:right-9 p-1"
       >
-        <CloseIcon width="24px" />
+        <CloseIcon width="24px" className="dark:stroke-off-white stroke-black" />
       </button>
       <div className="hidden md:flex flex-col pr-9 pl-5">
         <button type="button" className="p-1" onClick={onNextPhoto}>
-          <RightArrowIcon width="32px" />
+          <RightArrowIcon width="32px" className="dark:fill-off-white fill-black" />
         </button>
       </div>
     </div>

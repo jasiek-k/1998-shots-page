@@ -4,6 +4,9 @@ export const links = {
   contact: { name: "CONTACT", href: "/contact" },
 };
 
+export const defaultTheme = "dark";
+export const storageKey = "1998-SHOTS-THEME";
+
 export const instagramName = "1998.shots";
 export const instagramLink = `https://www.instagram.com/${instagramName}`;
 export const emailAddress = "1998.shots.mail@gmail.com";

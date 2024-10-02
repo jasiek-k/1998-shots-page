@@ -1,13 +1,13 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "selector",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    darkMode: "selector",
     spacing: {
       "0": "0px",
       divider: "1px",
@@ -15,7 +15,7 @@ const config: Config = {
       "1": "4px",
       "3/2": "6px",
       "2": "8px",
-      "2.5": "10px",
+      "5/2": "10px",
       "3": "12px",
       "4": "16px",
       "5": "20px",

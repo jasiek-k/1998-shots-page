@@ -13,7 +13,7 @@ const caption = ["PHOTOGRAPHY X DESIGN", `FROM 51°45'33.30"N, 19°27'21.54"E`, 
 const HeroCaption: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className }) => (
   <div className={clsx("flex justify-center flex-col", className)}>
     {caption.map((item, index) => (
-      <span className="text-center font-light text-sm" key={index}>
+      <span className="text-center text-off-white font-light text-sm" key={index}>
         {item}
       </span>
     ))}
