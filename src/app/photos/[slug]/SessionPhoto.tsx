@@ -13,6 +13,21 @@ interface ISessionPhotoProps {
   className?: string;
 }
 
+const handlePhotoWidth = (length: number) => {
+  switch (length) {
+    case 2:
+      return "md:w-1/2";
+    case 3:
+      return "md:w-1/3";
+    case 4:
+      return "md:w-1/4";
+    case 5:
+      return "md:w-1/5";
+    default:
+      return "md:w-auto";
+  }
+};
+
 const OverlayButton = ({ handleClick }: { handleClick: () => void }) => (
   <button
     type="button"
@@ -57,7 +72,7 @@ const SessionPhoto = ({
       <>
         <div className="flex flex-col md:flex-row md:gap-6">
           {img.map((item, index) => (
-            <div key={index} className={`md:w-1/${img.length} relative`}>
+            <div key={index} className={clsx(handlePhotoWidth(img.length), "relative")}>
               <Image
                 src={item}
                 width={width}
