@@ -29,7 +29,7 @@ const SessionTeaser = ({ item: { img, href }, className }: ISessionTeaserProps) 
 const SuggestedPhotos = ({ photos }: ISuggestedPhotosProps) => (
   <Container
     variant={EContainerVariant.BaseNoMobilePadding}
-    className="flex-col pb-8 md:pb-15"
+    className="flex-col pb-8 md:pb-15 mt-35"
   >
     <div className="pl-4 md:pl-0">
       <h1 className="text-md md:text-md font-bold mb-2 uppercase">Check another ones</h1>

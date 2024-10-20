@@ -9,7 +9,7 @@ export interface ISuggestedSession {
   title: string;
 }
 
-export interface ILinkContainer {
+export interface ILinkTile {
   src: string;
   href: string;
   caption: string;
@@ -45,6 +45,7 @@ export interface IVerticalPhoto extends IBasePhoto {
 export type TPhoto = IFullWidth | IGroup | IVerticalPhoto;
 
 export interface ISession {
+  id: number;
   title: string;
   about: string;
   heroPhoto: string;

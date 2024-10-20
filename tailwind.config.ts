@@ -48,6 +48,9 @@ const config: Config = {
       teaser: "177.51%",
       banner: "35.94%",
       bannerMobile: "132.80%",
+      clubBanner: "28.96%",
+      // TODO
+      clubBannerMobile: "",
       teaserMobile: "288vw",
       heroLink: "56.6%",
       arrow: "18px",

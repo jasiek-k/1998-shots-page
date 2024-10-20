@@ -19,11 +19,7 @@ const text =
 
 const ContactLink = ({ name, value, ...props }: IContactLinkProps) => (
   <div className="flex justify-between md:justify-normal">
-    <div>
-      <span>[</span>
-      <span className="mx-3 uppercase">{name}</span>
-      <span>]:</span>
-    </div>
+    <span className="uppercase">{`[ ${name} ]:`}</span>
     <Link {...props} className="ml-2 underline">
       {value}
     </Link>

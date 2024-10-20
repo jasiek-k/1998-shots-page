@@ -7,6 +7,7 @@ import PhotosLayout from "./PhotosLayout";
 import SuggestedPhotos from "./SuggestedPhotos";
 
 import sessions from "@/app/mock";
+import SocialMediaBanner from "@/components/SocialMediaBanner";
 
 interface IPhotoSessionProps {
   params: { slug: string };
@@ -19,15 +20,16 @@ const PhotoSession = ({ params: { slug } }: IPhotoSessionProps) => {
     notFound();
   }
 
-  const { title, about, heroPhoto, heroPhotoMobile, credits, photos, suggested } =
+  const { id, title, about, heroPhoto, heroPhotoMobile, credits, photos, suggested } =
     session;
 
   return (
     <section>
       <HeroSection photo={heroPhoto} photoMobile={heroPhotoMobile} />
-      <HeaderSection title={title} about={about} />
+      <HeaderSection id={id} title={title} about={about} />
       <PhotosLayout photos={photos} />
       <CreditsSection credits={credits} />
+      <SocialMediaBanner />
       <SuggestedPhotos photos={suggested} />
     </section>
   );

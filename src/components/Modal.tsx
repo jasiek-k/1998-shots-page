@@ -37,7 +37,7 @@ const Modal = ({
           src={img}
           width={width}
           height={height}
-          className="object-contain max-h-screen py-5"
+          className="object-contain w-full h-full max-h-screen py-5"
           alt=""
         />
         <button

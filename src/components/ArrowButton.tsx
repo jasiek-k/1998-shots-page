@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Link from "next/link";
 
 import { LeftArrowIcon, RightArrowIcon } from "public/icons";
@@ -10,6 +11,7 @@ interface IArrowButtonProps {
   type: TType;
   children: string;
   href?: string;
+  className?: string;
   handleClick?: () => void;
 }
 
@@ -22,6 +24,7 @@ const ArrowButton = ({
   href,
   handleClick,
   children,
+  className,
 }: IArrowButtonProps) => {
   const content =
     variant === "left" ? (
@@ -38,13 +41,13 @@ const ArrowButton = ({
 
   if (type === "button") {
     return (
-      <button type="button" onClick={handleClick} className={style}>
+      <button type="button" onClick={handleClick} className={clsx(style, className)}>
         {content}
       </button>
     );
   } else if (href) {
     return (
-      <Link href={href} className={style}>
+      <Link href={href} prefetch={true} className={clsx(style, className)}>
         {content}
       </Link>
     );

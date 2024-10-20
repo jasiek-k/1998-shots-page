@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-interface IImage {
+export interface IImage {
   src: string;
   className?: string;
   width: number;

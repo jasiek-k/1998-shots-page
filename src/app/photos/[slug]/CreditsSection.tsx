@@ -1,46 +1,33 @@
-import { Fragment } from "react";
-
-import { links } from "@/app/config";
 import type { ISession } from "@/app/types";
-import ArrowButton from "@/components/ArrowButton";
 import Container from "@/components/Container";
 
 interface ICreditsSectionProps {
   credits: ISession["credits"];
 }
 
-const creditStyle = "uppercase text-sm md:text-sm";
+const creditStyle = "uppercase  ";
 
-const CreditsSection = ({ credits }: ICreditsSectionProps) => {
-  const isDividerDisplayed = (index: number) =>
-    index < credits.length - 1 || credits.length === 1;
-
-  return (
-    <Container className="flex flex-col md:flex-row mt-29 mb-35">
-      <div className="md:w-2/3 md:pr-6 flex flex-col justify-center">
-        <div>
-          {credits.map(({ name, role }, index) => (
-            <Fragment key={index}>
-              <div className="flex justify-between">
-                <span className={creditStyle}>{name}</span>
-                <span className={creditStyle}> {role}</span>
-              </div>
-              {isDividerDisplayed(index) && (
-                <div className="w-full border-t-1 border-black dark:border-off-white mt-1 md:mt-2 mb-2" />
-              )}
-            </Fragment>
-          ))}
+const CreditsSection = ({ credits }: ICreditsSectionProps) => (
+  <Container className="flex flex-col md:flex-row mt-29 mb-35">
+    <div className="w-full flex flex-col justify-center">
+      {credits.map(({ name, role }, index) => (
+        <div key={index} className="flex">
+          <div className="flex w-1/2 items-center justify-end">
+            <span className={`${creditStyle} text-xs md:text-sm text-right pr-3`}>
+              {name}
+            </span>
+          </div>
+          <div className="flex w-1/2 items-center">
+            <span
+              className={`${creditStyle} text-xs md:text-md text-left pl-3 font-bold`}
+            >
+              {role}
+            </span>
+          </div>
         </div>
-      </div>
-      <div className="w-divider bg-black dark:bg-off-white" />
-      <div className="md:w-1/3 flex flex-col justify-between md:justify-normal mt-6 md:mt-0 md:pl-6">
-        <h1 className="text-md font-bold uppercase">WANT TO SEE MORE?</h1>
-        <ArrowButton variant="right" type="link" href={links.photos.href}>
-          GO BACK TO PHOTOS
-        </ArrowButton>
-      </div>
-    </Container>
-  );
-};
+      ))}
+    </div>
+  </Container>
+);
 
 export default CreditsSection;
