@@ -6,7 +6,7 @@ import type { IImage } from "./ResponsiveImage";
 import ResponsiveImage from "./ResponsiveImage";
 import { Title } from "./Text";
 
-const interval = 500;
+const interval = 750;
 const caption = "[ 1998® LIFESTYLE ]";
 
 // TODO mobile
