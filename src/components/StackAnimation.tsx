@@ -1,13 +1,12 @@
 "use client";
 
-// import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import type { IImage } from "./ResponsiveImage";
 import ResponsiveImage from "./ResponsiveImage";
 import { Title } from "./Text";
 
-const interval = 1000;
+const interval = 500;
 const caption = "[ 1998® LIFESTYLE ]";
 
 // TODO mobile
@@ -52,15 +51,15 @@ const getDesktopPhoto = (src: string): IImage => ({
 
 const StackAnimation = () => {
   const intervalId = useRef<NodeJS.Timeout>();
-  const [currentSlide, setCurrentSlide] = useState(slides[1]);
+  const [currentSlideId, setCurrentSlideId] = useState(0);
 
   const changeSlide = useCallback(() => {
-    if (currentSlide.id === slides.length - 1) {
-      setCurrentSlide(slides[0]);
+    if (currentSlideId === slides.length - 1) {
+      setCurrentSlideId(0);
     } else {
-      setCurrentSlide(slides[currentSlide.id + 1]);
+      setCurrentSlideId(currentSlideId + 1);
     }
-  }, [currentSlide.id]);
+  }, [currentSlideId]);
 
   useEffect(() => {
     intervalId.current = setInterval(changeSlide, interval);
@@ -73,11 +72,19 @@ const StackAnimation = () => {
   return (
     <div className="relative flex items-center justify-center">
       <Title className="absolute">{caption}</Title>
-      <ResponsiveImage
-        mobile={getMobilePhoto(currentSlide.mobile)}
-        desktop={getDesktopPhoto(currentSlide.desktop)}
-      />
-      {/* <Image src={currentSlide.desktop} width={1104} height={720} alt="" /> */}
+      {slides.map(({ id, mobile, desktop }) => (
+        <ResponsiveImage
+          mobile={{
+            className: currentSlideId === id ? "" : "hidden",
+            ...getMobilePhoto(mobile),
+          }}
+          desktop={{
+            className: currentSlideId === id ? "" : "md:hidden",
+            ...getDesktopPhoto(desktop),
+          }}
+          key={id}
+        />
+      ))}
     </div>
   );
 };
