@@ -11,28 +11,28 @@ function filterSuggested(this: ISession, item: ISuggestedSession) {
 
 export const teasers = [
   {
-    img: "/images/slider/slider-6.jpg",
+    img: "/images/slider/slider_6.jpg",
     href: `${links.photos.href}/no-face-no-case`,
     title: "no face no case",
   },
   {
-    //   img: "/images/slider/slider-1.jpg",
-    img: "/images/slider/slider-5.jpg",
+    //   img: "/images/slider/slider_1.jpg",
+    img: "/images/slider/slider_5.jpg",
     href: `${links.photos.href}/bike-life`,
     title: "bike life",
   },
   {
-    img: "/images/slider/slider-2.jpg",
+    img: "/images/slider/slider_2.jpg",
     href: `${links.photos.href}/guns-guns-guns`,
     title: "guns guns guns",
   },
   {
-    img: "/images/slider/slider-3.jpg",
+    img: "/images/slider/slider_3.jpg",
     href: `${links.photos.href}/i-love-the-smell-of-burning-rubber-in-the-morning`,
     title: "i love the smell of burning rubber in the morning",
   },
   {
-    img: "/images/slider/slider-4.jpg",
+    img: "/images/slider/slider_4.jpg",
     href: `${links.photos.href}/in-the-spotlight`,
     title: "in the spotlight",
   },
