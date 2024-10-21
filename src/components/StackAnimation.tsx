@@ -6,16 +6,36 @@ import type { IImage } from "./ResponsiveImage";
 import ResponsiveImage from "./ResponsiveImage";
 import { Title } from "./Text";
 
-const interval = 750;
+const interval = 500;
 const caption = "[ 1998® LIFESTYLE ]";
 
 // TODO mobile
 const slides = [
-  { id: 0, mobile: "", desktop: "/images/stackAnimation/slide_0.png" },
-  { id: 1, mobile: "", desktop: "/images/stackAnimation/slide_1.png" },
-  { id: 2, mobile: "", desktop: "/images/stackAnimation/slide_2.png" },
-  { id: 3, mobile: "", desktop: "/images/stackAnimation/slide_3.png" },
-  { id: 4, mobile: "", desktop: "/images/stackAnimation/slide_4.png" },
+  {
+    id: 0,
+    mobile: "/images/stackAnimation/slide_0.png",
+    desktop: "/images/stackAnimation/slide_0.png",
+  },
+  {
+    id: 1,
+    mobile: "/images/stackAnimation/slide_1.png",
+    desktop: "/images/stackAnimation/slide_1.png",
+  },
+  {
+    id: 2,
+    mobile: "/images/stackAnimation/slide_2.png",
+    desktop: "/images/stackAnimation/slide_2.png",
+  },
+  {
+    id: 3,
+    mobile: "/images/stackAnimation/slide_3.png",
+    desktop: "/images/stackAnimation/slide_3.png",
+  },
+  {
+    id: 4,
+    mobile: "/images/stackAnimation/slide_4.png",
+    desktop: "/images/stackAnimation/slide_4.png",
+  },
 ];
 
 const getMobilePhoto = (src: string): IImage => ({
