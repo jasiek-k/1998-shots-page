@@ -15,7 +15,7 @@ const WelcomeSection = () => (
     <div className="w-7/12 pr-6 py-14 flex flex-col items-center text-center justify-center text-black">
       <Title>{content.title}</Title>
       <p className="py-12 md:py-11 max-w-135 text-center uppercase">{content.text}</p>
-      <LogoRound width={70} className="fill-black" />
+      <LogoRound width="70px" className="fill-black" />
     </div>
     <div style={{ objectFit: "cover" }} className="w-5/12">
       <Image

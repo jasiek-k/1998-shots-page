@@ -44,3 +44,16 @@ body {
 .zoom:hover > img {
   transform: scale(1.2);
 }
+
+.spin {
+  animation: spinFrames 3s ease-in-out;
+}
+
+@keyframes spinFrames {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}

@@ -5,6 +5,7 @@ import LinkTile from "./LinkTile";
 import WelcomeSection from "./WelcomeSection";
 
 import { landingLinks } from "@/app/config";
+// import LoadingScreen from "@/components/LoadingScreen";
 import StackAnimation from "@/components/StackAnimation";
 
 const App = () => (
@@ -25,6 +26,7 @@ const App = () => (
         </div>
       </Container>
     </div>
+    {/* <LoadingScreen /> */}
   </>
 );
 
