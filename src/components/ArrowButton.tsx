@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import { LeftArrowIcon, RightArrowIcon } from "public/icons";
 
+import type { TTheme } from "@/utils/ThemeScope";
+
 type TVariant = "left" | "right";
 type TType = "button" | "link";
 
@@ -12,11 +14,27 @@ interface IArrowButtonProps {
   children: string;
   href?: string;
   className?: string;
+  forcedTheme?: TTheme;
   handleClick?: () => void;
 }
 
-const style =
-  "flex px-4 pb-1/2 pt-3/2 border-1 border-black dark:border-off-white rounded-full items-baseline w-max";
+const styles = {
+  text: {
+    dark: "text-off-white",
+    light: "text-black",
+    default: "text-black dark:text-off-white",
+  },
+  icon: {
+    dark: "fill-off-white",
+    light: "fill-black",
+    default: "dark:fill-off-white fill-black",
+  },
+  container: {
+    dark: "border-off-white",
+    light: "border-black",
+    default: "border-black dark:border-off-white",
+  },
+};
 
 const ArrowButton = ({
   variant,
@@ -25,29 +43,41 @@ const ArrowButton = ({
   handleClick,
   children,
   className,
+  forcedTheme,
 }: IArrowButtonProps) => {
+  const textStyle = clsx(
+    "uppercase",
+    forcedTheme ? styles.text[forcedTheme] : styles.text.default,
+  );
+  const iconStyle = forcedTheme ? styles.icon[forcedTheme] : styles.icon.default;
+  const containerStyle = clsx(
+    "flex px-4 pb-1/2 pt-3/2 border-1 rounded-full items-baseline w-max",
+    forcedTheme ? styles.container[forcedTheme] : styles.container.default,
+    className,
+  );
+
   const content =
     variant === "left" ? (
       <>
-        <LeftArrowIcon width="18px" className="dark:fill-off-white fill-black" />
-        <span className="ml-2 uppercase">{children}</span>
+        <LeftArrowIcon width="18px" className={iconStyle} />
+        <span className={clsx("ml-2", textStyle)}>{children}</span>
       </>
     ) : (
       <>
-        <span className="mr-2 uppercase">{children}</span>
-        <RightArrowIcon width="18px" className="dark:fill-off-white fill-black" />
+        <span className={clsx("mr-2", textStyle)}>{children}</span>
+        <RightArrowIcon width="18px" className={iconStyle} />
       </>
     );
 
   if (type === "button") {
     return (
-      <button type="button" onClick={handleClick} className={clsx(style, className)}>
+      <button type="button" onClick={handleClick} className={containerStyle}>
         {content}
       </button>
     );
   } else if (href) {
     return (
-      <Link href={href} prefetch={true} className={clsx(style, className)}>
+      <Link href={href} prefetch={true} className={containerStyle}>
         {content}
       </Link>
     );

@@ -4,7 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useState } from "rea
 
 import { defaultTheme, storageKey } from "@/app/config";
 
-type TTheme = "dark" | "light";
+export type TTheme = "dark" | "light";
 
 interface IProps {
   children: JSX.Element;
