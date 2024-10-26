@@ -1,8 +1,11 @@
 import clsx from "clsx";
 
-import { EContainerRatio, RatioContainer } from "components/Container";
-
 import { heroDesktop, heroMobile } from "@/app/config";
+import Container, {
+  EContainerRatio,
+  EContainerVariant,
+  RatioContainer,
+} from "@/components/Container";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import ScrollWrapper from "@/components/ScrollWrapper";
 
@@ -19,12 +22,14 @@ const HeroCaption: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className
 );
 
 const HeroSection = () => (
-  <ScrollWrapper>
-    <RatioContainer variant={EContainerRatio.FullPage}>
-      <ResponsiveImage mobile={heroMobile} desktop={heroDesktop} loading="eager" />
-      <HeroCaption className="absolute bottom-20 w-full" />
-    </RatioContainer>
-  </ScrollWrapper>
+  <Container variant={EContainerVariant.FullWidth} className="flex flex-col">
+    <ScrollWrapper>
+      <RatioContainer variant={EContainerRatio.FullPage}>
+        <ResponsiveImage mobile={heroMobile} desktop={heroDesktop} loading="eager" />
+        <HeroCaption className="absolute bottom-20 w-full" />
+      </RatioContainer>
+    </ScrollWrapper>
+  </Container>
 );
 
 export default HeroSection;
