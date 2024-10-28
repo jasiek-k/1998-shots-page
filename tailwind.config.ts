@@ -49,8 +49,7 @@ const config: Config = {
       banner: "35.94%",
       bannerMobile: "132.80%",
       clubBanner: "28.96%",
-      // TODO
-      clubBannerMobile: "",
+      clubBannerMobile: "74.67%",
       teaserMobile: "288vw",
       heroLink: "56.6%",
       arrow: "18px",
