@@ -15,7 +15,7 @@ const HeaderSection = ({ title, about, id }: IDetailsSectionProps) => (
       <span className="mx-1">{`ISSUE NO. ${id}`}</span>
       <span>]</span>
       <Title className="w-full mt-2">{`"${title}"`}</Title>
-      <p className="text-sm mt-10 text-center uppercase">{about}</p>
+      {about && <p className="text-sm mt-10 text-center uppercase">{about}</p>}
     </div>
   </Container>
 );

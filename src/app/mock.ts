@@ -43,8 +43,6 @@ export const heroSliderContent = teasers.reverse();
 export const burningRubberData: ISession = {
   id: 5,
   title: "i love the smell of burning rubber in the morning",
-  about:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
   heroPhoto: "/images/iltsobritm/iltsobritm_banner.jpg",
   heroPhotoMobile: "/images/iltsobritm/iltsobritm_banner_mobile.jpg",
   photos: [
@@ -112,8 +110,6 @@ export const burningRubberData: ISession = {
 export const bikeLifeData: ISession = {
   id: 3,
   title: "bike life",
-  about:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
   heroPhoto: "/images/bikeLife/bikelife_banner.jpg",
   heroPhotoMobile: "/images/bikeLife/bikelife_banner_mobile.jpg",
   photos: [
@@ -159,8 +155,6 @@ export const bikeLifeData: ISession = {
 export const noFaceNoCaseData: ISession = {
   id: 1,
   title: "no face no case",
-  about:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
   heroPhoto: "/images/noFaceNoCase/nofacenocase_banner.jpg",
   heroPhotoMobile: "/images/noFaceNoCase/nofacenocase_banner_mobile.jpg",
   photos: [
@@ -194,8 +188,6 @@ export const noFaceNoCaseData: ISession = {
 export const gunsData: ISession = {
   id: 4,
   title: "guns guns guns",
-  about:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
   heroPhoto: "/images/guns/guns_banner.jpg",
   heroPhotoMobile: "/images/guns/guns_banner_mobile.jpg",
   photos: [
@@ -233,8 +225,6 @@ export const gunsData: ISession = {
 export const inTheSpotlightData: ISession = {
   id: 2,
   title: "in the spotlight",
-  about:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
   heroPhoto: "/images/inTheSpotlight/inthespotlight_banner.jpg",
   heroPhotoMobile: "/images/inTheSpotlight/inthespotlight_banner_mobile.jpg",
   photos: [

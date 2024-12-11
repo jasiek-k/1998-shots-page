@@ -1,32 +1,48 @@
-import clsx from "clsx";
+// import clsx from "clsx";
 
-import { heroDesktop, heroMobile } from "@/app/config";
+// import { heroDesktop, heroMobile } from "@/app/config";
 import Container, {
   EContainerRatio,
   EContainerVariant,
   RatioContainer,
 } from "@/components/Container";
-import ResponsiveImage from "@/components/ResponsiveImage";
+// import ResponsiveImage from "@/components/ResponsiveImage";
 import ScrollWrapper from "@/components/ScrollWrapper";
 
-const caption = ["PHOTOGRAPHY X DESIGN", `FROM 51°45'33.30"N, 19°27'21.54"E`, "XXX"];
-
-const HeroCaption: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className }) => (
-  <div className={clsx("flex justify-center flex-col", className)}>
-    {caption.map((item, index) => (
-      <span className="text-center text-off-white font-light text-sm" key={index}>
-        {item}
-      </span>
-    ))}
-  </div>
-);
-
+// TODO poster
 const HeroSection = () => (
   <Container variant={EContainerVariant.FullWidth} className="flex flex-col">
     <ScrollWrapper>
       <RatioContainer variant={EContainerRatio.FullPage}>
-        <ResponsiveImage mobile={heroMobile} desktop={heroDesktop} loading="eager" />
-        <HeroCaption className="absolute bottom-20 w-full" />
+        <div
+          className="top-0 left-0 w-full h-full absolute"
+          style={{ background: "black", opacity: "0.12" }}
+        />
+        <video
+          className=""
+          preload="none"
+          playsInline={true}
+          autoPlay={true}
+          muted={true}
+          loop={true}
+        >
+          <source
+            src="/videos/hero_mobile.mp4"
+            media="(max-width: 767px)"
+            type="video/mp4"
+            width="768"
+            height="1365"
+          />
+          <source
+            src="/videos/hero_desktop.mp4"
+            media="(min-width: 768px)"
+            type="video/mp4"
+            width="1920"
+            height="1080"
+          />
+          Your browser does not support the video tag.
+        </video>
+        {/* <ResponsiveImage mobile={heroMobile} desktop={heroDesktop} loading="eager" /> */}
       </RatioContainer>
     </ScrollWrapper>
   </Container>
