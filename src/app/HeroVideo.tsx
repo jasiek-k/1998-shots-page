@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 
-import { heroDesktop, heroMobile } from "@/app/config";
+import { heroDesktop, heroMobile, mobileBreakpoint } from "@/app/config";
 
 const mobileVideo = {
   src: "/videos/hero_mobile.mp4",
@@ -17,17 +17,14 @@ const desktopVideo = {
 
 const HeroVideo = () => {
   const [video, setVideo] = useState(desktopVideo);
-  const [poster, setPoster] = useState(heroDesktop.src);
+  const [poster, setPoster] = useState<string>(heroDesktop.src);
 
   const handleResize = useCallback(() => {
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      console.log("mobile");
-      setVideo(mobileVideo); // Mobile video
+    if (window.matchMedia(`(max-width: ${mobileBreakpoint}px)`).matches) {
+      setVideo(mobileVideo);
       setPoster(heroMobile.src);
     } else {
-      console.log("desktop");
-
-      setVideo(desktopVideo); // Desktop video
+      setVideo(desktopVideo);
       setPoster(heroDesktop.src);
     }
   }, []);

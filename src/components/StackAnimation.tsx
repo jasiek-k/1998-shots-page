@@ -9,7 +9,6 @@ import { Title } from "./Text";
 
 const interval = 750;
 const caption = "[ 1998® LIFESTYLE ]";
-
 const slides = [
   {
     id: 0,

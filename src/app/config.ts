@@ -4,6 +4,8 @@ export const links = {
   contact: { name: "CONTACT", href: "/contact" },
 };
 
+export const mobileBreakpoint = 768;
+
 export const defaultTheme = "dark";
 export const storageKey = "1998-SHOTS-THEME";
 
