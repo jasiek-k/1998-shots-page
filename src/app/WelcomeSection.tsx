@@ -2,12 +2,12 @@ import Image from "next/image";
 
 import { LogoRound } from "public/icons";
 
-import Container, { EContainerVariant } from "@/components/Container";
+import Container from "@/components/Container";
 import { Title } from "@/components/Text";
 
 const content = {
   title: "WELCOME TO THE 1998\xa0SHOTS®\xa0WORLD",
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+  text: "Drift amongst photos that blend cinematic nostalgia with timeless charm. Each image captures moody tones, vintage aesthetics and minimalistic compositions. Explore the essence of the 1998 SHOTS® lifestyle through this artistic lens, where every photograph tells a story of style and timeless allure",
 };
 
 const WelcomeSection = () => (

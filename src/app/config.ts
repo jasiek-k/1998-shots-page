@@ -17,14 +17,14 @@ export const landingLinks = [
   {
     src: "/images/landing/landing_link_photos.jpg",
     href: links.photos.href,
-    caption: "DISCOVER MY WORK",
-    subcaption: "VIEW THE PHOTOS",
+    caption: "VIEW THE PHOTOS (THIS IS WHAT YOU ARE LOOKING FOR)",
+    subcaption: "DISCOVER MY WORK",
   },
   {
     src: "/images/landing/landing_link_contact.jpg",
     href: links.contact.href,
-    caption: "LET'S GET IN TOUCH",
-    subcaption: "GO TO CONTACT SECTION",
+    caption: "GO TO CONTACT SECTION",
+    subcaption: "LET'S GET IN TOUCH",
   },
 ];
 

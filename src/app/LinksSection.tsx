@@ -1,17 +1,23 @@
+import Link from "next/link";
+
 import Container, { EContainerVariant } from "components/Container";
 
-import LinkTile from "./LinkTile";
-
 import { landingLinks } from "@/app/config";
+import { Title } from "@/components/Text";
 
 const LinksSection = () => (
-  <Container
-    variant={EContainerVariant.BaseNoMobilePadding}
-    className="flex flex-col md:flex-row gap-4 md:gap-6 mt-35"
-  >
-    {landingLinks.map((item, index) => (
-      <LinkTile link={item} key={index} />
-    ))}
+  <Container variant={EContainerVariant.Base} className="flex flex-col my-35">
+    <Title className="text-center mb-4">Sooo now you can...</Title>
+    <div className="flex flex-col justify-center items-center">
+      {landingLinks.map(({ href, caption }, index) => (
+        <>
+          <Link href={href} key={index} className="underline">
+            {caption}
+          </Link>
+          {index !== landingLinks.length - 1 && <span className="my-1">OR</span>}
+        </>
+      ))}
+    </div>
   </Container>
 );
 
