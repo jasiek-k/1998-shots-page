@@ -9,6 +9,7 @@ const config: Config = {
   ],
   theme: {
     spacing: {
+      "-1/2": "-2px",
       "0": "0px",
       divider: "1px",
       "1/2": "2px",
