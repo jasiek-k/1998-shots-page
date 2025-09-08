@@ -47,6 +47,7 @@ export type TPhoto = IFullWidth | IGroup | IVerticalPhoto;
 export interface ISession {
   id: number;
   title: string;
+  subtitle?: string;
   about?: string;
   heroPhoto: string;
   heroPhotoMobile: string;

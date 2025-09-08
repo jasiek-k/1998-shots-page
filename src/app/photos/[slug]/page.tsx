@@ -13,20 +13,23 @@ interface IPhotoSessionProps {
   params: { slug: string };
 }
 
+export async function generateStaticParams() {
+  return Object.keys(sessions).map(slug => ({ slug }));
+}
+
 const PhotoSession = ({ params: { slug } }: IPhotoSessionProps) => {
   const session = sessions[slug];
 
   if (!session) {
-    notFound();
+    return notFound();
   }
 
-  const { id, title, about, heroPhoto, heroPhotoMobile, credits, photos, suggested } =
-    session;
+  const { heroPhoto, heroPhotoMobile, credits, photos, suggested, ...rest } = session;
 
   return (
     <section>
       <HeroSection photo={heroPhoto} photoMobile={heroPhotoMobile} />
-      <HeaderSection id={id} title={title} about={about} />
+      <HeaderSection {...rest} />
       <PhotosLayout photos={photos} />
       <CreditsSection credits={credits} />
       <SocialMediaBanner />

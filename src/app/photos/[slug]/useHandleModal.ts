@@ -5,10 +5,10 @@ import { EPhotoType } from "@/app/types";
 import type { IModal } from "@/components/Modal";
 
 const useHandleModal = (photos: TPhoto[]) => {
-  const [modal, setModal] = useState<IModal | null>(null);
+  const [modal, setModal] = useState<IModal>();
 
   const closeModal = useCallback(() => {
-    setModal(null);
+    setModal(undefined);
   }, []);
 
   const findCurrentPhoto = useCallback(() => {

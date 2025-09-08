@@ -14,12 +14,10 @@ const bannerMobile = { src: "/images/joinclub_mobile.jpg", width: 375, height: 2
 
 const SocialMediaBanner = () => (
   <Container variant={EContainerVariant.BaseNoMobilePadding}>
-    <RatioContainer variant={EContainerRatio.ClubBanner} className="zoom">
+    <RatioContainer variant={EContainerRatio.ClubBanner}>
       <ResponsiveImage mobile={bannerMobile} desktop={bannerDesktop} />
-      <div className="absolute top-0 left-0 w-full h-full flex flex-col md:flex-row items-center justify-center">
-        <Title className="md:mr-6 mb-3 md:mb-0 text-off-white">
-          JOIN THE 1998® CLUB
-        </Title>
+      <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">
+        <Title className="mb-3 md:mb-0 text-off-white">JOIN THE 1998® CLUB</Title>
         <ArrowButton
           type="link"
           variant="right"

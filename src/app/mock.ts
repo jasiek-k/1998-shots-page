@@ -43,6 +43,7 @@ export const heroSliderContent = teasers.reverse();
 export const burningRubberData: ISession = {
   id: 5,
   title: "i love the smell of burning rubber in the morning",
+  subtitle: "part I",
   heroPhoto: "/images/iltsobritm/iltsobritm_banner.jpg",
   heroPhotoMobile: "/images/iltsobritm/iltsobritm_banner_mobile.jpg",
   photos: [
@@ -274,6 +275,7 @@ const sessionsList = [
   gunsData,
   inTheSpotlightData,
 ];
+
 const sessions = Object.fromEntries(
   sessionsList.map(item => {
     item.suggested = teasers

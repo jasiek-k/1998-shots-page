@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
+import type { ReactNode } from "react";
+import { createPortal } from "react-dom";
 
 import { CloseIcon, LeftArrowIcon, RightArrowIcon } from "public/icons";
 
@@ -11,24 +14,33 @@ export interface IModal {
 }
 
 interface IModalProps {
-  photo: IModal;
-  onNextPhoto: () => void;
-  onPrevPhoto: () => void;
+  photo: IModal | undefined;
+  handleNextPhoto: () => void;
+  handlePrevPhoto: () => void;
   closeModal: () => void;
 }
 
-const Modal = ({
-  photo: { img, width, height },
-  onNextPhoto,
-  onPrevPhoto,
+const ModalComponent = ({
+  photo,
+  handleNextPhoto,
+  handlePrevPhoto,
   closeModal,
 }: IModalProps) => {
-  const swipeHandlers = useSwipe({ onSwipeLeft: onNextPhoto, onSwipeRight: onPrevPhoto });
+  const swipeHandlers = useSwipe({
+    onSwipeLeft: handleNextPhoto,
+    onSwipeRight: handlePrevPhoto,
+  });
+
+  if (!photo) {
+    return null;
+  }
+
+  const { img, width, height } = photo;
 
   return (
     <div className="freezeScrollAllSizes backdrop-blur-default fixed left-0 top-0 w-full h-full bg-red flex flex-row justify-center items-center">
       <div className="hidden md:flex flex-col pl-9 pr-5">
-        <button type="button" className="p-1" onClick={onPrevPhoto}>
+        <button type="button" className="p-1" onClick={handlePrevPhoto}>
           <LeftArrowIcon width="32px" className="dark:fill-off-white fill-black" />
         </button>
       </div>
@@ -54,12 +66,18 @@ const Modal = ({
         <CloseIcon width="24px" className="dark:stroke-off-white stroke-black" />
       </button>
       <div className="hidden md:flex flex-col pr-9 pl-5">
-        <button type="button" className="p-1" onClick={onNextPhoto}>
+        <button type="button" className="p-1" onClick={handleNextPhoto}>
           <RightArrowIcon width="32px" className="dark:fill-off-white fill-black" />
         </button>
       </div>
     </div>
   );
+};
+
+const Modal = (props: IModalProps) => {
+  if (typeof window !== "undefined") {
+    return createPortal(<ModalComponent {...props} />, document.body);
+  }
 };
 
 export default Modal;

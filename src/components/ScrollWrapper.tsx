@@ -16,7 +16,7 @@ const ScrollWrapper = ({ children }: IProps) => {
   const { ref, isDisplayed } = useDisplayScrollButton();
 
   useEffect(() => {
-    if (document) {
+    if (typeof window !== "undefined") {
       setContainer(document.body);
     }
   }, []);
