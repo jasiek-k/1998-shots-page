@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 
 import { CloseIcon, LeftArrowIcon, RightArrowIcon } from "public/icons";
 
-import useSwipe from "@/utils/useSwipe";
+import useSwipe from "@/hooks/useSwipe";
 
 export interface IModal {
   img: string;
@@ -26,6 +26,7 @@ const ModalComponent = ({
   handlePrevPhoto,
   closeModal,
 }: IModalProps) => {
+  // TODO arrow keys handling
   const swipeHandlers = useSwipe({
     onSwipeLeft: handleNextPhoto,
     onSwipeRight: handlePrevPhoto,

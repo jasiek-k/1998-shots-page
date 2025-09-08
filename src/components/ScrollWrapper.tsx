@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 
 import ScrollTopButton from "./ScrollTopButton";
 
-import useDisplayScrollButton from "@/utils/useDisplayScrollButton";
+import useDisplayScrollButton from "@/hooks/useDisplayScrollButton";
 
 interface IProps {
   children: JSX.Element;

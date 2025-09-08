@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { EContainerRatio, RatioContainer } from "components/Container";
 
-import type { ILinkTile } from "./types";
+import type { ILinkTile } from "../types";
 
 import ArrowButton from "@/components/ArrowButton";
 

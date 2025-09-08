@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 
-import useTheme from "@/utils/ThemeScope";
+import useTheme from "@/context/ThemeScope";
 
 interface IThemeSwitchProps {
   className?: string;

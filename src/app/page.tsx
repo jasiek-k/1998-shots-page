@@ -1,6 +1,6 @@
-import HeroSection from "./HeroSection";
-import LinksSection from "./LinksSection";
-import WelcomeSection from "./WelcomeSection";
+import HeroSection from "./components/HeroSection";
+import LinksSection from "./components/LinksSection";
+import WelcomeSection from "./components/WelcomeSection";
 
 import StackAnimation from "@/components/StackAnimation";
 

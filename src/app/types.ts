@@ -51,7 +51,8 @@ export interface ISession {
   about?: string;
   heroPhoto: string;
   heroPhotoMobile: string;
+  teaser: string;
   photos: Array<TPhoto>;
-  suggested: ISuggestedSession[];
+  suggested?: ISuggestedSession[];
   credits: Array<ICredit>;
 }

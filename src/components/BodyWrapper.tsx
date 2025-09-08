@@ -3,8 +3,8 @@
 import clsx from "clsx";
 import type { ReactNode } from "react";
 
-import useTheme from "@/utils/ThemeScope";
-import useFonts from "@/utils/useFonts";
+import useTheme from "@/context/ThemeScope";
+import useFonts from "@/hooks/useFonts";
 
 interface IProps {
   children: ReactNode;

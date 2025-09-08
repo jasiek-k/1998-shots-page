@@ -6,7 +6,7 @@ import BodyWrapper from "@/components/BodyWrapper";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollTop from "@/components/ScrollTop";
-import { ThemeScope } from "@/utils/ThemeScope";
+import { ThemeScope } from "@/context/ThemeScope";
 
 export const metadata: Metadata = {
   title: "1998 SHOTS",

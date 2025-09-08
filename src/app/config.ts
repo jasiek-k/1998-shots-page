@@ -1,3 +1,5 @@
+export const suggestedPostsNumber = 4;
+
 export const links = {
   home: { name: "HOME", href: "/" },
   photos: { name: "PHOTOS", href: "/photos" },
