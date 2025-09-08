@@ -1,8 +1,8 @@
 // TODO
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { suggestedPostsNumber } from "@/app/config";
-import type { ISession, ISuggestedSession } from "@/app/types";
 import { links } from "@/app/config";
+import type { ISession, ISuggestedSession } from "@/app/types";
 
 export const parseSlug = (title: string) => title.toLowerCase().split(" ").join("-");
 
@@ -28,8 +28,9 @@ export const mapSessions = (sessionsList: Array<ISession>, teasers: any) =>
     }),
   );
 
-export const mapTeasers = (sessions: ISession[]) => sessions.map(({title, teaser}) => ({
-  title,
-  img: teaser,
-  href: `${links.photos.href}/${parseSlug(title)}`,
-}));
+export const mapTeasers = (sessions: ISession[]) =>
+  sessions.map(({ title, teaser }) => ({
+    title,
+    img: teaser,
+    href: `${links.photos.href}/${parseSlug(title)}`,
+  }));

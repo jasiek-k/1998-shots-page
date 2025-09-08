@@ -52,8 +52,6 @@ const PhotoSlider = () => {
     setIsHover(index);
   }, []);
 
-  console.log(heroSliderContent)
-
   return (
     <>
       <Slider ref={ref} {...settings}>
