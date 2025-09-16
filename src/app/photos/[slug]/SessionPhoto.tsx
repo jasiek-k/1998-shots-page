@@ -1,11 +1,10 @@
 "use client";
 
+import { type IModal } from "@components";
 import clsx from "clsx";
 import Image from "next/image";
 
-import type { TPhoto } from "@/app/types";
-import { EPhotoType } from "@/app/types";
-import type { IModal } from "@/components/Modal";
+import { EPhotoType, type TPhoto } from "@/app/types";
 
 interface ISessionPhotoProps {
   photo: TPhoto;
@@ -40,56 +39,45 @@ const SessionPhoto = ({
   photo: { type, img, width, height },
   openModal,
   className,
-}: ISessionPhotoProps) => (
-  <div className={className}>
-    {type === EPhotoType.VerticalPhoto && (
-      <div className="max-w-182 mx-auto relative">
+}: ISessionPhotoProps) => {
+  const Photo = ({ photoClass, src }: { src: string; photoClass?: string }) => (
+    <>
+      <div className={clsx(photoClass, "relative")}>
         <Image
-          src={img}
+          src={src}
           width={width}
           height={height}
           className="w-full"
           priority={true}
           alt=""
         />
-        <OverlayButton handleClick={() => openModal({ img, width, height })} />
+        <OverlayButton handleClick={() => openModal({ img: src, width, height })} />
       </div>
-    )}
-    {type === EPhotoType.FullWidth && (
-      <div className="relative">
-        <Image
-          src={img}
-          width={width}
-          height={height}
-          className="w-full"
-          priority={true}
-          alt=""
-        />
-        <OverlayButton handleClick={() => openModal({ img, width, height })} />
-      </div>
-    )}
-    {type === EPhotoType.Group && (
-      <>
+    </>
+  );
+
+  return (
+    <div className={className}>
+      {type === EPhotoType.VerticalPhoto && (
+        <Photo photoClass="max-w-182 mx-auto" src={img} />
+      )}
+      {type === EPhotoType.FullWidth && <Photo src={img} />}
+      {type === EPhotoType.Group && (
         <div className="flex flex-col md:flex-row md:gap-6">
           {img.map((item, index) => (
-            <div key={index} className={clsx(handlePhotoWidth(img.length), "relative")}>
-              <Image
-                src={item}
-                width={width}
-                height={height}
-                className={clsx(index !== img.length - 1 && "mb-6 md:mb-0", "w-full")}
-                priority={true}
-                alt=""
-              />
-              <OverlayButton
-                handleClick={() => openModal({ img: item, width, height })}
-              />
-            </div>
+            <Photo
+              key={index}
+              src={item}
+              photoClass={clsx(
+                handlePhotoWidth(img.length),
+                index !== img.length - 1 && "mb-6 md:mb-0",
+              )}
+            />
           ))}
         </div>
-      </>
-    )}
-  </div>
-);
+      )}
+    </div>
+  );
+};
 
 export default SessionPhoto;

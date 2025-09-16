@@ -1,14 +1,13 @@
 "use client";
 
+import { useTheme } from "@context";
 import clsx from "clsx";
-
-import useTheme from "@/context/ThemeScope";
 
 interface IThemeSwitchProps {
   className?: string;
 }
 
-const ThemeSwitch = ({ className }: IThemeSwitchProps) => {
+export const ThemeSwitch = ({ className }: IThemeSwitchProps) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
@@ -24,5 +23,3 @@ const ThemeSwitch = ({ className }: IThemeSwitchProps) => {
     </button>
   );
 };
-
-export default ThemeSwitch;

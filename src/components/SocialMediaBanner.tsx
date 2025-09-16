@@ -1,18 +1,19 @@
-import ArrowButton from "./ArrowButton";
-import Container, {
+import { ArrowButton } from "./ArrowButton";
+import {
+  Container,
   EContainerRatio,
   EContainerVariant,
   RatioContainer,
 } from "./Container";
+import { ResponsiveImage } from "./ResponsiveImage";
 import { Title } from "./Text";
 
 import { instagramLink } from "@/app/config";
-import ResponsiveImage from "@/components/ResponsiveImage";
 
 const bannerDesktop = { src: "/images/joinclub.jpg", width: 1104, height: 352 };
 const bannerMobile = { src: "/images/joinclub_mobile.jpg", width: 375, height: 280 };
 
-const SocialMediaBanner = () => (
+export const SocialMediaBanner = () => (
   <Container variant={EContainerVariant.BaseNoMobilePadding}>
     <RatioContainer variant={EContainerRatio.ClubBanner}>
       <ResponsiveImage mobile={bannerMobile} desktop={bannerDesktop} />
@@ -31,5 +32,3 @@ const SocialMediaBanner = () => (
     </RatioContainer>
   </Container>
 );
-
-export default SocialMediaBanner;

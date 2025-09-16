@@ -1,6 +1,7 @@
+import { ArrowButton, Container, Title } from "@components";
+
+import { links } from "@/app/config";
 import type { ISession } from "@/app/types";
-import Container from "@/components/Container";
-import { Title } from "@/components/Text";
 
 interface IDetailsSectionProps {
   id: ISession["id"];
@@ -10,8 +11,11 @@ interface IDetailsSectionProps {
 }
 
 const HeaderSection = ({ title, about, subtitle, id }: IDetailsSectionProps) => (
-  <Container className="flex-col py-35 text-black dark:text-off-white">
-    <div className="md:max-w-135 mx-auto text-center">
+  <Container className="pt-8 flex-col text-black dark:text-off-white">
+    <ArrowButton type="link" variant="left" href={links.photos.href}>
+      RETURN
+    </ArrowButton>
+    <div className="pb-35 pt-18 md:max-w-135 mx-auto text-center">
       <span>[</span>
       <span className="mx-1">{`ISSUE NO. ${id}`}</span>
       <span>]</span>

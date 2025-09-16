@@ -1,8 +1,10 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
-import useIsOutOfView from "./useIsOutOfView";
+import { useIsOutOfView } from "./useIsOutOfView";
 
-const useDisplayScrollButton = () => {
+export const useDisplayScrollButton = () => {
   const { ref, isOutState } = useIsOutOfView();
   const [isDisplayed, setIsDisplayed] = useState(false);
 
@@ -35,5 +37,3 @@ const useDisplayScrollButton = () => {
     ref,
   };
 };
-
-export default useDisplayScrollButton;

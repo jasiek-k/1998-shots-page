@@ -1,8 +1,6 @@
+import { Container } from "@components";
+import { LogoRound, ServingAuthenticityCaption } from "@public/icons";
 import Link from "next/link";
-
-import Container from "components/Container";
-
-import { LogoRound, ServingAuthenticityCaption } from "public/icons";
 
 import { emailAddress, instagramLink, instagramName } from "@/app/config";
 

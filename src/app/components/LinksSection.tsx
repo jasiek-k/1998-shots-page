@@ -1,14 +1,17 @@
+import { Container, EContainerVariant, Title } from "@components";
 import Link from "next/link";
 import { Fragment } from "react";
 
-import Container, { EContainerVariant } from "components/Container";
-
 import { landingLinks } from "@/app/config";
-import { Title } from "@/components/Text";
 
+// TODO caption, emoji?
 const LinksSection = () => (
   <Container variant={EContainerVariant.Base} className="flex flex-col my-35">
-    <Title className="text-center mb-4">Sooo now you can...</Title>
+    <Title className="text-center mb-4">
+      now, let&apos;s watch
+      <br />
+      some photos...
+    </Title>
     <div className="flex flex-col justify-center items-center">
       {landingLinks.map(({ href, caption }, index) => (
         <Fragment key={index}>

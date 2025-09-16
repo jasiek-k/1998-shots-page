@@ -1,3 +1,5 @@
+"use client";
+
 import type { TouchEventHandler } from "react";
 import { useCallback, useState } from "react";
 
@@ -6,7 +8,7 @@ interface IProps {
   onSwipeRight: () => void;
 }
 
-const useSwipe = ({ onSwipeLeft, onSwipeRight }: IProps) => {
+export const useSwipe = ({ onSwipeLeft, onSwipeRight }: IProps) => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
@@ -42,5 +44,3 @@ const useSwipe = ({ onSwipeLeft, onSwipeRight }: IProps) => {
 
   return { onTouchStart, onTouchMove, onTouchEnd };
 };
-
-export default useSwipe;

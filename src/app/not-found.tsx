@@ -1,13 +1,14 @@
-import { links } from "./config";
-
-import ArrowButton from "@/components/ArrowButton";
-import Container, {
+import {
+  ArrowButton,
+  Container,
   EContainerRatio,
   EContainerVariant,
   RatioContainer,
-} from "@/components/Container";
-import ResponsiveImage from "@/components/ResponsiveImage";
-import { Title } from "@/components/Text";
+  ResponsiveImage,
+  Title,
+} from "@components";
+
+import { links } from "./config";
 
 const content = {
   title: "SOMETHING WENT WRONG...",

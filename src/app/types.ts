@@ -53,6 +53,14 @@ export interface ISession {
   heroPhotoMobile: string;
   teaser: string;
   photos: Array<TPhoto>;
-  suggested?: ISuggestedSession[];
+  suggested: ISuggestedSession[];
   credits: Array<ICredit>;
+}
+
+export type TInitSession = Omit<ISession, "suggested">;
+
+export interface ITeaser {
+  title: string;
+  img: string;
+  href: string;
 }

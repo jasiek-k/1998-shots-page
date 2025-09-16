@@ -20,8 +20,6 @@ const fonts = localFont({
   ],
 });
 
-const useFonts = () => {
+export const useFonts = () => {
   return fonts;
 };
-
-export default useFonts;

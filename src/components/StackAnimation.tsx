@@ -2,9 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import Container, { EContainerVariant } from "./Container";
-import type { IImage } from "./ResponsiveImage";
-import ResponsiveImage from "./ResponsiveImage";
+import { Container, EContainerVariant } from "./Container";
+import { type IImage, ResponsiveImage } from "./ResponsiveImage";
 import { Title } from "./Text";
 
 const interval = 750;
@@ -48,7 +47,7 @@ const getDesktopPhoto = (src: string): IImage => ({
   height: 720,
 });
 
-const StackAnimation = () => {
+export const StackAnimation = () => {
   const intervalId = useRef<NodeJS.Timeout>();
   const [currentSlideId, setCurrentSlideId] = useState(0);
 
@@ -89,5 +88,3 @@ const StackAnimation = () => {
     </Container>
   );
 };
-
-export default StackAnimation;

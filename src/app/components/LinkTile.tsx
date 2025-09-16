@@ -1,10 +1,7 @@
+import { ArrowButton, EContainerRatio, RatioContainer } from "@components";
 import Image from "next/image";
 
-import { EContainerRatio, RatioContainer } from "components/Container";
-
-import type { ILinkTile } from "../types";
-
-import ArrowButton from "@/components/ArrowButton";
+import type { ILinkTile } from "@/app/types";
 
 const LinkTile = ({ link: { href, src, caption, subcaption } }: { link: ILinkTile }) => (
   <div className="w-full md:w-2/4">

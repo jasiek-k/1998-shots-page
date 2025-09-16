@@ -1,4 +1,4 @@
-import Container, { EContainerVariant } from "components/Container";
+import { Container, EContainerVariant } from "@components";
 
 import PhotoSlider from "./PhotoSlider";
 

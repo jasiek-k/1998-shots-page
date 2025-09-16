@@ -49,10 +49,8 @@ export const ThemeScope = ({ children }: IProps) => {
   );
 };
 
-const useTheme = (): IThemeContext => {
+export const useTheme = (): IThemeContext => {
   const value = useContext(ThemeContext);
 
   return value;
 };
-
-export default useTheme;

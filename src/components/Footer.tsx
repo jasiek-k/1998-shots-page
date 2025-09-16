@@ -1,4 +1,4 @@
-const Footer = () => (
+export const Footer = () => (
   <footer className="pb-9 pt-4 text-xxs md:text-sm flex justify-center bg-off-white dark:bg-black relative -top-1/2">
     <span className="font-bold">1998</span>
     <span className="font-light mx-1">SHOTS®</span>
@@ -7,5 +7,3 @@ const Footer = () => (
     <span className="font-bold">EST. MMXXIII</span>
   </footer>
 );
-
-export default Footer;

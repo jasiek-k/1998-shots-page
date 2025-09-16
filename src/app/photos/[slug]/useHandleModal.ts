@@ -1,8 +1,7 @@
+import { type IModal } from "@components";
 import { useCallback, useState } from "react";
 
-import type { TPhoto } from "@/app/types";
-import { EPhotoType } from "@/app/types";
-import type { IModal } from "@/components/Modal";
+import { EPhotoType, type TPhoto } from "@/app/types";
 
 const useHandleModal = (photos: TPhoto[]) => {
   const [modal, setModal] = useState<IModal>();

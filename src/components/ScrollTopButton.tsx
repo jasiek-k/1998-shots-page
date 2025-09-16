@@ -1,15 +1,14 @@
 "use client";
 
+import { TopArrowIcon } from "@public/icons";
 import clsx from "clsx";
 import { useCallback } from "react";
-
-import { TopArrowIcon } from "public/icons";
 
 interface IProps {
   isDisplayed: boolean;
 }
 
-const ScrollTopButton = ({ isDisplayed }: IProps) => {
+export const ScrollTopButton = ({ isDisplayed }: IProps) => {
   const handleScrollTop = useCallback(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -28,5 +27,3 @@ const ScrollTopButton = ({ isDisplayed }: IProps) => {
     </button>
   );
 };
-
-export default ScrollTopButton;

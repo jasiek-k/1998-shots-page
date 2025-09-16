@@ -1,11 +1,12 @@
-import HeroVideo from "./HeroVideo";
-
-import Container, {
+import {
+  Container,
   EContainerRatio,
   EContainerVariant,
   RatioContainer,
-} from "@/components/Container";
-import ScrollWrapper from "@/components/ScrollWrapper";
+  ScrollWrapper,
+} from "@components";
+
+import HeroVideo from "./HeroVideo";
 
 const HeroSection = () => (
   <Container variant={EContainerVariant.FullWidth} className="flex flex-col">

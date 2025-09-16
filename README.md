@@ -4,8 +4,6 @@ Page created for my photography activity [1998 SHOTS®](https://www.instagram.co
 
 ![Landing](/public/landing.png)
 
-TODO: sharp package?
-
 ## Getting Started
 
 First, run the development server:

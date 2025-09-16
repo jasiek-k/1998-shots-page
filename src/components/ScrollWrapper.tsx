@@ -1,17 +1,16 @@
 "use client";
 
+import { useDisplayScrollButton } from "@hooks";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-import ScrollTopButton from "./ScrollTopButton";
-
-import useDisplayScrollButton from "@/hooks/useDisplayScrollButton";
+import { ScrollTopButton } from "./ScrollTopButton";
 
 interface IProps {
   children: JSX.Element;
 }
 
-const ScrollWrapper = ({ children }: IProps) => {
+export const ScrollWrapper = ({ children }: IProps) => {
   const [container, setContainer] = useState<Element | undefined>(undefined);
   const { ref, isDisplayed } = useDisplayScrollButton();
 
@@ -29,5 +28,3 @@ const ScrollWrapper = ({ children }: IProps) => {
     </div>
   );
 };
-
-export default ScrollWrapper;

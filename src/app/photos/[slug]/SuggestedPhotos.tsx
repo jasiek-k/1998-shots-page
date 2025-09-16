@@ -1,11 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
-
-import Container, {
+import {
+  Container,
   EContainerRatio,
   EContainerVariant,
   RatioContainer,
-} from "components/Container";
+} from "@components";
+import Image from "next/image";
+import Link from "next/link";
 
 import type { ISuggestedSession } from "@/app/types";
 
@@ -32,7 +32,9 @@ const SuggestedPhotos = ({ photos }: ISuggestedPhotosProps) => (
     className="flex-col pb-8 md:pb-15 mt-35"
   >
     <div className="pl-4 md:pl-0">
-      <h1 className="text-md md:text-md font-bold mb-2 uppercase">Check another ones</h1>
+      <h1 className="text-md md:text-md font-bold mb-2 uppercase">
+        Check another sessions
+      </h1>
       <div className="overflow-auto snap-x noScroll">
         <div className="flex gap-6 pr-4 md:pr-0 w-teaserMobile md:w-auto">
           {photos.map((item, index) => (

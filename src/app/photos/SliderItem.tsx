@@ -1,10 +1,9 @@
-import clsx from "clsx";
+import { EContainerRatio, RatioContainer } from "@components";
 import Image from "next/image";
 import Link from "next/link";
+import { useCallback } from "react";
 
-import { EContainerRatio, RatioContainer } from "components/Container";
-
-import type { ISuggestedSession } from "../types";
+import type { ISuggestedSession } from "@/app/types";
 
 interface ISliderItemProps {
   item: ISuggestedSession;
@@ -21,27 +20,29 @@ const SliderItem = ({
 }: ISliderItemProps) => {
   const isBlurred = Boolean(isHover !== undefined && isHover !== index);
 
+  const handleMouseEnter = useCallback(() => {
+    toggleIsHover(index);
+  }, [index, toggleIsHover]);
+
+  const handleMouseLeave = useCallback(() => {
+    toggleIsHover();
+  }, [toggleIsHover]);
+
   return (
-    <div className="px-3">
-      <Link
-        href={href}
-        onMouseEnter={() => {
-          toggleIsHover(index);
-        }}
-        onMouseLeave={() => {
-          toggleIsHover();
-        }}
-        prefetch={true}
-      >
+    <div className="px-3" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <Link href={href} prefetch={true} className="relative">
         <RatioContainer variant={EContainerRatio.Teaser}>
           <Image
             src={img}
-            className={clsx("w-full", isBlurred && "blur-md")}
+            className="w-full"
             priority={true}
             width={338}
             height={600}
             alt=""
           />
+          {isBlurred && (
+            <div className="backdrop-brightness-25 absolute w-full h-full top-0 left-0" />
+          )}
         </RatioContainer>
       </Link>
     </div>

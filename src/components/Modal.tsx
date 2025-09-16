@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
+
+import { useSwipe } from "@hooks";
+import { CloseIcon, LeftArrowIcon, RightArrowIcon } from "@public/icons";
 import Image from "next/image";
-import type { ReactNode } from "react";
+import { useCallback, useEffect } from "react";
 import { createPortal } from "react-dom";
-
-import { CloseIcon, LeftArrowIcon, RightArrowIcon } from "public/icons";
-
-import useSwipe from "@/hooks/useSwipe";
 
 export interface IModal {
   img: string;
@@ -20,17 +19,43 @@ interface IModalProps {
   closeModal: () => void;
 }
 
+const ARROW_LEFT = "ArrowLeft";
+const ARROW_RIGHT = "ArrowRight";
+
 const ModalComponent = ({
   photo,
   handleNextPhoto,
   handlePrevPhoto,
   closeModal,
 }: IModalProps) => {
-  // TODO arrow keys handling
   const swipeHandlers = useSwipe({
     onSwipeLeft: handleNextPhoto,
     onSwipeRight: handlePrevPhoto,
   });
+
+  const handleKeyDown = useCallback(
+    ({ key }: KeyboardEvent) => {
+      switch (key) {
+        case ARROW_LEFT:
+          handlePrevPhoto();
+          break;
+        case ARROW_RIGHT:
+          handleNextPhoto();
+          break;
+        default:
+          break;
+      }
+    },
+    [handleNextPhoto, handlePrevPhoto],
+  );
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [handleKeyDown]);
 
   if (!photo) {
     return null;
@@ -39,7 +64,7 @@ const ModalComponent = ({
   const { img, width, height } = photo;
 
   return (
-    <div className="freezeScrollAllSizes backdrop-blur-default fixed left-0 top-0 w-full h-full bg-red flex flex-row justify-center items-center">
+    <div className="freezeScrollAllSizes backdrop-brightness-25 fixed left-0 top-0 w-full h-full bg-red flex flex-row justify-center items-center">
       <div className="hidden md:flex flex-col pl-9 pr-5">
         <button type="button" className="p-1" onClick={handlePrevPhoto}>
           <LeftArrowIcon width="32px" className="dark:fill-off-white fill-black" />
@@ -75,10 +100,8 @@ const ModalComponent = ({
   );
 };
 
-const Modal = (props: IModalProps) => {
+export const Modal = (props: IModalProps) => {
   if (typeof window !== "undefined") {
     return createPortal(<ModalComponent {...props} />, document.body);
   }
 };
-
-export default Modal;

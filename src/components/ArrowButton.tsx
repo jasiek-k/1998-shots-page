@@ -1,9 +1,7 @@
+import type { TTheme } from "@context";
+import { LeftArrowIcon, RightArrowIcon } from "@public/icons";
 import clsx from "clsx";
 import Link from "next/link";
-
-import { LeftArrowIcon, RightArrowIcon } from "public/icons";
-
-import type { TTheme } from "@/context/ThemeScope";
 
 type TVariant = "left" | "right";
 type TType = "button" | "link";
@@ -36,7 +34,7 @@ const styles = {
   },
 };
 
-const ArrowButton = ({
+export const ArrowButton = ({
   variant,
   type,
   href,
@@ -83,5 +81,3 @@ const ArrowButton = ({
     );
   }
 };
-
-export default ArrowButton;

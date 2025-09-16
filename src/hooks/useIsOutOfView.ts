@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const useIsOutOfView = () => {
+export const useIsOutOfView = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [isOutState, setIsOutState] = useState(false);
 
@@ -29,5 +29,3 @@ const useIsOutOfView = () => {
 
   return { ref, isOutState };
 };
-
-export default useIsOutOfView;

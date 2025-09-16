@@ -1,11 +1,11 @@
 "use client";
 
+import { Container, EContainerVariant, Modal } from "@components";
+
 import SessionPhoto from "./SessionPhoto";
 import useHandleModal from "./useHandleModal";
 
 import { type TPhoto } from "@/app/types";
-import Container, { EContainerVariant } from "@/components/Container";
-import Modal from "@/components/Modal";
 
 interface IPhotosLayoutProps {
   photos: TPhoto[];

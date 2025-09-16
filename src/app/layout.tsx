@@ -1,12 +1,8 @@
 import "./globals.css";
 
+import { BodyWrapper, Footer, Header, ScrollTop } from "@components";
+import { ThemeScope } from "@context";
 import type { Metadata } from "next";
-
-import BodyWrapper from "@/components/BodyWrapper";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import ScrollTop from "@/components/ScrollTop";
-import { ThemeScope } from "@/context/ThemeScope";
 
 export const metadata: Metadata = {
   title: "1998 SHOTS",

@@ -39,7 +39,7 @@ const ratios: Record<EContainerRatio, string> = {
   [EContainerRatio.HeroLink]: "pb-heroLink",
 };
 
-const Container = ({
+export const Container = ({
   children,
   className,
   variant = EContainerVariant.Base,
@@ -57,12 +57,11 @@ export const RatioContainer = ({
   children,
   className,
   variant,
+  ...rest
 }: IRatioContainerProps) => (
-  <div className={clsx("relative overflow-hidden w-full", ratios[variant])}>
+  <div {...rest} className={clsx("relative overflow-hidden w-full", ratios[variant])}>
     <div className={clsx("absolute top-0 left-0 w-full h-full", className)}>
       {children}
     </div>
   </div>
 );
-
-export default Container;

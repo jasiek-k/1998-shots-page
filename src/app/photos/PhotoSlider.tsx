@@ -3,20 +3,20 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import { ArrowButton } from "@components";
 import React, { useCallback, useRef, useState } from "react";
 import Slider from "react-slick";
 
 import SliderItem from "./SliderItem";
 
 import { heroSliderContent } from "@/app/mock";
-import ArrowButton from "@/components/ArrowButton";
 
 const settings = {
   dots: false,
   infinite: true,
   slidesToShow: 5,
   slidesToScroll: 1,
-  centerMode: true,
+  centerMode: false,
   autoplay: true,
   autoplaySpeed: 3000,
   pauseOnHover: true,

@@ -1,13 +1,13 @@
 "use client";
 
-import Container, {
+import {
+  Container,
   EContainerRatio,
   EContainerVariant,
   RatioContainer,
-} from "components/Container";
-import ResponsiveImage from "components/ResponsiveImage";
-
-import ScrollWrapper from "@/components/ScrollWrapper";
+  ResponsiveImage,
+  ScrollWrapper,
+} from "@components";
 
 interface IHeroSectionProps {
   photo: string;

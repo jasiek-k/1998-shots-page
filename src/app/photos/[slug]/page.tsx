@@ -1,3 +1,4 @@
+import { SocialMediaBanner } from "@components";
 import { notFound } from "next/navigation";
 
 import CreditsSection from "./CreditsSection";
@@ -7,7 +8,6 @@ import PhotosLayout from "./PhotosLayout";
 import SuggestedPhotos from "./SuggestedPhotos";
 
 import sessions from "@/app/mock";
-import SocialMediaBanner from "@/components/SocialMediaBanner";
 
 interface IPhotoSessionProps {
   params: { slug: string };

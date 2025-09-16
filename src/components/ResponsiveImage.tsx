@@ -15,7 +15,7 @@ interface IResponsiveImageProps {
   loading?: "eager" | "lazy";
 }
 
-const ResponsiveImage = ({
+export const ResponsiveImage = ({
   mobile,
   desktop,
   priority,
@@ -38,5 +38,3 @@ const ResponsiveImage = ({
     />
   </>
 );
-
-export default ResponsiveImage;

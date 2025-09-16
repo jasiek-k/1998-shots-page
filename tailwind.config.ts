@@ -9,6 +9,7 @@ const config: Config = {
   ],
   theme: {
     spacing: {
+      "-23/2": "-46px",
       "-1/2": "-2px",
       "0": "0px",
       divider: "1px",
@@ -30,6 +31,7 @@ const config: Config = {
       "14": "56px",
       "15": "60px",
       "16": "64px",
+      "18": "72px",
       "20": "80px",
       "23": "92px",
       "25": "100px",
@@ -89,6 +91,11 @@ const config: Config = {
       },
       backdropBlur: {
         default: "15px",
+      },
+      backdropBrightness: {
+        25: "25%",
+        50: "50%",
+        75: "75%",
       },
     },
   },
