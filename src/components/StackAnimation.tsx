@@ -1,13 +1,15 @@
 "use client";
 
+import { useIsMobile } from "@hooks";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { Container, EContainerVariant } from "./Container";
-import { type IImage, ResponsiveImage } from "./ResponsiveImage";
+import { ResponsiveImage } from "./ResponsiveImage";
 import { Title } from "./Text";
 
+import { prefetchImage } from "@/app/utils";
+
 const interval = 750;
-const caption = "[ 1998® LIFESTYLE ]";
 const slides = [
   {
     id: 0,
@@ -36,20 +38,10 @@ const slides = [
   },
 ];
 
-const getMobilePhoto = (src: string): IImage => ({
-  src,
-  width: 300,
-  height: 300,
-});
-const getDesktopPhoto = (src: string): IImage => ({
-  src,
-  width: 1104,
-  height: 720,
-});
-
 export const StackAnimation = () => {
-  const intervalId = useRef<NodeJS.Timeout>();
   const [currentSlideId, setCurrentSlideId] = useState(0);
+  const intervalId = useRef<NodeJS.Timeout>();
+  const isMobile = useIsMobile();
 
   const changeSlide = useCallback(() => {
     if (currentSlideId === slides.length - 1) {
@@ -58,6 +50,16 @@ export const StackAnimation = () => {
       setCurrentSlideId(currentSlideId + 1);
     }
   }, [currentSlideId]);
+
+  const prefetchAnimation = useCallback(() => {
+    slides.forEach(({ mobile, desktop }) => {
+      prefetchImage(isMobile ? mobile : desktop);
+    });
+  }, [isMobile]);
+
+  useEffect(() => {
+    prefetchAnimation();
+  }, [prefetchAnimation, isMobile]);
 
   useEffect(() => {
     intervalId.current = setInterval(changeSlide, interval);
@@ -70,16 +72,20 @@ export const StackAnimation = () => {
   return (
     <Container variant={EContainerVariant.BaseNoMobilePadding}>
       <div className="relative flex items-center justify-center w-full">
-        <Title className="absolute">{caption}</Title>
+        <Title className="absolute">[ 1998® LIFESTYLE ]</Title>
         {slides.map(({ id, mobile, desktop }) => (
           <ResponsiveImage
             mobile={{
               className: currentSlideId === id ? "" : "hidden",
-              ...getMobilePhoto(mobile),
+              src: mobile,
+              width: 300,
+              height: 300,
             }}
             desktop={{
               className: currentSlideId === id ? "" : "md:hidden",
-              ...getDesktopPhoto(desktop),
+              src: desktop,
+              width: 1104,
+              height: 720,
             }}
             key={id}
           />

@@ -43,3 +43,8 @@ export const mapTeasers = (sessions: Omit<ISession, "suggested">[]): ITeaser[] =
     img: teaser,
     href: `${links.photos.href}/${parseSlug(title, subtitle)}`,
   }));
+
+export const prefetchImage = (url: string) => {
+  const img = new Image();
+  img.src = url;
+};

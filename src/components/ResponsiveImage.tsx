@@ -27,6 +27,7 @@ export const ResponsiveImage = ({
       className={clsx("w-full hidden md:block", desktop?.className)}
       priority={priority}
       loading={loading}
+      unoptimized
       alt=""
     />
     <Image
@@ -34,6 +35,7 @@ export const ResponsiveImage = ({
       className={clsx("w-full md:hidden", mobile?.className)}
       priority={priority}
       loading={loading}
+      unoptimized
       alt=""
     />
   </>
