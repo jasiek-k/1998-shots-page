@@ -53,9 +53,16 @@ export const Header = () => {
       )}
     >
       <div
+        className={
+          isOpen
+            ? "fixed top-0 left-0 w-full h-full bg-og-black opacity-85 z-10 md:hidden"
+            : "hidden"
+        }
+      />
+      <div
         className={clsx(
           isOpen ? "flex freezeScroll" : "hidden",
-          "md:hidden backdrop-brightness-25 pt-15 pb-20 justify-between fixed top-0 left-0 w-full h-full z-10 items-center flex-col",
+          "md:hidden pt-15 pb-20 justify-between fixed top-0 left-0 w-full h-full z-10 items-center flex-col",
         )}
       >
         <LogoRound width="60px" className="dark:fill-off-white fill-black" />

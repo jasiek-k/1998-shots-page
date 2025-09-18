@@ -63,6 +63,7 @@ const config: Config = {
     colors: {
       "off-white": "#fffff4",
       black: "#181818",
+      "og-black": "#000000",
     },
     fontSize: {
       xxs: "12px",
@@ -76,6 +77,11 @@ const config: Config = {
       lineHeight: {
         header: "1.25",
         photosLink: "36px",
+      },
+      opacity: {
+        15: "15%",
+        80: "80%",
+        85: "85%",
       },
       blur: {
         md: "10px",

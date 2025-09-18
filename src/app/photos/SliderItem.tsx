@@ -41,7 +41,7 @@ const SliderItem = ({
             alt=""
           />
           {isBlurred && (
-            <div className="backdrop-brightness-25 absolute w-full h-full top-0 left-0" />
+            <div className="bg-og-black opacity-85 absolute w-full h-full top-0 left-0" />
           )}
         </RatioContainer>
       </Link>

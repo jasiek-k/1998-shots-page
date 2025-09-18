@@ -21,6 +21,10 @@ body {
 
   &:has(.freezeScrollAllSizes) {
     overflow: hidden;
+
+    & .scrollTopButton {
+      display: none;
+    }
   }
 
   &:has(.notFound) > .header {

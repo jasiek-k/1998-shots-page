@@ -250,7 +250,6 @@ const untitledNo1: TInitSession = {
       height: 1104,
     },
     {
-      // TODO add cropped photos
       type: "group" as EPhotoType.Group,
       img: ["/images/untitledNo1/untitled_3.jpg", "/images/untitledNo1/untitled_4.jpg"],
       width: 540,
