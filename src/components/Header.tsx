@@ -13,6 +13,8 @@ import { links } from "@/app/config";
 
 const homePath = "/";
 
+const formatLink = (name: string) => `[ ${name} ]`;
+
 const getLinks = (checkIsActive: (href: string) => boolean, onClick?: () => void) =>
   Object.values(links).map(({ name, href, ...rest }) => (
     <Link
@@ -26,7 +28,7 @@ const getLinks = (checkIsActive: (href: string) => boolean, onClick?: () => void
       )}
       {...rest}
     >
-      {name}
+      {formatLink(name)}
     </Link>
   ));
 
