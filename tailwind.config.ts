@@ -62,7 +62,7 @@ const config: Config = {
     },
     colors: {
       "off-white": "#fffff4",
-      black: "#181818",
+      black: "#161616",
       "og-black": "#000000",
     },
     fontSize: {
@@ -71,7 +71,7 @@ const config: Config = {
       sm: "16px",
       md: "24px",
       lg: "32px",
-      xl: "60px",
+      xl: "48px",
     },
     extend: {
       lineHeight: {

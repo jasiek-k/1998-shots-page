@@ -16,9 +16,11 @@ const HeaderSection = ({ title, about, subtitle, id }: IDetailsSectionProps) => 
       RETURN
     </ArrowButton>
     <div className="pb-35 pt-18 md:max-w-135 mx-auto text-center">
-      <span>[</span>
-      <span className="mx-1">{`ISSUE NO. ${id}`}</span>
-      <span>]</span>
+      <div>
+        <span>[</span>
+        <span className="mx-1">{`ISSUE NO. ${id}`}</span>
+        <span>]</span>
+      </div>
       <Title className="w-full mt-2">{`"${title}"`}</Title>
       {subtitle && <p className="text-sm mt-1 text-center uppercase">{subtitle}</p>}
       {about && <p className="text-sm mt-10 text-center uppercase">{about}</p>}

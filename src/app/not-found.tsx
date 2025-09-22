@@ -10,12 +10,6 @@ import {
 
 import { links } from "./config";
 
-const content = {
-  title: "SOMETHING WENT WRONG...",
-  text: "ARE YOU LOST IN THE SMOKE?",
-  button: "GO BACK TO PHOTOS",
-};
-
 const heroMobile = {
   src: "/images/notfound_mobile.jpg",
   width: 375,
@@ -34,10 +28,14 @@ const NotFound = () => (
       <ResponsiveImage mobile={heroMobile} desktop={heroDesktop} priority={true} />
       <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
         <div className="flex flex-col max-w-135 text-center px-4 items-center mt-25">
-          <Title>{content.title}</Title>
-          <span className="uppercase mt-5 mb-4">{content.text}</span>
+          <Title>
+            YOU MUST BE LOST
+            <br />
+            IN THE SMOKE...
+          </Title>
+          <span className="uppercase my-4">THERE IS NOTHING HERE.</span>
           <ArrowButton variant="right" type="link" href={links.photos.href}>
-            {content.button}
+            GO BACK TO PHOTOS
           </ArrowButton>
         </div>
       </div>

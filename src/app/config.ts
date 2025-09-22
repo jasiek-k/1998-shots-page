@@ -19,7 +19,7 @@ export const landingLinks = [
   {
     src: "/images/landing/landing_link_photos.jpg",
     href: links.photos.href,
-    caption: "THIS IS WHAT YOU CAME FOR",
+    caption: "GO TO GALLERY",
     subcaption: "DISCOVER MY WORK",
   },
   // {
