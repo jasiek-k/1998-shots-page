@@ -8,8 +8,16 @@ import ViewAllSection from "./ViewAllSection";
 
 import { displayKey } from "@/app/config";
 
+const initView = () => {
+  if (typeof window !== "undefined") {
+    return !!localStorage.getItem(displayKey);
+  }
+
+  return false;
+};
+
 const Photos = () => {
-  const [isViewingAll, setIsViewingAll] = useState(!!localStorage.getItem(displayKey));
+  const [isViewingAll, setIsViewingAll] = useState(initView());
 
   const toggleIsViewingAll = () => {
     setIsViewingAll(isViewing => {
