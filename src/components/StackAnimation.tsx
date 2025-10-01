@@ -72,7 +72,10 @@ export const StackAnimation = () => {
   return (
     <Container variant={EContainerVariant.BaseNoMobilePadding}>
       <div className="relative flex items-center justify-center w-full">
-        <Title className="absolute">[ 1998® LIFESTYLE ]</Title>
+        <div className="absolute text-center">
+          <Title>[ 1998® LIFESTYLE ]</Title>
+          {/* <span>PHOTOGRAPHY - RETOUCH - GRAPHIC DESIGN</span> */}
+        </div>
         {slides.map(({ id, mobile, desktop }) => (
           <ResponsiveImage
             mobile={{

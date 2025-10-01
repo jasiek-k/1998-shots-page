@@ -61,3 +61,9 @@ body {
     transform:rotate(360deg);
   }
 }
+
+.sessionItem {
+  -webkit-box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.4);
+}

@@ -4,8 +4,9 @@ import { mapSessions, mapTeasers } from "@/app/utils";
 export const noFaceNoCase: TInitSession = {
   id: 1,
   title: "no face no case",
-  heroPhoto: "/images/noFaceNoCase/nofacenocase_banner.jpg",
-  heroPhotoMobile: "/images/noFaceNoCase/nofacenocase_banner_mobile.jpg",
+  hero: "/images/noFaceNoCase/nofacenocase_banner.jpg",
+  heroMobile: "/images/noFaceNoCase/nofacenocase_banner_mobile.jpg",
+  heroSecondaryMobile: "/images/noFaceNoCase/nofacenocase_banner_mobile_2.jpg",
   teaser: "/images/slider/slider_6.jpg",
   photos: [
     {
@@ -37,8 +38,9 @@ export const noFaceNoCase: TInitSession = {
 export const inTheSpotlight: TInitSession = {
   id: 2,
   title: "in the spotlight",
-  heroPhoto: "/images/inTheSpotlight/inthespotlight_banner.jpg",
-  heroPhotoMobile: "/images/inTheSpotlight/inthespotlight_banner_mobile.jpg",
+  hero: "/images/inTheSpotlight/inthespotlight_banner.jpg",
+  heroMobile: "/images/inTheSpotlight/inthespotlight_banner_mobile.jpg",
+  heroSecondaryMobile: "/images/inTheSpotlight/inthespotlight_banner_mobile_2.jpg",
   teaser: "/images/slider/slider_4.jpg",
   photos: [
     {
@@ -82,8 +84,9 @@ export const inTheSpotlight: TInitSession = {
 export const bikeLife: TInitSession = {
   id: 3,
   title: "bike life",
-  heroPhoto: "/images/bikeLife/bikelife_banner.jpg",
-  heroPhotoMobile: "/images/bikeLife/bikelife_banner_mobile.jpg",
+  hero: "/images/bikeLife/bikelife_banner.jpg",
+  heroMobile: "/images/bikeLife/bikelife_banner_mobile.jpg",
+  heroSecondaryMobile: "/images/bikeLife/bikelife_banner_mobile_2.jpg",
   // teaser: "/images/slider/slider_1.jpg",
   teaser: "/images/slider/slider_5.jpg",
   photos: [
@@ -128,8 +131,9 @@ export const bikeLife: TInitSession = {
 export const guns: TInitSession = {
   id: 4,
   title: "guns guns guns",
-  heroPhoto: "/images/guns/guns_banner.jpg",
-  heroPhotoMobile: "/images/guns/guns_banner_mobile.jpg",
+  hero: "/images/guns/guns_banner.jpg",
+  heroMobile: "/images/guns/guns_banner_mobile.jpg",
+  heroSecondaryMobile: "/images/guns/guns_banner_mobile_2.jpg",
   teaser: "/images/slider/slider_2.jpg",
   photos: [
     {
@@ -166,8 +170,9 @@ export const burningRubber: TInitSession = {
   id: 5,
   title: "i love the smell of burning rubber in the morning",
   subtitle: "part I",
-  heroPhoto: "/images/iltsobritm/iltsobritm_banner.jpg",
-  heroPhotoMobile: "/images/iltsobritm/iltsobritm_banner_mobile.jpg",
+  hero: "/images/iltsobritm/iltsobritm_banner.jpg",
+  heroMobile: "/images/iltsobritm/iltsobritm_banner_mobile.jpg",
+  heroSecondaryMobile: "/images/iltsobritm/iltsobritm_banner_mobile_2.jpg",
   teaser: "/images/slider/slider_3.jpg",
   photos: [
     {
@@ -233,8 +238,9 @@ export const burningRubber: TInitSession = {
 const untitledNo1: TInitSession = {
   id: 6,
   title: "untitled no. 1",
-  heroPhoto: "/images/untitledNo1/untitled_banner.jpg",
-  heroPhotoMobile: "/images/untitledNo1/untitled_banner_mobile.jpg",
+  hero: "/images/untitledNo1/untitled_banner.jpg",
+  heroMobile: "/images/untitledNo1/untitled_banner_mobile.jpg",
+  heroSecondaryMobile: "/images/untitledNo1/untitled_banner_mobile_2.jpg",
   teaser: "/images/slider/slider_7.jpg",
   photos: [
     {
@@ -272,8 +278,9 @@ const burningRubberPart2 = {
   id: 7,
   title: "i love the smell of burning rubber in the morning",
   subtitle: "part II",
-  heroPhoto: "/images/iltsobritmPart2/iltsobritmPart2_banner.jpg",
-  heroPhotoMobile: "/images/iltsobritmPart2/iltsobritmPart2_banner_mobile.jpg",
+  hero: "/images/iltsobritmPart2/iltsobritmPart2_banner.jpg",
+  heroMobile: "/images/iltsobritmPart2/iltsobritmPart2_banner_mobile.jpg",
+  heroSecondaryMobile: "/images/iltsobritmPart2/iltsobritmPart2_banner_mobile_2.jpg",
   teaser: "/images/slider/slider_8.jpg",
   photos: [
     {

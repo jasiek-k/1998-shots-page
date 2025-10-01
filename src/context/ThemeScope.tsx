@@ -2,7 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
-import { defaultTheme, storageKey } from "@/app/config";
+import { defaultTheme, themeKey } from "@/app/config";
 
 export type TTheme = "dark" | "light";
 
@@ -31,11 +31,11 @@ export const ThemeScope = ({ children }: IProps) => {
     const newTheme = theme === "dark" ? "light" : "dark";
 
     setTheme(newTheme);
-    localStorage.setItem(storageKey, newTheme);
+    localStorage.setItem(themeKey, newTheme);
   }, [theme]);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem(storageKey);
+    const savedTheme = localStorage.getItem(themeKey);
 
     if (savedTheme && savedTheme !== theme) {
       setTheme(savedTheme as TTheme);

@@ -28,6 +28,7 @@ export const mapSessions = (
     const slug = parseSlug(item.title, item.subtitle);
     const updatedSession = {
       ...item,
+      href: `${links.photos.href}/${parseSlug(item.title, item.subtitle)}`,
       suggested: filterTeasers(teasers, item),
     };
 
@@ -37,7 +38,7 @@ export const mapSessions = (
   return Object.fromEntries(sessionsList.map(mapSession));
 };
 
-export const mapTeasers = (sessions: Omit<ISession, "suggested">[]): ITeaser[] =>
+export const mapTeasers = (sessions: TInitSession[]): ITeaser[] =>
   sessions.map(({ title, subtitle, teaser }) => ({
     title,
     img: teaser,

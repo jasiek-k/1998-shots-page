@@ -24,11 +24,11 @@ const PhotoSession = ({ params: { slug } }: IPhotoSessionProps) => {
     return notFound();
   }
 
-  const { heroPhoto, heroPhotoMobile, credits, photos, suggested, ...rest } = session;
+  const { hero, heroMobile, credits, photos, suggested, ...rest } = session;
 
   return (
     <section>
-      <HeroSection photo={heroPhoto} photoMobile={heroPhotoMobile} />
+      <HeroSection photo={hero} photoMobile={heroMobile} />
       <HeaderSection {...rest} />
       <PhotosLayout photos={photos} />
       <CreditsSection credits={credits} />

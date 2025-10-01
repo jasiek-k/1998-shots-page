@@ -49,15 +49,17 @@ export interface ISession {
   title: string;
   subtitle?: string;
   about?: string;
-  heroPhoto: string;
-  heroPhotoMobile: string;
+  hero: string;
+  heroMobile: string;
+  heroSecondaryMobile: string;
   teaser: string;
   photos: Array<TPhoto>;
   suggested: ISuggestedSession[];
   credits: Array<ICredit>;
+  href: string;
 }
 
-export type TInitSession = Omit<ISession, "suggested">;
+export type TInitSession = Omit<ISession, "suggested" | "href">;
 
 export interface ITeaser {
   title: string;
