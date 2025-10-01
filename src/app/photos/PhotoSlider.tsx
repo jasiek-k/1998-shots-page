@@ -3,10 +3,10 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { ArrowButton } from "@components";
 import React, { useCallback, useRef, useState } from "react";
 import Slider from "react-slick";
 
+import SliderButtons from "./SliderButtons";
 import SliderItem from "./SliderItem";
 
 import { heroSliderContent } from "@/app/mock";
@@ -26,13 +26,13 @@ const settings = {
     {
       breakpoint: 768,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 1.5,
       },
     },
   ],
 };
 
-const PhotoSlider = () => {
+const PhotoSlider = ({ toggleIsViewingAll }: { toggleIsViewingAll: () => void }) => {
   const ref = useRef<Slider>(null);
   const [isHover, setIsHover] = useState<number | undefined>(undefined);
 
@@ -47,6 +47,8 @@ const PhotoSlider = () => {
       ref.current.slickPrev();
     }
   }, []);
+
+  // const handleViewAll = useCallback(() => {}, []);
 
   const toggleIsHover = useCallback((index?: number) => {
     setIsHover(index);
@@ -65,14 +67,11 @@ const PhotoSlider = () => {
           />
         ))}
       </Slider>
-      <div className="flex flex-row justify-between md:justify-end md:mr-5 md:ml-0 mx-4 mt-5 md:mt-5 md:gap-4">
-        <ArrowButton type="button" variant="left" handleClick={handlePrevSlide}>
-          Prev
-        </ArrowButton>
-        <ArrowButton type="button" variant="right" handleClick={handleNextSlide}>
-          Next
-        </ArrowButton>
-      </div>
+      <SliderButtons
+        handleNextSlide={handleNextSlide}
+        handlePrevSlide={handlePrevSlide}
+        handleViewAll={toggleIsViewingAll}
+      />
     </>
   );
 };

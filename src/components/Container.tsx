@@ -13,6 +13,7 @@ export enum EContainerRatio {
   ClubBanner = "clubBanner",
   Teaser = "teaser",
   HeroLink = "heroLink",
+  SessionItem = "sessionItem",
 }
 
 type TDivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
@@ -37,6 +38,7 @@ const ratios: Record<EContainerRatio, string> = {
   [EContainerRatio.ClubBanner]: "pb-clubBannerMobile md:pb-clubBanner",
   [EContainerRatio.Teaser]: "pb-teaser",
   [EContainerRatio.HeroLink]: "pb-heroLink",
+  [EContainerRatio.SessionItem]: "pb-sessionItemMobile md:pb-sessionItemDesktop",
 };
 
 export const Container = ({
