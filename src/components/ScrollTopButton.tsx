@@ -23,7 +23,7 @@ export const ScrollTopButton = ({ isDisplayed }: IProps) => {
       onClick={handleScrollTop}
     >
       <TopArrowIcon className="dark:fill-off-white fill-black w-5/2" />
-      <span className="mt-1">TOP</span>
+      <span className="mt-1 font-light">TOP</span>
     </button>
   );
 };

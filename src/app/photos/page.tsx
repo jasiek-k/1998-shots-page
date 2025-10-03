@@ -1,35 +1,38 @@
 "use client";
 
 import { Container, EContainerVariant } from "@components";
+import clsx from "clsx";
 import { useEffect, useState } from "react";
 
 import PhotoSlider from "./PhotoSlider";
+import ToggleViewButton from "./ToggleViewButton";
 import ViewAllSection from "./ViewAllSection";
 
 import { displayKey } from "@/app/config";
 
-const initView = () => {
-  if (typeof window !== "undefined") {
-    return !!localStorage.getItem(displayKey);
-  }
-
-  return false;
-};
-
 const Photos = () => {
-  const [isViewingAll, setIsViewingAll] = useState(initView());
+  const [isViewingAll, setIsViewingAll] = useState(false);
 
   const toggleIsViewingAll = () => {
-    setIsViewingAll(isViewing => {
-      if (isViewing) {
-        localStorage.removeItem(displayKey);
-      } else {
+    setIsViewingAll(prev => {
+      const next = !prev;
+
+      if (next) {
         localStorage.setItem(displayKey, "true");
+      } else {
+        localStorage.removeItem(displayKey);
       }
 
-      return !isViewing;
+      return next;
     });
   };
+
+  useEffect(() => {
+    const saved = localStorage.getItem(displayKey);
+    if (saved) {
+      setIsViewingAll(true);
+    }
+  }, []);
 
   return (
     <Container
@@ -38,11 +41,15 @@ const Photos = () => {
       }
       className="flex-col mb-10"
     >
-      {isViewingAll ? (
-        <ViewAllSection toggleIsViewingAll={toggleIsViewingAll} />
-      ) : (
-        <PhotoSlider toggleIsViewingAll={toggleIsViewingAll} />
-      )}
+      <div
+        className={clsx(
+          "flex justify-end mb-2 pr-4",
+          isViewingAll ? "md:pr-0" : "md:pr-5",
+        )}
+      >
+        <ToggleViewButton isViewingAll={isViewingAll} onClick={toggleIsViewingAll} />
+      </div>
+      {isViewingAll ? <ViewAllSection /> : <PhotoSlider />}
     </Container>
   );
 };

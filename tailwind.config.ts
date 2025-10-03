@@ -55,8 +55,7 @@ const config: Config = {
       clubBannerMobile: "74.67%",
       teaserMobile: "288vw",
       heroLink: "56.6%",
-      sessionItemDesktop: "37%",
-      sessionItemMobile: "100%",
+      sessionItem: "100%",
       arrow: "18px",
     },
     borderWidth: {
@@ -78,7 +77,7 @@ const config: Config = {
     },
     extend: {
       lineHeight: {
-        base: "1",
+        base: "1.2",
         header: "1.25",
         photosLink: "36px",
       },

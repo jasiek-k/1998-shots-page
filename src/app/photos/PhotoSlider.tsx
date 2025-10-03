@@ -32,7 +32,7 @@ const settings = {
   ],
 };
 
-const PhotoSlider = ({ toggleIsViewingAll }: { toggleIsViewingAll: () => void }) => {
+const PhotoSlider = () => {
   const ref = useRef<Slider>(null);
   const [isHover, setIsHover] = useState<number | undefined>(undefined);
 
@@ -47,8 +47,6 @@ const PhotoSlider = ({ toggleIsViewingAll }: { toggleIsViewingAll: () => void })
       ref.current.slickPrev();
     }
   }, []);
-
-  // const handleViewAll = useCallback(() => {}, []);
 
   const toggleIsHover = useCallback((index?: number) => {
     setIsHover(index);
@@ -70,7 +68,6 @@ const PhotoSlider = ({ toggleIsViewingAll }: { toggleIsViewingAll: () => void })
       <SliderButtons
         handleNextSlide={handleNextSlide}
         handlePrevSlide={handlePrevSlide}
-        handleViewAll={toggleIsViewingAll}
       />
     </>
   );

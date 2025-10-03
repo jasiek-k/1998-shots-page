@@ -44,7 +44,7 @@ export const ArrowButton = ({
   forcedTheme,
 }: IArrowButtonProps) => {
   const textStyle = clsx(
-    "uppercase",
+    "uppercase font-light",
     forcedTheme ? styles.text[forcedTheme] : styles.text.default,
   );
   const iconStyle = forcedTheme ? styles.icon[forcedTheme] : styles.icon.default;
@@ -54,18 +54,19 @@ export const ArrowButton = ({
     className,
   );
 
-  const content =
-    variant === "left" ? (
-      <>
-        <LeftArrowIcon width="18px" className={iconStyle} />
-        <span className={clsx("ml-2", textStyle)}>{children}</span>
-      </>
-    ) : (
-      <>
-        <span className={clsx("mr-2", textStyle)}>{children}</span>
-        <RightArrowIcon width="18px" className={iconStyle} />
-      </>
-    );
+  const leftVariant = (
+    <>
+      <LeftArrowIcon width="18px" className={iconStyle} />
+      <span className={clsx("ml-2", textStyle)}>{children}</span>
+    </>
+  );
+  const rightVariant = (
+    <>
+      <span className={clsx("mr-2", textStyle)}>{children}</span>
+      <RightArrowIcon width="18px" className={iconStyle} />
+    </>
+  );
+  const content = variant === "left" ? leftVariant : rightVariant;
 
   if (type === "button") {
     return (
@@ -73,11 +74,15 @@ export const ArrowButton = ({
         {content}
       </button>
     );
-  } else if (href) {
+  }
+
+  if (href) {
     return (
       <Link href={href} prefetch={true} className={containerStyle}>
         {content}
       </Link>
     );
   }
+
+  return null;
 };

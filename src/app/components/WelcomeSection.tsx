@@ -1,5 +1,4 @@
 import { Container, Title } from "@components";
-import { LogoRound } from "@public/icons";
 import Image from "next/image";
 
 const content = {
@@ -25,19 +24,9 @@ const WelcomeSection = () => (
           alt=""
         />
         <div className="relative flex flex-col items-center max-w-135 -top-23/2">
-          <p className="py-12 md:pb-11 md:pt-0 text-center uppercase">{content.text}</p>
-          <LogoRound width="70px" className="fill-off-white" />
+          <p className="pt-12 md:pt-0 text-center uppercase">{content.text}</p>
         </div>
       </div>
-      {/* <div className="md:w-5/12 object-cover hidden md:flex">
-        <Image
-          src="/images/welcomeTo1998World.jpg"
-          className="w-full h-full"
-          width="446"
-          height="633"
-          alt=""
-        />
-      </div> */}
     </Container>
   </div>
 );

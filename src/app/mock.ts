@@ -3,6 +3,7 @@ import { mapSessions, mapTeasers } from "@/app/utils";
 
 export const noFaceNoCase: TInitSession = {
   id: 1,
+  year: 2023,
   title: "no face no case",
   hero: "/images/noFaceNoCase/nofacenocase_banner.jpg",
   heroMobile: "/images/noFaceNoCase/nofacenocase_banner_mobile.jpg",
@@ -37,6 +38,7 @@ export const noFaceNoCase: TInitSession = {
 
 export const inTheSpotlight: TInitSession = {
   id: 2,
+  year: 2023,
   title: "in the spotlight",
   hero: "/images/inTheSpotlight/inthespotlight_banner.jpg",
   heroMobile: "/images/inTheSpotlight/inthespotlight_banner_mobile.jpg",
@@ -83,6 +85,7 @@ export const inTheSpotlight: TInitSession = {
 
 export const bikeLife: TInitSession = {
   id: 3,
+  year: 2023,
   title: "bike life",
   hero: "/images/bikeLife/bikelife_banner.jpg",
   heroMobile: "/images/bikeLife/bikelife_banner_mobile.jpg",
@@ -130,6 +133,7 @@ export const bikeLife: TInitSession = {
 
 export const guns: TInitSession = {
   id: 4,
+  year: 2024,
   title: "guns guns guns",
   hero: "/images/guns/guns_banner.jpg",
   heroMobile: "/images/guns/guns_banner_mobile.jpg",
@@ -168,6 +172,7 @@ export const guns: TInitSession = {
 
 export const burningRubber: TInitSession = {
   id: 5,
+  year: 2024,
   title: "i love the smell of burning rubber in the morning",
   subtitle: "part I",
   hero: "/images/iltsobritm/iltsobritm_banner.jpg",
@@ -237,6 +242,7 @@ export const burningRubber: TInitSession = {
 
 const untitledNo1: TInitSession = {
   id: 6,
+  year: 2025,
   title: "untitled no. 1",
   hero: "/images/untitledNo1/untitled_banner.jpg",
   heroMobile: "/images/untitledNo1/untitled_banner_mobile.jpg",
@@ -276,6 +282,7 @@ const untitledNo1: TInitSession = {
 
 const burningRubberPart2 = {
   id: 7,
+  year: 2025,
   title: "i love the smell of burning rubber in the morning",
   subtitle: "part II",
   hero: "/images/iltsobritmPart2/iltsobritmPart2_banner.jpg",

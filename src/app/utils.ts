@@ -49,3 +49,5 @@ export const prefetchImage = (url: string) => {
   const img = new Image();
   img.src = url;
 };
+
+export const formatYear = (year: number) => year.toString().replace("0", "K");

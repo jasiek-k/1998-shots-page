@@ -38,7 +38,7 @@ const ratios: Record<EContainerRatio, string> = {
   [EContainerRatio.ClubBanner]: "pb-clubBannerMobile md:pb-clubBanner",
   [EContainerRatio.Teaser]: "pb-teaser",
   [EContainerRatio.HeroLink]: "pb-heroLink",
-  [EContainerRatio.SessionItem]: "pb-sessionItemMobile md:pb-sessionItemDesktop",
+  [EContainerRatio.SessionItem]: "pb-sessionItem",
 };
 
 export const Container = ({
