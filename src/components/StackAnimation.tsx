@@ -10,38 +10,26 @@ import { Title } from "./Text";
 import { prefetchImage } from "@/app/utils";
 
 const interval = 750;
+const imageBase = "/images/stackAnimation/";
 const slides = [
-  {
-    id: 0,
-    mobile: "/images/stackAnimation/slide_0_mobile.png",
-    desktop: "/images/stackAnimation/slide_0.png",
-  },
-  {
-    id: 1,
-    mobile: "/images/stackAnimation/slide_1_mobile.png",
-    desktop: "/images/stackAnimation/slide_1.png",
-  },
-  {
-    id: 2,
-    mobile: "/images/stackAnimation/slide_2_mobile.png",
-    desktop: "/images/stackAnimation/slide_2.png",
-  },
-  {
-    id: 3,
-    mobile: "/images/stackAnimation/slide_3_mobile.png",
-    desktop: "/images/stackAnimation/slide_3.png",
-  },
-  {
-    id: 4,
-    mobile: "/images/stackAnimation/slide_4_mobile.png",
-    desktop: "/images/stackAnimation/slide_4.png",
-  },
+  { mobile: "slide_0_mobile.png", desktop: "slide_0.png" },
+  { mobile: "slide_1_mobile.png", desktop: "slide_1.png" },
+  { mobile: "slide_2_mobile.png", desktop: "slide_2.png" },
+  { mobile: "slide_3_mobile.png", desktop: "slide_3.png" },
+  { mobile: "slide_4_mobile.png", desktop: "slide_4.png" },
+  { mobile: "slide_5_mobile.png", desktop: "slide_5.png" },
 ];
 
 export const StackAnimation = () => {
+  const isMobile = useIsMobile();
   const [currentSlideId, setCurrentSlideId] = useState(0);
   const intervalId = useRef<NodeJS.Timeout>();
-  const isMobile = useIsMobile();
+
+  const prefetchAnimation = useCallback(() => {
+    slides.forEach(({ mobile, desktop }) => {
+      prefetchImage(`${imageBase}${isMobile ? mobile : desktop}`);
+    });
+  }, [isMobile]);
 
   const changeSlide = useCallback(() => {
     if (currentSlideId === slides.length - 1) {
@@ -50,12 +38,6 @@ export const StackAnimation = () => {
       setCurrentSlideId(currentSlideId + 1);
     }
   }, [currentSlideId]);
-
-  const prefetchAnimation = useCallback(() => {
-    slides.forEach(({ mobile, desktop }) => {
-      prefetchImage(isMobile ? mobile : desktop);
-    });
-  }, [isMobile]);
 
   useEffect(() => {
     prefetchAnimation();
@@ -76,21 +58,21 @@ export const StackAnimation = () => {
           <Title>[ 1998® LIFESTYLE ]</Title>
           {/* <span>PHOTOGRAPHY - RETOUCH - GRAPHIC DESIGN</span> */}
         </div>
-        {slides.map(({ id, mobile, desktop }) => (
+        {slides.map(({ mobile, desktop }, index) => (
           <ResponsiveImage
+            key={index}
             mobile={{
-              className: currentSlideId === id ? "" : "hidden",
-              src: mobile,
+              className: currentSlideId === index ? "" : "hidden",
+              src: imageBase + mobile,
               width: 300,
               height: 300,
             }}
             desktop={{
-              className: currentSlideId === id ? "" : "md:hidden",
-              src: desktop,
+              className: currentSlideId === index ? "" : "md:hidden",
+              src: imageBase + desktop,
               width: 1104,
               height: 720,
             }}
-            key={id}
           />
         ))}
       </div>

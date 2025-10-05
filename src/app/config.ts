@@ -16,20 +16,7 @@ export const links = {
   email: { name: "E-MAIL", href: `mailto:${emailAddress}` },
 };
 
-export const landingLinks = [
-  {
-    src: "/images/landing/landing_link_photos.jpg",
-    href: links.photos.href,
-    caption: "GO TO GALLERY",
-    subcaption: "DISCOVER MY WORK",
-  },
-  // {
-  //   src: "/images/landing/landing_link_contact.jpg",
-  //   href: links.contact.href,
-  //   caption: "GO TO CONTACT SECTION",
-  //   subcaption: "LET'S GET IN TOUCH",
-  // },
-];
+export const landingLinks = [];
 
 export const heroMobile = {
   src: "/images/landing/landing_hero_mobile.jpg",
