@@ -5,10 +5,7 @@ import { links } from "@/app/config";
 
 // TODO caption, emoji?
 const LinksSection = () => (
-  <Container
-    variant={EContainerVariant.Base}
-    className="flex flex-col items-center my-35"
-  >
+  <Container variant={EContainerVariant.Base} className="flex flex-col items-center">
     <Title className="text-center mb-4">
       so now, let&apos;s watch
       <br />

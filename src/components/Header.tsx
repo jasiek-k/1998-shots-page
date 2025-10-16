@@ -23,7 +23,7 @@ const getLinks = (checkIsActive: (href: string) => boolean, onClick?: () => void
       prefetch={true}
       onClick={onClick}
       className={clsx(
-        "text-black dark:text-off-white font-light text-md md:text-sm mx-5 text-center my-4 md:my-0",
+        "text-black dark:text-off-white font-light text-xmd md:text-sm px-5 text-center py-4 md:py-0",
         checkIsActive(href) && "underline",
       )}
       {...rest}
@@ -70,7 +70,7 @@ export const Header = () => {
         <LogoRound width="60px" className="dark:fill-off-white fill-black" />
         <nav className="flex flex-col">{getLinks(checkIsActive, toggleIsOpen)}</nav>
         <button type="button" onClick={toggleIsOpen}>
-          <CloseIcon width="30px" className="dark:stroke-off-white stroke-black" />
+          <CloseIcon width="24px" className="dark:stroke-off-white stroke-black" />
         </button>
       </div>
       <Container className="mt-5 md:mt-0 md:px-40 flex flex-col">

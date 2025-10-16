@@ -5,7 +5,7 @@ interface IProps {
 
 const ToggleViewButton = ({ isViewingAll, onClick }: IProps) => (
   <button type="button" onClick={onClick} className="uppercase font-light text-sm">
-    {isViewingAll ? "[ VIEW IN SLIDER ]" : "[ VIEW ALL ]"}
+    {isViewingAll ? "[ VIEW IN SLIDER ]" : "[ VIEW IN GRID ]"}
   </button>
 );
 
