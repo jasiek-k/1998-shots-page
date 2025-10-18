@@ -3,7 +3,7 @@ import { ArrowButton } from "@components";
 
 import { links } from "@/app/config";
 
-// TODO caption, emoji?
+// TODO caption, emoji? 📷
 const LinksSection = () => (
   <Container variant={EContainerVariant.Base} className="flex flex-col items-center">
     <Title className="text-center mb-4">

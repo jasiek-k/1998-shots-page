@@ -44,6 +44,7 @@ const config: Config = {
       "100": "400px",
       "120": "480px",
       "135": "540px",
+      "145": "580px",
       "182": "728px",
       container: "1552px",
       fullWidth: "1920px",
@@ -83,6 +84,7 @@ const config: Config = {
         photosLink: "36px",
       },
       opacity: {
+        10: "10%",
         15: "15%",
         80: "80%",
         85: "85%",
