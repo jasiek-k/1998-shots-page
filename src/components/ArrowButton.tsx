@@ -1,9 +1,8 @@
-import type { TTheme } from "@context";
 import { LeftArrowIcon, RightArrowIcon } from "@public/icons";
 import clsx from "clsx";
 import Link from "next/link";
 
-type TVariant = "left" | "right";
+type TVariant = "left" | "right" | "no-icon";
 type TType = "button" | "link";
 
 interface IArrowButtonProps {
@@ -12,27 +11,9 @@ interface IArrowButtonProps {
   children: string;
   href?: string;
   className?: string;
-  forcedTheme?: TTheme;
   handleClick?: () => void;
+  isActive?: boolean;
 }
-
-const styles = {
-  text: {
-    dark: "text-off-white",
-    light: "text-black",
-    default: "text-black dark:text-off-white",
-  },
-  icon: {
-    dark: "fill-off-white",
-    light: "fill-black",
-    default: "dark:fill-off-white fill-black",
-  },
-  container: {
-    dark: "border-off-white",
-    light: "border-black",
-    default: "border-black dark:border-off-white",
-  },
-};
 
 export const ArrowButton = ({
   variant,
@@ -41,16 +22,14 @@ export const ArrowButton = ({
   handleClick,
   children,
   className,
-  forcedTheme,
+  isActive,
+  ...rest
 }: IArrowButtonProps) => {
-  const textStyle = clsx(
-    "uppercase font-light text-xs",
-    forcedTheme ? styles.text[forcedTheme] : styles.text.default,
-  );
-  const iconStyle = forcedTheme ? styles.icon[forcedTheme] : styles.icon.default;
+  const iconStyle = "fill-off-white";
+  const textStyle = "uppercase font-light text-xs";
   const containerStyle = clsx(
-    "flex px-4 pb-1/2 pt-3/2 border-1 rounded-full items-baseline w-max",
-    forcedTheme ? styles.container[forcedTheme] : styles.container.default,
+    "flex px-4 pb-1/2 pt-3/2 border-1 rounded-full items-baseline w-max border-off-white",
+    isActive ? "text-black bg-off-white" : "text-off-white",
     className,
   );
 
@@ -66,11 +45,18 @@ export const ArrowButton = ({
       <RightArrowIcon width="18px" className={iconStyle} />
     </>
   );
-  const content = variant === "left" ? leftVariant : rightVariant;
+  const noIconVariant = <span className={textStyle}>{children}</span>;
+
+  const variants = {
+    left: leftVariant,
+    right: rightVariant,
+    "no-icon": noIconVariant,
+  };
+  const content = variants[variant];
 
   if (type === "button") {
     return (
-      <button type="button" onClick={handleClick} className={containerStyle}>
+      <button type="button" onClick={handleClick} className={containerStyle} {...rest}>
         {content}
       </button>
     );
@@ -78,7 +64,7 @@ export const ArrowButton = ({
 
   if (href) {
     return (
-      <Link href={href} prefetch={true} className={containerStyle}>
+      <Link href={href} prefetch={true} className={containerStyle} {...rest}>
         {content}
       </Link>
     );

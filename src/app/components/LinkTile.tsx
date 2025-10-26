@@ -9,7 +9,7 @@ const LinkTile = ({ link: { href, src, caption, subcaption } }: { link: ILinkTil
       <Image src={src} alt="" className="w-full" width={540} height={300} />
       <div className="absolute w-full h-full top-0 left-0 flex flex-col items-center justify-center text-off-white">
         <span className="text-md uppercase font-bold mb-2">{caption}</span>
-        <ArrowButton type="link" variant="right" forcedTheme="dark" href={href}>
+        <ArrowButton type="link" variant="right" href={href}>
           {subcaption}
         </ArrowButton>
       </div>

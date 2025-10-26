@@ -21,13 +21,7 @@ export const SocialMediaBanner = () => (
         <Title className="mb-1 md:mb-0 md:mr-6 text-off-white">
           JOIN THE 1998® CLUB
         </Title>
-        <ArrowButton
-          type="link"
-          variant="right"
-          href={instagramLink}
-          className="md:mb-4"
-          forcedTheme="dark"
-        >
+        <ArrowButton type="link" variant="right" href={instagramLink} className="md:mb-4">
           FOLLOW ON INSTAGRAM
         </ArrowButton>
       </div>

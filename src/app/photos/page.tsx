@@ -1,15 +1,11 @@
-"use client";
-
 import { Container, EContainerVariant } from "@components";
 
 import ViewAllSection from "./ViewAllSection";
 
-const Photos = () => {
-  return (
-    <Container variant={EContainerVariant.BaseNoMobilePadding} className="flex-col mb-10">
-      <ViewAllSection />
-    </Container>
-  );
-};
+const Photos = () => (
+  <Container variant={EContainerVariant.BaseNoMobilePadding} className="flex-col mb-8">
+    <ViewAllSection />
+  </Container>
+);
 
 export default Photos;
