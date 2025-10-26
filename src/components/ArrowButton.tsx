@@ -44,7 +44,7 @@ export const ArrowButton = ({
   forcedTheme,
 }: IArrowButtonProps) => {
   const textStyle = clsx(
-    "uppercase font-light",
+    "uppercase font-light text-xs",
     forcedTheme ? styles.text[forcedTheme] : styles.text.default,
   );
   const iconStyle = forcedTheme ? styles.icon[forcedTheme] : styles.icon.default;

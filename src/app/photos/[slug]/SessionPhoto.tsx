@@ -9,7 +9,6 @@ import { EPhotoType, type TPhoto } from "@/app/types";
 interface ISessionPhotoProps {
   photo: TPhoto;
   openModal: (img: IModal) => void;
-  className?: string;
 }
 
 const handlePhotoWidth = (length: number) => {
@@ -38,7 +37,6 @@ const OverlayButton = ({ handleClick }: { handleClick: () => void }) => (
 const SessionPhoto = ({
   photo: { type, img, width, height },
   openModal,
-  className,
 }: ISessionPhotoProps) => {
   const Photo = ({ photoClass, src }: { src: string; photoClass?: string }) => (
     <>
@@ -57,7 +55,7 @@ const SessionPhoto = ({
   );
 
   return (
-    <div className={className}>
+    <>
       {type === EPhotoType.VerticalPhoto && (
         <Photo photoClass="max-w-182 mx-auto" src={img} />
       )}
@@ -76,7 +74,7 @@ const SessionPhoto = ({
           ))}
         </div>
       )}
-    </div>
+    </>
   );
 };
 

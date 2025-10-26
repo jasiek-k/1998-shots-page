@@ -7,23 +7,18 @@ interface ICreditsSectionProps {
 }
 
 const CreditsSection = ({ credits }: ICreditsSectionProps) => (
-  <Container className="flex flex-col md:flex-row mt-29 mb-35">
-    <div className="w-full flex flex-col justify-center">
-      {credits.map(({ name, role }) => (
-        <div key={name} className="flex">
-          <div className="flex w-1/2 items-center justify-end">
-            <span className="uppercase text-xs md:text-sm text-right pr-3 font-light">
-              {name}
-            </span>
-          </div>
-          <div className="flex w-1/2 items-center">
-            <span className="uppercase text-xs md:text-md text-left pl-3 font-bold">
-              {role}
-            </span>
-          </div>
-        </div>
-      ))}
-    </div>
+  <Container className="grid grid-cols-5 md:grid-cols-12 gap-y-3 md:gap-y-2">
+    {credits.map(({ name, role }) => (
+      <div
+        key={name}
+        className="flex flex-col md:grid col-start-2 col-span-4 md:grid-cols-12 md:col-start-1 md:col-span-12"
+      >
+        <span className="uppercase text-xs md:text-sm font-light md:col-start-2 md:col-span-4">{`[${role}]`}</span>
+        <span className="uppercase text-xmd md:text-md font-normal mt-1 md:mt-0 md:col-start-6 md:col-span-6">
+          {name}
+        </span>
+      </div>
+    ))}
   </Container>
 );
 

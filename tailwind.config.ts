@@ -9,7 +9,6 @@ const config: Config = {
   ],
   theme: {
     spacing: {
-      "-23/2": "-46px",
       "-1/2": "-2px",
       "0": "0px",
       divider: "1px",
@@ -39,6 +38,7 @@ const config: Config = {
       "35": "140px",
       "37": "148px",
       "40": "160px",
+      "45": "180px",
       "88": "352px",
       "90": "360px",
       "100": "400px",
@@ -55,7 +55,7 @@ const config: Config = {
       bannerMobile: "132.80%",
       clubBanner: "28.96%",
       clubBannerMobile: "74.67%",
-      teaserMobile: "288vw",
+      teaserMobile: "228vw",
       heroLink: "56.6%",
       sessionItem: "100%",
       arrow: "18px",
@@ -65,17 +65,18 @@ const config: Config = {
     },
     colors: {
       "off-white": "#fffff4",
-      black: "#161616",
+      black: "#0D0D0D",
       "og-black": "#000000",
     },
     fontSize: {
+      xxxs: "10px",
       xxs: "12px",
       xs: "14px",
       sm: "16px",
       xmd: "18px",
-      md: "24px",
-      lg: "32px",
-      xl: "48px",
+      md: "20px",
+      lg: "24px",
+      xl: "40px",
     },
     extend: {
       lineHeight: {

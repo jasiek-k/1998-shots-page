@@ -1,13 +1,28 @@
-import { SessionTile } from "@components";
+import { SessionTile, Title } from "@components";
 import { useMemo } from "react";
 
 import sessions from "@/app/mock";
+
+const PageDetails = () => (
+  <div className="flex flex-col justify-between">
+    <Title>PHOTO SESSIONS®</Title>
+    <div className="flex flex-col">
+      <p className="uppercase pb-6 text-justify">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+        nostrud. Ut enim ad minim veniam, quis nostrud.
+      </p>
+      <span>[MORE THINGS COMING IN THE FUTURE]</span>
+    </div>
+  </div>
+);
 
 const ViewAllSection = () => {
   const content = useMemo(() => Object.values(sessions).reverse(), []);
 
   return (
     <div className="grid md:grid-cols-3 gap-y-8 md:gap-x-6 md:gap-y-8">
+      <PageDetails />
       {content.map(item => (
         <SessionTile key={item.id} {...item} />
       ))}
