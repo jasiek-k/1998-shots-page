@@ -7,7 +7,7 @@ import sessions from "@/app/mock";
 const PageDetails = () => (
   <div className="flex flex-col justify-between px-4 md:px-0">
     <Title className="tracking-2">PHOTO SESSIONS®</Title>
-    <div className="flex flex-col pt-35 md:pt-0">
+    <div className="flex flex-col pt-45 md:pt-0">
       <p className="uppercase pb-6 text-justify">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
