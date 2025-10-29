@@ -26,7 +26,7 @@ export const ArrowButton = ({
   ...rest
 }: IArrowButtonProps) => {
   const iconStyle = "fill-off-white";
-  const textStyle = "uppercase font-light text-md"; // xs
+  const textStyle = "uppercase font-light text-xmd"; // xs
   const containerStyle = clsx(
     "flex px-6 pb-1/2 pt-3/2 border-1 rounded-full items-baseline w-max border-off-white", //px-4
     isActive ? "text-black bg-off-white" : "text-off-white",
