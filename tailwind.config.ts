@@ -60,6 +60,9 @@ const config: Config = {
       sessionItem: "100%",
       arrow: "18px",
     },
+    letterSpacing: {
+      2: "2px",
+    },
     borderWidth: {
       1: "1px",
     },
