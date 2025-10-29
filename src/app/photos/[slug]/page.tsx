@@ -31,7 +31,7 @@ const PhotoSession = ({ params: { slug } }: IPhotoSessionProps) => {
       <HeroSection photo={hero} photoMobile={heroMobile} />
       <HeaderSection {...rest} />
       <PhotosLayout photos={photos} />
-      <div className="flex flex-col gap-35 md:gap-45 py-35 md:py-45">
+      <div className="flex flex-col gap-45 md:gap-45 py-45 md:py-45">
         <CreditsSection credits={credits} />
         <SocialMediaBanner />
         <SuggestedPhotos photos={suggested} />
