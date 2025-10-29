@@ -1,4 +1,3 @@
-// TODO pt-4
 export const Footer = () => (
   <footer className="pb-6 text-xxs md:text-sm flex justify-center">
     <span className="font-normal">1998</span>
