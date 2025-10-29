@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
+import type { TSize } from "@components";
 import { ArrowButton } from "@components";
 import { CloseIcon, LogoDark, LogoRound, MenuIcon } from "@public/icons";
 import clsx from "clsx";
@@ -14,15 +15,19 @@ import { links } from "@/app/config";
 
 const homePath = "/";
 
-// TODO mobile
-const getLinks = (checkIsActive: (href: string) => boolean, onClick?: () => void) =>
+const getLinks = (
+  size: TSize,
+  checkIsActive: (href: string) => boolean,
+  onClick?: () => void,
+) =>
   Object.values(links).map(({ name, href, ...rest }) => (
     <ArrowButton
       key={href}
       href={href}
       variant="no-icon"
       type="link"
-      // onClick={onClick}
+      size={size}
+      handleClick={onClick}
       isActive={checkIsActive(href)}
       {...rest}
     >
@@ -47,7 +52,7 @@ const MobileHeader = ({ isOpen, checkIsActive, toggleIsOpen }: any) => (
     >
       <LogoRound width="60px" className="dark:fill-off-white fill-black" />
       <nav className="flex flex-col items-center gap-8">
-        {getLinks(checkIsActive, toggleIsOpen)}
+        {getLinks("lg", checkIsActive, toggleIsOpen)}
       </nav>
       <button type="button" onClick={toggleIsOpen}>
         <CloseIcon width="24px" className="dark:stroke-off-white stroke-black" />
@@ -63,7 +68,7 @@ const DesktopHeader = ({ checkIsActive, toggleIsOpen }: any) => (
         <MenuIcon className="fill-black dark:fill-off-white" />
       </button>
       <nav className="hidden md:flex flex-row justify-center gap-8">
-        {getLinks(checkIsActive)}
+        {getLinks("sm", checkIsActive)}
       </nav>
     </div>
     <Link href={homePath}>

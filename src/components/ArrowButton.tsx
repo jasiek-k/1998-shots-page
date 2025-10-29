@@ -1,9 +1,12 @@
+"use client";
+
 import { LeftArrowIcon, RightArrowIcon } from "@public/icons";
 import clsx from "clsx";
 import Link from "next/link";
 
 type TVariant = "left" | "right" | "no-icon";
 type TType = "button" | "link";
+export type TSize = "sm" | "lg";
 
 interface IArrowButtonProps {
   variant: TVariant;
@@ -13,23 +16,37 @@ interface IArrowButtonProps {
   className?: string;
   handleClick?: () => void;
   isActive?: boolean;
+  size?: TSize;
 }
+
+const sizes = {
+  sm: {
+    text: "text-xs",
+    container: "px-4",
+  },
+  lg: {
+    text: "text-xmd",
+    container: "px-6",
+  },
+};
 
 export const ArrowButton = ({
   variant,
   type,
   href,
-  handleClick,
+  handleClick = () => {},
   children,
   className,
   isActive,
+  size = "sm",
   ...rest
 }: IArrowButtonProps) => {
   const iconStyle = "fill-off-white";
-  const textStyle = "uppercase font-light text-xmd"; // xs
+  const textStyle = clsx("uppercase font-light", sizes[size].text);
   const containerStyle = clsx(
-    "flex px-6 pb-1/2 pt-3/2 border-1 rounded-full items-baseline w-max border-off-white", //px-4
+    "flex pb-1/2 pt-3/2 border-1 rounded-full items-baseline w-max border-off-white",
     isActive ? "text-black bg-off-white" : "text-off-white",
+    sizes[size].container,
     className,
   );
 
@@ -64,7 +81,13 @@ export const ArrowButton = ({
 
   if (href) {
     return (
-      <Link href={href} prefetch={true} className={containerStyle} {...rest}>
+      <Link
+        href={href}
+        prefetch={true}
+        className={containerStyle}
+        onClick={handleClick}
+        {...rest}
+      >
         {content}
       </Link>
     );

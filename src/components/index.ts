@@ -1,4 +1,4 @@
-export { ArrowButton } from "./ArrowButton";
+export { ArrowButton, type TSize } from "./ArrowButton";
 export { BodyWrapper } from "./BodyWrapper";
 export { Chip } from "./Chip";
 export {
