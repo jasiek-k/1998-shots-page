@@ -5,7 +5,7 @@ import LinksSection from "./components/LinksSection";
 import WelcomeSection from "./components/WelcomeSection";
 
 const App = () => (
-  <div className="flex flex-col gap-45 pb-35">
+  <div className="flex flex-col gap-45 pb-45">
     <HeroSection />
     <WelcomeSection />
     <StackAnimation />

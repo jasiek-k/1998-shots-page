@@ -9,7 +9,7 @@ const WelcomeSection = () => (
     <WelcomeMobileIcon className="md:hidden flex pb-4 px-4" />
     <ResponsiveImage
       desktop={{ src: "/images/welcomeimage.jpg", width: 1104, height: 290 }}
-      mobile={{ src: "/images/welcomeimage_mobile.jpg", width: 375, height: 540 }}
+      mobile={{ src: "/images/welcomeimage_mobile.jpg", width: 375, height: 240 }}
     />
     <div className="grid grid-cols-5 md:grid-cols-12 pt-8 gap-y-4 md:gap-y-6 uppercase px-4 md:px-0">
       <span className="col-start-1 col-span-5 md:col-start-2 md:col-span-2 font-light text-xs">
