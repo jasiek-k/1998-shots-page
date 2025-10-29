@@ -46,7 +46,9 @@ const MobileHeader = ({ isOpen, checkIsActive, toggleIsOpen }: any) => (
       )}
     >
       <LogoRound width="60px" className="dark:fill-off-white fill-black" />
-      <nav className="flex flex-col">{getLinks(checkIsActive, toggleIsOpen)}</nav>
+      <nav className="flex flex-col items-center gap-8">
+        {getLinks(checkIsActive, toggleIsOpen)}
+      </nav>
       <button type="button" onClick={toggleIsOpen}>
         <CloseIcon width="24px" className="dark:stroke-off-white stroke-black" />
       </button>
