@@ -19,7 +19,7 @@ const HeaderSection = ({ title, subtitle, year }: IDetailsSectionProps) => (
         </ArrowButton>
       </div>
       <div className="pt-45 md:pt-0 md:col-start-6 md:col-span-6">
-        <Title className="w-full tracking-2">{`"${title}"`}</Title>
+        <Title className="w-full">{`"${title}"`}</Title>
         <p className="mt-2 uppercase">
           {subtitle && <span className="text-sm font-normal mr-1">{subtitle}</span>}
           <span className="text-xxxs font-light mr-1">YEAR</span>
