@@ -1,16 +1,18 @@
 import { Container, EContainerVariant, ResponsiveImage } from "@components";
 import { WelcomeDesktopIcon, WelcomeMobileIcon } from "@public/icons";
 
+const config = {
+  mobile: { src: "/images/others/welcomeimage_mobile.jpg", width: 375, height: 240 },
+  desktop: { src: "/images/others/welcomeimage.jpg", width: 1104, height: 290 },
+};
+
 const Divider = () => <span className="font-light text-xs">X</span>;
 
 const WelcomeSection = () => (
   <Container className="flex flex-col" variant={EContainerVariant.BaseNoMobilePadding}>
     <WelcomeDesktopIcon className="hidden md:flex md:pb-5" />
     <WelcomeMobileIcon className="md:hidden flex pb-4 px-4" />
-    <ResponsiveImage
-      desktop={{ src: "/images/welcomeimage.jpg", width: 1104, height: 290 }}
-      mobile={{ src: "/images/welcomeimage_mobile.jpg", width: 375, height: 240 }}
-    />
+    <ResponsiveImage config={config} />
     <div className="grid grid-cols-5 md:grid-cols-12 pt-8 gap-y-4 md:gap-y-6 uppercase px-4 md:px-0">
       <span className="col-start-1 col-span-5 md:col-start-2 md:col-span-2 font-light text-xs">
         [INTRODUCTION]

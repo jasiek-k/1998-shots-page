@@ -10,13 +10,15 @@ import { Title } from "./Text";
 
 import { instagramLink } from "@/app/config";
 
-const bannerDesktop = { src: "/images/joinclub.jpg", width: 1104, height: 352 };
-const bannerMobile = { src: "/images/joinclub_mobile.jpg", width: 375, height: 280 };
+const config = {
+  mobile: { src: "/images/others/joinclub_mobile.jpg", width: 375, height: 280 },
+  desktop: { src: "/images/others/joinclub.jpg", width: 1104, height: 352 },
+};
 
 export const SocialMediaBanner = () => (
   <Container variant={EContainerVariant.BaseNoMobilePadding}>
     <RatioContainer variant={EContainerRatio.ClubBanner}>
-      <ResponsiveImage mobile={bannerMobile} desktop={bannerDesktop} />
+      <ResponsiveImage config={config} />
       <div className="absolute top-0 left-0 w-full h-full flex flex-col md:flex-row items-center justify-center">
         <Title className="mb-1 md:mb-0 md:mr-6 text-off-white tracking-2">
           JOIN THE 1998® CLUB

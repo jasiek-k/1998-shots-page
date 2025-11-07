@@ -21,6 +21,8 @@ const PageDetails = () => (
   </div>
 );
 
+const isEnabled = false;
+
 const ViewAllSection = () => {
   const [firstFullyVisible, setFirstFullyVisible] = useState(null);
   const debounceTimeout = useRef<any>(null);
@@ -29,7 +31,7 @@ const ViewAllSection = () => {
   const content = useMemo(() => Object.values(sessions).reverse(), []);
 
   useEffect(() => {
-    if (!isMobile) {
+    if (!isMobile || !isEnabled) {
       return;
     }
 

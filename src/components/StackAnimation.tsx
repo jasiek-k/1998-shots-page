@@ -60,17 +60,19 @@ export const StackAnimation = () => {
         {slides.map(({ mobile, desktop }, index) => (
           <ResponsiveImage
             key={index}
-            mobile={{
-              className: currentSlideId === index ? "" : "hidden",
-              src: imageBase + mobile,
-              width: 300,
-              height: 300,
-            }}
-            desktop={{
-              className: currentSlideId === index ? "" : "md:hidden",
-              src: imageBase + desktop,
-              width: 1104,
-              height: 720,
+            config={{
+              mobile: {
+                className: currentSlideId === index ? "" : "hidden",
+                src: imageBase + mobile,
+                width: 300,
+                height: 300,
+              },
+              desktop: {
+                className: currentSlideId === index ? "" : "md:hidden",
+                src: imageBase + desktop,
+                width: 1104,
+                height: 720,
+              },
             }}
           />
         ))}

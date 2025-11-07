@@ -23,8 +23,10 @@ export const SessionTile = forwardRef(
           <div className="bg-off-white w-full h-full"></div>
         ) : (
           <ResponsiveImage
-            desktop={{ src: heroSecondaryMobile, width: 540, height: 540 }}
-            mobile={{ src: heroSecondaryMobile, width: 375, height: 375 }}
+            config={{
+              mobile: { src: heroSecondaryMobile, width: 375, height: 375 },
+              desktop: { src: heroSecondaryMobile, width: 540, height: 540 },
+            }}
           />
         )}
       </RatioContainer>
