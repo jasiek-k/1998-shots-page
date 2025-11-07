@@ -27,7 +27,7 @@ const WelcomeSection = () => (
       <span className="col-start-2 col-span-4 md:col-start-6 md:col-span-5 font-normal text-sm">
         photography <Divider /> retouch <Divider /> design
       </span>
-      <span className="col-start-2 col-span-4 md:col-start-6 md:col-span-5 pt-2 font-normal text-lg tracking-2">
+      <span className="text-center md:text-left col-start-1 col-span-5 md:col-start-6 md:col-span-5 pt-4 md:pt-2 font-normal text-md tracking-2">
         SERVING AUTHENTICITY SINCE&nbsp;MMXXIII
       </span>
     </div>
