@@ -24,7 +24,7 @@ const config = {
 };
 
 const NotFound = () => (
-  <Container variant={EContainerVariant.FullWidth} className="notFound">
+  <Container variant={EContainerVariant.FullWidth} className="notFound pb-4">
     <RatioContainer variant={EContainerRatio.FullPage}>
       <ResponsiveImage config={config} priority={true} />
       <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
