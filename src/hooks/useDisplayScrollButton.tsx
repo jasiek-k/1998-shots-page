@@ -13,6 +13,7 @@ export const useDisplayScrollButton = () => {
 
     const handleScroll = () => {
       const newValue = window.scrollY;
+      console.log(window.scrollY);
       const isScrollingUp = oldValue - newValue > 0;
       const isScrollingDown = oldValue - newValue < 0;
 
