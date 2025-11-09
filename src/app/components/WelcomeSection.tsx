@@ -17,7 +17,7 @@ const WelcomeSection = () => (
       <span className="col-start-1 col-span-5 md:col-start-2 md:col-span-2 font-light text-xs">
         [INTRODUCTION]
       </span>
-      <p className="col-start-2 col-span-4 md:col-start-6 md:col-span-5 text-justify font-normal">
+      <p className="col-start-2 col-span-4 md:col-start-6 md:col-span-5 text-justify font-normal text-sm">
         Drift amongst photos that capture moody tones, vintage aesthetics and minimalistic
         compositions. Explore the essence of the
         <b className="font-bold"> 1998&nbsp;SHOTS® </b>lifestyle through this artistic
@@ -29,7 +29,7 @@ const WelcomeSection = () => (
       <span className="col-start-2 col-span-4 md:col-start-6 md:col-span-5 font-normal text-sm">
         photography <Divider /> retouch <Divider /> design
       </span>
-      <span className="text-center md:text-left col-start-1 col-span-5 md:col-start-6 md:col-span-5 pt-4 md:pt-2 font-normal text-md tracking-2">
+      <span className="text-center md:text-left col-start-1 col-span-5 md:col-start-6 md:col-span-5 pt-4 md:pt-2 font-light text-xmd tracking-2">
         SERVING AUTHENTICITY SINCE&nbsp;MMXXIII
       </span>
     </div>

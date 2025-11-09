@@ -20,10 +20,10 @@ export const SocialMediaBanner = () => (
     <RatioContainer variant={EContainerRatio.ClubBanner}>
       <ResponsiveImage config={config} />
       <div className="absolute top-0 left-0 w-full h-full flex flex-col md:flex-row items-center justify-center">
-        <Title className="mb-1 md:mb-0 md:mr-6 text-off-white tracking-2">
+        <Title className="mb-2 md:mb-0 md:mr-6 text-off-white">
           JOIN THE 1998® CLUB
         </Title>
-        <ArrowButton type="link" variant="right" href={instagramLink} className="md:mb-4">
+        <ArrowButton type="link" variant="right" href={instagramLink} className="md:mb-2">
           FOLLOW ON INSTAGRAM
         </ArrowButton>
       </div>

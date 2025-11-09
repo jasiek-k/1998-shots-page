@@ -10,6 +10,7 @@ interface IProps {
   size?: keyof typeof sizes;
 }
 
+// not used
 export const Chip = ({ children, size = "md" }: IProps) => (
   <div
     className={clsx(

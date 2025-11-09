@@ -41,10 +41,10 @@ export const ArrowButton = ({
   size = "sm",
   ...rest
 }: IArrowButtonProps) => {
-  const iconStyle = "fill-off-white";
+  const iconStyle = "fill-off-white mb-1";
   const textStyle = clsx("uppercase font-light", sizes[size].text);
   const containerStyle = clsx(
-    "flex pb-1/2 pt-3/2 border-1 rounded-full items-baseline w-max border-off-white",
+    "flex pb-1/2 pt-3/2 border-1 rounded-full items-center w-max border-off-white",
     isActive ? "text-black bg-off-white" : "text-off-white",
     sizes[size].container,
     className,

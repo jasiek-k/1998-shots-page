@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import type { ILinkTile } from "@/app/types";
 
+// not used
 const LinkTile = ({ link: { href, src, caption, subcaption } }: { link: ILinkTile }) => (
   <div className="w-full md:w-2/4">
     <RatioContainer variant={EContainerRatio.HeroLink} className="zoom">

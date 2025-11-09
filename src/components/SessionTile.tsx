@@ -37,9 +37,7 @@ export const SessionTile = forwardRef(
           <span className="font-normal text-xxs">YEAR {formatYear(year)}</span>
         </p>
         <p className="inline-block m-0 uppercase gap-x-2 items-baseline leading-base">
-          <span className={clsx("text-xmd font-normal", subtitle && "mr-2")}>
-            {title}
-          </span>
+          <span className={clsx("text-sm font-normal", subtitle && "mr-2")}>{title}</span>
           {subtitle && <span className="text-xxs font-light">{subtitle}</span>}
         </p>
       </div>

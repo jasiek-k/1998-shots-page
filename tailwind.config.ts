@@ -73,13 +73,13 @@ const config: Config = {
     },
     fontSize: {
       xxxs: "10px",
-      xxs: "12px",
-      xs: "14px",
-      sm: "16px",
+      xxs: "11px",
+      xs: "12px",
+      sm: "14px",
       xmd: "18px",
       md: "20px",
       lg: "24px",
-      xl: "40px",
+      xl: "32px",
     },
     extend: {
       lineHeight: {
