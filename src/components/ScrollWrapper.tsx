@@ -11,7 +11,7 @@ interface IProps {
 }
 
 export const ScrollWrapper = ({ children }: IProps) => {
-  const [container, setContainer] = useState<Element | undefined>(undefined);
+  const [container, setContainer] = useState<Element>();
   const { ref, isDisplayed } = useDisplayScrollButton();
 
   useEffect(() => {
