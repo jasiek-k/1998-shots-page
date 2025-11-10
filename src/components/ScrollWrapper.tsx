@@ -25,7 +25,8 @@ export const ScrollWrapper = ({ children, ...props }: IProps) => {
   return (
     <div ref={ref} {...props}>
       {children}
-      {container && createPortal(<ScrollTopButton isDisplayed={false} />, container)}
+      {container &&
+        createPortal(<ScrollTopButton isDisplayed={isDisplayed} />, container)}
     </div>
   );
 };
