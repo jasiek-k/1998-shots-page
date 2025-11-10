@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { SessionTile, Title } from "@components";
+import { ScrollWrapper, SessionTile, Title } from "@components";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import sessions from "@/app/mock";
@@ -11,11 +11,7 @@ const PageDetails = () => (
   <div className="flex flex-col justify-between px-4 md:px-0">
     <Title className="tracking-2">PHOTO SESSIONS®</Title>
     <div className="flex flex-col pt-35 md:pt-0 text-sm">
-      <p className="uppercase pb-6 text-justify">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-        nostrud. Ut enim ad minim veniam, quis nostrud.
-      </p>
+      <p className="uppercase pb-6 text-justify">Take your time while exploring</p>
       <span>[MORE THINGS COMING IN THE FUTURE]</span>
     </div>
   </div>
@@ -73,7 +69,9 @@ const ViewAllSection = () => {
 
   return (
     <div className="grid md:grid-cols-3 gap-y-8 md:gap-x-6 md:gap-y-6">
-      <PageDetails />
+      <ScrollWrapper className="flex">
+        <PageDetails />
+      </ScrollWrapper>
       {content.map((item, index) => (
         <SessionTile
           ref={element => {
