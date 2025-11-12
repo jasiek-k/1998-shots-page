@@ -18,9 +18,10 @@ const WelcomeSection = () => (
         [INTRODUCTION]
       </span>
       <p className="col-start-2 col-span-4 md:col-start-6 md:col-span-5 text-justify font-normal text-sm">
-        <b className="font-bold">1998&nbsp;SHOTS® </b>tells the story of the journey from
-        an after-hours hobby to a brand, focused on photography and design. Studio and
-        automotive photography to be exact. Based in Poland. Active since year 2K23.
+        <span className="tracking-2">1998&nbsp;SHOTS® </span>tells the story of the
+        journey from an after-hours hobby to a brand, focused on photography and design.
+        Studio and automotive photography to be exact. Based in Poland. Active since year
+        2K23.
       </p>
       <span className="col-start-1 col-span-5 md:col-start-2 md:col-span-2 font-light text-xs">
         [FIELDS]

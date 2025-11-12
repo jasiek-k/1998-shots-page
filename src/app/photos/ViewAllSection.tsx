@@ -11,7 +11,11 @@ const PageDetails = () => (
   <div className="flex flex-col justify-between px-4 md:px-0">
     <Title className="tracking-2">PHOTO SESSIONS®</Title>
     <div className="flex flex-col pt-35 md:pt-0 text-sm">
-      <p className="uppercase pb-6 text-justify">Take your time while exploring</p>
+      <p className="uppercase pb-6 text-justify">
+        Take your time while exploring <span className="tracking-2">1998® </span>
+        sessions. Portraits? Automotive photos? We got you and wish you a pleasant
+        experience.
+      </p>
       <span>[MORE THINGS COMING IN THE FUTURE]</span>
     </div>
   </div>

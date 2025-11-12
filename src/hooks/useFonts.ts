@@ -3,11 +3,6 @@ import localFont from "next/font/local";
 const fonts = localFont({
   src: [
     {
-      path: "../../public/fonts/HelveticaNeueLTStd-BdEx.woff",
-      weight: "700",
-      style: "normal",
-    },
-    {
       path: "../../public/fonts/HelveticaNeueLTStd-Ex.woff",
       weight: "400",
       style: "normal",
