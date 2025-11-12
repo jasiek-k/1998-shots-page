@@ -15,29 +15,3 @@ export const links = {
   instagram: { name: "INSTAGRAM", href: instagramLink, target: "_blank" },
   email: { name: "E-MAIL", href: `mailto:${emailAddress}` },
 };
-
-export const landingLinks = [];
-
-export const heroMobile = {
-  src: "/images/landing/landing_hero_mobile.jpg",
-  width: 375,
-  height: 667,
-};
-
-export const heroDesktop = {
-  src: "/images/landing/landing_hero.jpg",
-  width: 1920,
-  height: 1080,
-};
-
-export const bannerMobile = {
-  src: "/images/landing/landing_banner_mobile.jpg",
-  width: 343,
-  height: 190,
-};
-
-export const bannerDesktop = {
-  src: "/images/landing/landing_banner.jpg",
-  width: 1104,
-  height: 352,
-};

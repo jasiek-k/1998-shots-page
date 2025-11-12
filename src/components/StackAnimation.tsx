@@ -55,23 +55,24 @@ export const StackAnimation = () => {
     <Container variant={EContainerVariant.BaseNoMobilePadding}>
       <div className="relative flex items-center justify-center w-full">
         <div className="absolute text-center">
-          <Title>[ 1998® LIFESTYLE ]</Title>
-          {/* <span>PHOTOGRAPHY - RETOUCH - GRAPHIC DESIGN</span> */}
+          <Title className="tracking-2">[ 1998® LIFESTYLE ]</Title>
         </div>
         {slides.map(({ mobile, desktop }, index) => (
           <ResponsiveImage
             key={index}
-            mobile={{
-              className: currentSlideId === index ? "" : "hidden",
-              src: imageBase + mobile,
-              width: 300,
-              height: 300,
-            }}
-            desktop={{
-              className: currentSlideId === index ? "" : "md:hidden",
-              src: imageBase + desktop,
-              width: 1104,
-              height: 720,
+            config={{
+              mobile: {
+                className: currentSlideId === index ? "" : "hidden",
+                src: imageBase + mobile,
+                width: 300,
+                height: 300,
+              },
+              desktop: {
+                className: currentSlideId === index ? "" : "md:hidden",
+                src: imageBase + desktop,
+                width: 1104,
+                height: 720,
+              },
             }}
           />
         ))}

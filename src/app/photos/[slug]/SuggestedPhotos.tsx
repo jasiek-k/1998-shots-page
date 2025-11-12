@@ -27,12 +27,9 @@ const SessionTeaser = ({ item: { img, href }, className }: ISessionTeaserProps) 
 );
 
 const SuggestedPhotos = ({ photos }: ISuggestedPhotosProps) => (
-  <Container
-    variant={EContainerVariant.BaseNoMobilePadding}
-    className="flex-col pb-8 md:pb-15 mt-35"
-  >
+  <Container variant={EContainerVariant.BaseNoMobilePadding} className="flex-col">
     <div className="pl-4 md:pl-0">
-      <h1 className="text-md md:text-md font-bold mb-2 uppercase">
+      <h1 className="text-xmd md:text-md font-normal mb-2 uppercase">
         Check another sessions
       </h1>
       <div className="overflow-auto snap-x noScroll">

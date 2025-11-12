@@ -15,11 +15,13 @@ export const useDisplayScrollButton = () => {
       const newValue = window.scrollY;
       const isScrollingUp = oldValue - newValue > 0;
       const isScrollingDown = oldValue - newValue < 0;
+      const isScrolledBottom =
+        window.scrollY + window.innerHeight > document.body.scrollHeight - 250;
 
-      if (isScrollingDown) {
-        setIsDisplayed(false);
-      } else if (isScrollingUp) {
+      if (isScrollingUp || isScrolledBottom) {
         setIsDisplayed(true);
+      } else if (isScrollingDown) {
+        setIsDisplayed(false);
       }
 
       oldValue = newValue;

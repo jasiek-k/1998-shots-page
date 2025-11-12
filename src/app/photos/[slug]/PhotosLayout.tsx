@@ -16,9 +16,12 @@ const PhotosLayout = ({ photos }: IPhotosLayoutProps) => {
 
   return (
     <>
-      <Container variant={EContainerVariant.BaseNoMobilePadding} className="flex-col">
+      <Container
+        variant={EContainerVariant.BaseNoMobilePadding}
+        className="flex-col gap-6"
+      >
         {photos.map((item, index) => (
-          <SessionPhoto photo={item} openModal={setModal} key={index} className="mb-6" />
+          <SessionPhoto photo={item} openModal={setModal} key={index} />
         ))}
       </Container>
       <Modal photo={modal} {...rest} />

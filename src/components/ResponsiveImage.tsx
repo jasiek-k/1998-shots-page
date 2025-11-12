@@ -9,15 +9,16 @@ export interface IImage {
 }
 
 interface IResponsiveImageProps {
-  mobile: IImage;
-  desktop: IImage;
+  config: {
+    mobile: IImage;
+    desktop: IImage;
+  };
   priority?: boolean;
   loading?: "eager" | "lazy";
 }
 
 export const ResponsiveImage = ({
-  mobile,
-  desktop,
+  config: { mobile, desktop },
   priority,
   loading,
 }: IResponsiveImageProps) => (

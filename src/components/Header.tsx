@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { CloseIcon, LogoDark, LogoLight, LogoRound, MenuIcon } from "@public/icons";
+import type { TSize } from "@components";
+import { ArrowButton } from "@components";
+import { CloseIcon, LogoDark, LogoRound, MenuIcon } from "@public/icons";
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,29 +11,71 @@ import { useCallback, useState } from "react";
 
 import { Container } from "./Container";
 
-// import ThemeSwitch from "./ThemeSwitch";
 import { links } from "@/app/config";
 
 const homePath = "/";
 
-const formatLink = (name: string) => `[ ${name} ]`;
-
-const getLinks = (checkIsActive: (href: string) => boolean, onClick?: () => void) =>
+const getLinks = (
+  size: TSize,
+  checkIsActive: (href: string) => boolean,
+  onClick?: () => void,
+) =>
   Object.values(links).map(({ name, href, ...rest }) => (
-    <Link
-      href={href}
+    <ArrowButton
       key={href}
-      prefetch={true}
-      onClick={onClick}
-      className={clsx(
-        "text-black dark:text-off-white font-light text-xmd md:text-sm px-5 text-center py-4 md:py-0",
-        checkIsActive(href) && "underline",
-      )}
+      href={href}
+      variant="no-icon"
+      type="link"
+      size={size}
+      handleClick={onClick}
+      isActive={checkIsActive(href)}
       {...rest}
     >
-      {formatLink(name)}
-    </Link>
+      {name}
+    </ArrowButton>
   ));
+
+const MobileHeader = ({ isOpen, checkIsActive, toggleIsOpen }: any) => (
+  <>
+    <div
+      className={
+        isOpen
+          ? "fixed top-0 left-0 w-full h-full bg-og-black opacity-85 z-10 md:hidden"
+          : "hidden"
+      }
+    />
+    <div
+      className={clsx(
+        isOpen ? "flex freezeScroll" : "hidden",
+        "md:hidden pt-15 pb-20 justify-between fixed top-0 left-0 w-full h-full z-10 items-center flex-col",
+      )}
+    >
+      <LogoRound width="60px" className="dark:fill-off-white fill-black" />
+      <nav className="flex flex-col items-center gap-8">
+        {getLinks("lg", checkIsActive, toggleIsOpen)}
+      </nav>
+      <button type="button" onClick={toggleIsOpen}>
+        <CloseIcon width="24px" className="dark:stroke-off-white stroke-black" />
+      </button>
+    </div>
+  </>
+);
+
+const DesktopHeader = ({ checkIsActive, toggleIsOpen }: any) => (
+  <Container className="mt-5 md:mt-0 md:px-40 flex flex-col">
+    <div className="flex justify-end md:justify-center mb-6 text-xs md:relative">
+      <button onClick={toggleIsOpen} className="md:hidden">
+        <MenuIcon className="fill-black dark:fill-off-white" />
+      </button>
+      <nav className="hidden md:flex flex-row justify-center gap-8">
+        {getLinks("sm", checkIsActive)}
+      </nav>
+    </div>
+    <Link href={homePath}>
+      <LogoDark />
+    </Link>
+  </Container>
+);
 
 export const Header = () => {
   const pathname = usePathname();
@@ -51,43 +96,15 @@ export const Header = () => {
     <header
       className={clsx(
         isHomePath && "absolute",
-        "header w-full flex z-50 mb-6 md:mt-10 flex-col",
+        "header w-full flex z-50 mb-5 md:mt-9 flex-col",
       )}
     >
-      <div
-        className={
-          isOpen
-            ? "fixed top-0 left-0 w-full h-full bg-og-black opacity-85 z-10 md:hidden"
-            : "hidden"
-        }
+      <MobileHeader
+        isOpen={isOpen}
+        checkIsActive={checkIsActive}
+        toggleIsOpen={toggleIsOpen}
       />
-      <div
-        className={clsx(
-          isOpen ? "flex freezeScroll" : "hidden",
-          "md:hidden pt-15 pb-20 justify-between fixed top-0 left-0 w-full h-full z-10 items-center flex-col",
-        )}
-      >
-        <LogoRound width="60px" className="dark:fill-off-white fill-black" />
-        <nav className="flex flex-col">{getLinks(checkIsActive, toggleIsOpen)}</nav>
-        <button type="button" onClick={toggleIsOpen}>
-          <CloseIcon width="24px" className="dark:stroke-off-white stroke-black" />
-        </button>
-      </div>
-      <Container className="mt-5 md:mt-0 md:px-40 flex flex-col">
-        <div className="flex justify-end md:justify-center mb-6 text-xs md:relative">
-          {/* <ThemeSwitch className="md:absolute md:left-0 md:-top-1" /> */}
-          <button onClick={toggleIsOpen} className="md:hidden">
-            <MenuIcon className="fill-black dark:fill-off-white" />
-          </button>
-          <nav className="hidden md:flex flex-row justify-center">
-            {getLinks(checkIsActive)}
-          </nav>
-        </div>
-        <Link href={homePath}>
-          <LogoDark className="hidden dark:flex" />
-          <LogoLight className="dark:hidden flex" />
-        </Link>
-      </Container>
+      <DesktopHeader checkIsActive={checkIsActive} toggleIsOpen={toggleIsOpen} />
     </header>
   );
 };

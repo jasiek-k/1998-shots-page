@@ -2,8 +2,12 @@
 
 import { useCallback, useEffect, useState } from "react";
 
-import { heroDesktop, heroMobile, mobileBreakpoint } from "@/app/config";
+import { mobileBreakpoint } from "@/app/config";
 
+const posterImage = {
+  desktop: "/images/others/landing_hero.jpg",
+  mobile: "/images/others/landing_hero_mobile.jpg",
+};
 const mobileVideo = {
   src: "/videos/hero_mobile.mp4",
   width: "768",
@@ -17,15 +21,15 @@ const desktopVideo = {
 
 const HeroVideo = () => {
   const [video, setVideo] = useState(desktopVideo);
-  const [poster, setPoster] = useState<string>(heroDesktop.src);
+  const [poster, setPoster] = useState<string>(posterImage.desktop);
 
   const handleResize = useCallback(() => {
     if (window.matchMedia(`(max-width: ${mobileBreakpoint}px)`).matches) {
       setVideo(mobileVideo);
-      setPoster(heroMobile.src);
+      setPoster(posterImage.mobile);
     } else {
       setVideo(desktopVideo);
-      setPoster(heroDesktop.src);
+      setPoster(posterImage.desktop);
     }
   }, []);
 
