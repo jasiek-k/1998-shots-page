@@ -3,7 +3,7 @@ import { ArrowButton } from "@components";
 
 import { links } from "@/app/config";
 
-const LinksSection = () => (
+const GalleryLinkSection = () => (
   <Container
     variant={EContainerVariant.Base}
     className="flex flex-col md:grid md:grid-cols-12"
@@ -22,4 +22,4 @@ const LinksSection = () => (
   </Container>
 );
 
-export default LinksSection;
+export default GalleryLinkSection;

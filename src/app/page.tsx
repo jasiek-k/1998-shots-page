@@ -1,7 +1,7 @@
 import { SocialMediaBanner, StackAnimation } from "@components";
 
+import GalleryLinkSection from "./components/GalleryLinkSection";
 import HeroSection from "./components/HeroSection";
-import LinksSection from "./components/LinksSection";
 import WelcomeSection from "./components/WelcomeSection";
 
 const App = () => (
@@ -9,8 +9,8 @@ const App = () => (
     <HeroSection />
     <WelcomeSection />
     <StackAnimation />
-    <LinksSection />
     <SocialMediaBanner />
+    <GalleryLinkSection />
   </div>
 );
 
